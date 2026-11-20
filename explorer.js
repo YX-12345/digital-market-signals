@@ -98,7 +98,8 @@
     }
 
     form.addEventListener('change', render);
-    form.addEventListener('reset', () => queueMicrotask(render));
+    // Run after the browser restores the form controls.
+    form.addEventListener('reset', () => setTimeout(render, 0));
     render();
     form.hidden = false;
   }
