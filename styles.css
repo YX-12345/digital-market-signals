@@ -140,3 +140,11 @@ td { text-align: right; font-variant-numeric: tabular-nums; }
   .chart-row, .chart-axis { grid-template-columns: 4.55rem minmax(0, 1fr) 2.9rem; gap: .35rem; }
   .chart-ticks span:nth-child(2), .chart-ticks span:nth-child(4) { display: none; }
 }
+
+.byline { color: var(--ink); font-weight: 650; }
+.project-note { font-size: .9rem; }
+.action-links { display: flex; flex-wrap: wrap; gap: .5rem; }
+.action-links .button { margin-top: 0; }
+.availability { padding: .75rem 1rem; border-inline-start: 3px solid #b4ccea; background: var(--light); }
+.archive > summary { cursor: pointer; color: var(--link); font-weight: 650; }
+.archive[open] > summary { margin-bottom: .75rem; }

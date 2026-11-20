@@ -38,6 +38,12 @@ window.DMS_SIGNALS = [
         "date": "2026-11-16",
         "url": "https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology",
         "type": "Government release"
+      },
+      {
+        "label": "Singapore MDDI and METI · Joint response to the interim rule",
+        "date": "2026-11-17",
+        "url": "https://www.meti.gov.sg/newsroom/mddi-meti-joint-media-statement-on-us-interim-final-rule-on-addressing-remote-access-to-advanced-semiconductors/",
+        "type": "Government release"
       }
     ],
     "history": [
@@ -45,6 +51,11 @@ window.DMS_SIGNALS = [
         "date": "2026-11-16",
         "text": "BIS announced the interim final rule.",
         "source": 1
+      },
+      {
+        "date": "2026-11-17",
+        "text": "Singapore ministries reported engagement with affected companies and U.S. authorities on scope and implementation.",
+        "source": 2
       },
       {
         "date": "2026-11-19",

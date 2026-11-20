@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Compare 2024 internet use in seven case economies, using ITU data published in World Development Indicators.">
-  <title>Data Explorer | Digital Market Signals</title>
-  <link rel="stylesheet" href="styles.css?v=3">
+  <meta name="description" content="Compare connectivity, broadband and electricity trends in 77 low- and middle-income economies using World Development Indicators.">
+  <title>Digital Infrastructure Dashboard | Digital Market Signals</title>
+  <link rel="stylesheet" href="styles.css?v=4">
   <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/data-explorer.html">
   <script defer src="explorer.js?v=3"></script>
 </head>
@@ -18,19 +18,63 @@
         <a href="./">Home</a>
         <a href="market-signals.html">Market Signals</a>
         <a href="https://yx-12345.github.io/digital-market-signals/intelligence-brief.html">Intelligence Brief</a>
-        <a href="data-explorer.html" aria-current="page">Data Explorer</a>
-        <a href="methodology.html">Methodology</a>
+        <a href="data-explorer.html" aria-current="page">Dashboard</a>
       </nav>
     </div>
   </header>
   <main class="wrap page" id="main" tabindex="-1">
-<header class="page-intro">
-      <h1>Data Explorer</h1>
-      <p class="lede">Compare selected AI infrastructure milestones, then explore internet use as a separate measure of connectivity.</p>
+    <header class="page-intro">
+      <h1>Digital Infrastructure in Emerging Economies</h1>
+      <p class="focus">Connectivity, Broadband and Electricity: Cross-country Trends and Comparisons</p>
+      <p class="lede">How do the infrastructure conditions supporting digital service adoption differ across developing economies, and how have they changed over time?</p>
     </header>
 
-    <section class="section infrastructure" aria-labelledby="infrastructure-title">
-      <h2 id="infrastructure-title">Infrastructure status in selected cases</h2>
+    <p class="availability"><strong>Tableau Public publication is pending.</strong> The verified findings and downloadable data are available below.</p>
+
+    <section class="section" aria-labelledby="wdi-findings">
+      <h2 id="wdi-findings">Three findings from the WDI data</h2>
+      <ol class="findings">
+        <li><strong>Internet use rose across the matched sample.</strong> All 67 economies with observations in both 2015 and 2024 recorded increases. The median increase was 26.5 percentage points. Ten economies are outside that comparison because an endpoint is missing.</li>
+        <li><strong>High internet use can accompany different fixed-broadband rates.</strong> In 2024, Malaysia recorded 98.0% internet use and 13.5 fixed subscriptions per 100 people. Brazil recorded 84.5% internet use and 24.1 fixed subscriptions per 100. Investigate the access mix and local service quality before planning delivery.</li>
+        <li><strong>Electricity access improved at different rates in two project markets.</strong> From 2015 to 2024, access increased from 41.6% to 77.0% in Kenya and from 52.5% to 62.5% in Nigeria. National access helps frame local inquiries about firm power, connection timelines and backup at proposed sites.</li>
+      </ol>
+      <p class="metadata">Source: World Development Indicators, retrieved 20 November 2026. Changes are descriptive, and the cross-country comparisons use the stated reference year.</p>
+    </section>
+
+    <section class="section compact" aria-labelledby="data-heading">
+      <h2 id="data-heading">Data, definitions and downloads</h2>
+      <p>The dataset includes 77 economies in six World Bank regions and 770 country-year rows for 2015–2024. It covers all low- and lower-middle-income economies in the FY2027 classification plus five upper-middle-income Market Signals economies. Aggregates are excluded.</p>
+      <dl class="definitions">
+        <dt><a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/IT.NET.USER.ZS">Internet use · IT.NET.USER.ZS</a></dt>
+        <dd>Percent of people who used the internet from any location in the previous three months.</dd>
+        <dt><a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/IT.NET.BBND.P2">Fixed broadband · IT.NET.BBND.P2</a></dt>
+        <dd>Fixed subscriptions per 100 people, including household and organizational subscriptions.</dd>
+        <dt><a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/EG.ELC.ACCS.ZS">Electricity access · EG.ELC.ACCS.ZS</a></dt>
+        <dd>Percent of the population with access to electricity.</dd>
+      </dl>
+      <p>Blank values stay blank. The long file contains 2,164 reported observations and 146 missing cells. In 2024, 49 economies had both internet-use and fixed-broadband data. The 2025 probe returned one internet-use value, with zero observations for the other two series. The 2026 probe returned no observations for the sample.</p>
+      <ul class="source-list">
+        <li><a href="data/processed/wdi_tableau.csv" download>Download Tableau-ready wide CSV</a></li>
+        <li><a href="data/processed/wdi_long.csv" download>Download long-format CSV</a></li>
+        <li><a href="data/processed/wdi_coverage.json">Annual coverage and source API URLs</a></li>
+        <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/docs/wdi-data.md">Data dictionary, inclusion rules and validation</a></li>
+        <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/scripts/prepare_wdi.py">Python processing script</a></li>
+      </ul>
+    </section>
+
+    <section class="section compact" aria-labelledby="market-context">
+      <h2 id="market-context">From Infrastructure Data to Market Intelligence</h2>
+      <p>Country data describe the conditions for reaching users. Procurement decisions also need project evidence on available cloud services, compute allocations, financing, hardware and commissioning.</p>
+      <ul>
+        <li>Compare connectivity context with the published milestone for <a href="signal.html?id=indonesia-azure-region">Microsoft Azure in Indonesia</a>. Check regional services and quotas for the intended workload.</li>
+        <li>Use electricity access to frame power questions for the <a href="signal.html?id=nigeria-ustda-afridata-feasibility-2026">proposed Nigeria data centers</a> and <a href="signal.html?id=india-ctrls-bihar-data-center">Bihar proposals</a>. Confirm firm power, financing and commissioning separately.</li>
+        <li>For <a href="signal.html?id=india-ai-compute-portal">India’s shared compute program</a>, examine eligibility, allocations and usage to assess who can obtain usable compute.</li>
+      </ul>
+      <p><a href="https://yx-12345.github.io/digital-market-signals/intelligence-brief.html">Read the Build or Buy? intelligence brief</a></p>
+    </section>
+
+    <details class="section archive">
+      <summary id="infrastructure-title">Evidence table · Five selected project milestones</summary>
       <p>These curated examples compare the milestone supported by each record. They do not measure total national capacity, market coverage or AI readiness.</p>
       <p class="table-hint">Scroll the table horizontally to see the evidence links.</p>
       <div class="table-scroll" role="region" aria-labelledby="infrastructure-title" tabindex="0">
@@ -45,9 +89,11 @@
           </tbody>
         </table>
       </div>
-    </section>
+    </details>
 
-    <section class="explorer panel" aria-labelledby="chart-title">
+    <details class="section archive">
+      <summary>Earlier seven-economy connectivity chart · 2024</summary>
+      <section class="explorer panel" aria-labelledby="chart-title">
       <h2 id="chart-title">Connectivity context · Individuals using the Internet</h2>
       <p class="metadata">Share of population (%) · 2024 · World Development Indicators / ITU</p>
       <p>This measures internet use among individuals. It does not measure cloud capacity or access to AI compute.</p>
@@ -65,23 +111,9 @@
       </figure>
       <div id="chart-table"></div>
       <p id="chart-fallback">The interactive chart is unavailable. Enable JavaScript or reload to try again. <a href="internet-use-2024.csv">Download the source observations</a>.</p>
-    </section>
+      </section>
+    </details>
 
-    <section class="section compact">
-      <h2>What the comparison shows</h2>
-      <p>In the selected economies, 2024 internet use ranged from 35.0% in Kenya to 98.0% in Malaysia. The spread signals different starting points for reaching people online. It does not establish differences in the supply, price or use of AI compute.</p>
-    </section>
-    <section class="section compact">
-      <h2>Data and comparability</h2>
-      <p>Indicator <code>IT.NET.USER.ZS</code> measures people who used the internet from any location in the previous three months as a share of the population. We use 2024 because it is the most recent reference year present for all seven selected economies in the 20 November 2026 retrieval. The seven economies are the original connectivity sample. The qualitative cases above include other economies.</p>
-      <p>All observations use the same indicator and reference year. Reporting methods and data quality can still differ. National figures conceal subnational differences and do not capture connection quality, affordability, cloud availability, or access to accelerators.</p>
-      <ul class="source-list">
-        <li><a href="https://data.worldbank.org/indicator/IT.NET.USER.ZS">World Development Indicators · indicator page (original provider: ITU)</a></li>
-        <li><a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/IT.NET.USER.ZS">World Bank DataBank · definition and limitations</a></li>
-        <li><a href="https://api.worldbank.org/v2/country/BRA;IND;IDN;KEN;MEX;MYS;THA/indicator/IT.NET.USER.ZS?source=2&amp;date=2024:2025&amp;format=json&amp;per_page=100">World Bank API · observations used to check the common year</a></li>
-        <li><a href="internet-use-2024.csv" download>Download the seven 2024 observations (CSV)</a></li>
-      </ul>
-    </section>
   </main>
   <footer class="site-footer">
     <div class="wrap footer-inner">

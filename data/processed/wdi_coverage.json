@@ -1,0 +1,122 @@
+{
+  "retrieved_on": "2026-11-20",
+  "classification_fiscal_year": 2027,
+  "classification_source": "https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country",
+  "api_urls": {
+    "country": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+    "IT.NET.USER.ZS": "https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?source=2&date=2015%3A2026&format=json&per_page=20000",
+    "IT.NET.BBND.P2": "https://api.worldbank.org/v2/country/all/indicator/IT.NET.BBND.P2?source=2&date=2015%3A2026&format=json&per_page=20000",
+    "EG.ELC.ACCS.ZS": "https://api.worldbank.org/v2/country/all/indicator/EG.ELC.ACCS.ZS?source=2&date=2015%3A2026&format=json&per_page=20000"
+  },
+  "api_last_updated": {
+    "IT.NET.USER.ZS": "2026-11-11",
+    "IT.NET.BBND.P2": "2026-11-11",
+    "EG.ELC.ACCS.ZS": "2026-11-11"
+  },
+  "analytical_period": [
+    2015,
+    2024
+  ],
+  "coverage_checked_through": 2026,
+  "economies": 77,
+  "economies_by_income_group": {
+    "Low income": 25,
+    "Lower middle income": 47,
+    "Upper middle income": 5
+  },
+  "economies_by_region": {
+    "East Asia & Pacific": 12,
+    "Europe & Central Asia": 3,
+    "Latin America & Caribbean": 7,
+    "Middle East, North Africa, Afghanistan & Pakistan": 10,
+    "South Asia": 4,
+    "Sub-Saharan Africa": 41
+  },
+  "featured_economies_excluded": [
+    "SGP"
+  ],
+  "country_year_rows": 770,
+  "indicator_rows": 2310,
+  "nonmissing_observations": 2164,
+  "missing_observations": 146,
+  "missing_by_indicator": {
+    "IT.NET.USER.ZS": 70,
+    "IT.NET.BBND.P2": 76,
+    "EG.ELC.ACCS.ZS": 0
+  },
+  "absent_api_keys_in_window": 0,
+  "annual_nonmissing_counts": {
+    "2015": {
+      "IT.NET.USER.ZS": 76,
+      "IT.NET.BBND.P2": 73,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 73
+    },
+    "2016": {
+      "IT.NET.USER.ZS": 75,
+      "IT.NET.BBND.P2": 72,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 71
+    },
+    "2017": {
+      "IT.NET.USER.ZS": 71,
+      "IT.NET.BBND.P2": 71,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 67
+    },
+    "2018": {
+      "IT.NET.USER.ZS": 70,
+      "IT.NET.BBND.P2": 64,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 60
+    },
+    "2019": {
+      "IT.NET.USER.ZS": 73,
+      "IT.NET.BBND.P2": 75,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 72
+    },
+    "2020": {
+      "IT.NET.USER.ZS": 70,
+      "IT.NET.BBND.P2": 73,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 69
+    },
+    "2021": {
+      "IT.NET.USER.ZS": 66,
+      "IT.NET.BBND.P2": 75,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 65
+    },
+    "2022": {
+      "IT.NET.USER.ZS": 66,
+      "IT.NET.BBND.P2": 74,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 64
+    },
+    "2023": {
+      "IT.NET.USER.ZS": 66,
+      "IT.NET.BBND.P2": 64,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 57
+    },
+    "2024": {
+      "IT.NET.USER.ZS": 67,
+      "IT.NET.BBND.P2": 53,
+      "EG.ELC.ACCS.ZS": 77,
+      "all_three": 49
+    },
+    "2025": {
+      "IT.NET.USER.ZS": 1,
+      "IT.NET.BBND.P2": 0,
+      "EG.ELC.ACCS.ZS": 0,
+      "all_three": 0
+    },
+    "2026": {
+      "IT.NET.USER.ZS": 0,
+      "IT.NET.BBND.P2": 0,
+      "EG.ELC.ACCS.ZS": 0,
+      "all_three": 0
+    }
+  }
+}

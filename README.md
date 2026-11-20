@@ -1,29 +1,40 @@
 # Digital Market Signals
 
-An independent research portfolio on AI infrastructure and cloud markets in emerging economies.
+An independent research portfolio by Phoebe Wang on AI infrastructure and cloud markets in emerging economies. [Open the public website](https://yx-12345.github.io/digital-market-signals/)
 
-[Open the public website](https://yx-12345.github.io/digital-market-signals/)
-
-## Site map
-
-| Page | Source |
+| Navigation | Product |
 | --- | --- |
-| Home | `index.html` |
-| Market Signals, including the knowledge library | `market-signals.html` |
-| Individual signal permalink | `signal.html?id=<record-id>` |
-| Intelligence Brief | `intelligence-brief.html` |
-| Data Explorer | `data-explorer.html` |
-| Methodology | `methodology.html` |
-| November 2026 digest (linked from Home and Market Signals) | `digital-market-digest-2026-11.html` and `digital-market-digest-2026-11.txt` |
+| Home | Research question, three current developments and featured products |
+| Market Signals | Searchable evidence records with stable `signal.html?id=<record-id>` links |
+| Intelligence Brief | Build or Buy? A comparison of commercial cloud, shared compute and local infrastructure |
+| Dashboard | WDI findings and data files at `data-explorer.html` |
 
-## Maintain the content
+The November 2026 digest is available as [HTML](digital-market-digest-2026-11.html) and [email-ready text](digital-market-digest-2026-11.txt). The [research workflow and review checklist](methodology.html) remain at their original URL.
 
-GitHub Pages serves the root of the `main` branch. All pages are static HTML and share `styles.css`. The library and chart use plain browser JavaScript.
+## Reproduce the WDI dataset
 
-- Edit or add entries in `signals-data.js`. Keep each `id` stable. Use YYYY-MM-DD for `date` (the publication date of the lead source at `sources[0]`) and `reviewed` (the latest source-check date). Use arrays for `countries` and `regions`, and a clear `stage` with an optional qualifying phrase in `status`.
-- Each source has a title, source type, URL and a publication date when documented. For a changed milestone or substantive correction, add the dated evidence to `sources`, update the status and append a `history` item. Its `source` number is the zero-based index into `sources`. Keep history chronological.
-- Update affected text in the Home, brief, qualitative case table and published digest as applicable. Maintain both the HTML digest and its copy-ready text. Update script and stylesheet version query strings in the HTML when changing those assets.
-- The interactive chart uses `internet-use-2024.csv`, which preserves the seven World Development Indicators observations at source precision. An updated reference year requires a comparable sample and coordinated changes to the CSV, validation and prose.
-- Preview from the repository root with `python3 -m http.server 8000`. Open `http://localhost:8000/` so the browser can load the CSV. Test the five pages, record routes, filters and chart before publishing. Reopen the production URLs after deployment and compare status, dates and evidence.
+Run `python3 scripts/prepare_wdi.py` with Python 3.10 or later. The script retrieves three WDI indicators and country metadata, selects eligible economies, joins on ISO3, validates values and writes analysis-ready CSVs. The committed release covers 77 economies, 2015–2024, 770 country-year rows and 2,310 possible observations. Of those, 2,164 are reported and 146 are blank.
 
-The Methodology page documents the worked example, AI-assisted source checks and the owner’s independent-review checklist.
+- [Wide CSV for Tableau](data/processed/wdi_tableau.csv)
+- [Long CSV for analysis](data/processed/wdi_long.csv)
+- [Annual coverage and API provenance](data/processed/wdi_coverage.json)
+- [Data dictionary, definitions, scope and validation](docs/wdi-data.md)
+- [Tableau Public build and verification guide](docs/tableau-authoring.md)
+
+The data and findings are published. Tableau Public workbook authoring and publication require a signed-in owner account. The original seven-economy connectivity chart is available under an archive disclosure on the Dashboard page.
+
+## Maintain Market Signals
+
+1. Check primary operator, government or regulator material. If a milestone comes from later reporting, keep the attribution and link to that reporting separately. Identify operational, proposed, funded study, program launch and regulatory milestones by the evidence available.
+2. Edit `signals-data.js`. Keep `id` stable. Store the lead publication date in `date`, the last source-check date in `reviewed`, and add countries, regions, topic, stage and qualifying status. Use YYYY-MM-DD.
+3. Add source objects with label, type, URL and date when documented. For substantive updates, append a chronological `history` item referencing its zero-based source index. Update the stage only when the evidence supports it. Preserve conflicts, uncertainties and follow-up questions.
+4. Check related prose in Home, the brief, the dashboard and both digest formats. Revisit the research question when a detail changes. Update the browser asset query versions for changed JavaScript or CSS.
+5. Preview from the root with `python3 -m http.server 8000`. After GitHub Pages publishes from `main`, check the four main routes, brief direct link, ten record links, filters, reset, document downloads and responsive layout.
+
+## AI assistance and independent review
+
+AI assisted with discovery, organizing evidence, drafting, Python data preparation and validation, HTML/JavaScript development, and QA. Source checks and independent API spot checks are documented. Independent human review is pending.
+
+For a human review, select the claims and observations to check. Open original evidence and confirm the dates, scope, units, and milestone. Re-fetch sample country-year values, including nulls. Record the reviewer, date, evidence and decision. Update any changed claims across all products before adding a human-review label.
+
+WDI measures national infrastructure context. Service availability and facility readiness require deal- or workload-level evidence. The portfolio is independent and its views do not represent the World Bank Group or the cited organizations.
