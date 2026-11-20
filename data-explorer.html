@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare 2024 internet use in seven case economies, using ITU data published in World Development Indicators.">
+  <title>Data Explorer | Digital Market Signals</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/data-explorer.html">
+  <script defer src="explorer.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="./">Digital Market Signals</a>
+      <nav aria-label="Main navigation" class="site-nav">
+        <a href="./">Home</a>
+        <a href="market-signals.html">Market Signals</a>
+        <a href="intelligence-brief.html">Intelligence Brief</a>
+        <a href="data-explorer.html" aria-current="page">Data Explorer</a>
+        <a href="methodology.html">Methodology</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap page" id="main" tabindex="-1">
+<header class="page-intro">
+      <h1>Data Explorer</h1>
+      <p class="lede">Compare internet use across the seven economies covered in the Market Signals library.</p>
+    </header>
+
+    <section class="explorer panel" aria-labelledby="chart-title">
+      <h2 id="chart-title">Individuals using the Internet</h2>
+      <p class="metadata">Share of population (%) · 2024 · World Development Indicators / ITU</p>
+      <form id="country-form" hidden>
+        <fieldset>
+          <legend>Choose countries</legend>
+          <div id="country-options" class="country-options"></div>
+        </fieldset>
+        <button type="reset">Select all countries</button>
+      </form>
+      <p id="chart-status" class="result-count" role="status"></p>
+      <figure aria-labelledby="chart-title">
+        <div id="chart" aria-hidden="true"></div>
+        <figcaption>Bars use a fixed 0–100% scale. Values are rounded to one decimal place.</figcaption>
+      </figure>
+      <div id="chart-table"></div>
+      <noscript><p>Enable JavaScript for the interactive chart, or <a href="internet-use-2024.csv">download the source observations</a>.</p></noscript>
+    </section>
+
+    <section class="section compact">
+      <h2>What the comparison shows</h2>
+      <p>In the selected economies, 2024 internet use ranged from 35.0% in Kenya to 98.0% in Malaysia. The spread signals different starting points for reaching people online. It does not establish differences in the supply, price or use of AI compute.</p>
+    </section>
+    <section class="section compact">
+      <h2>Data and comparability</h2>
+      <p>Indicator <code>IT.NET.USER.ZS</code> measures people who used the internet from any location in the previous three months as a share of the population. We use 2024 because it is the most recent reference year present for all seven selected economies in the 20 November 2026 retrieval. Countries were selected for their coverage in the research library.</p>
+      <p>All observations use the same indicator and reference year. Reporting methods and data quality can still differ. National figures conceal subnational differences and do not capture connection quality, affordability, cloud availability, or access to accelerators.</p>
+      <ul class="source-list">
+        <li><a href="https://data.worldbank.org/indicator/IT.NET.USER.ZS">World Development Indicators · indicator page (original provider: ITU)</a></li>
+        <li><a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/IT.NET.USER.ZS">World Bank DataBank · definition and limitations</a></li>
+        <li><a href="https://api.worldbank.org/v2/country/BRA;IND;IDN;KEN;MEX;MYS;THA/indicator/IT.NET.USER.ZS?source=2&amp;date=2024:2025&amp;format=json&amp;per_page=100">World Bank API · observations used to check the common year</a></li>
+        <li><a href="internet-use-2024.csv" download>Download the seven 2024 observations (CSV)</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Independent research portfolio. The views are the project’s own and do not represent the World Bank Group or any organization cited.</p>
+      <a href="https://github.com/YX-12345/digital-market-signals">GitHub repository</a>
+    </div>
+  </footer>
+</body>
+</html>

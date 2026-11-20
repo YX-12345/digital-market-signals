@@ -3,144 +3,88 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent portfolio project on AI infrastructure and cloud markets in emerging economies. Explore the research scope and proposed methodology.">
+  <meta name="description" content="Research on AI infrastructure and cloud markets in emerging economies.">
   <title>Digital Market Signals</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #162b2a;
-      --muted: #455b59;
-      --forest: #102f30;
-      --mint: #acf0d3;
-      --accent: #14604b;
-      --line: #d7e3df;
-      --surface: #f1f7f5;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; background: #fff; color: var(--ink); font: 1rem/1.65 system-ui, -apple-system, sans-serif; }
-    h1, h2, h3, p { margin: 0; }
-    h1, h2, h3 { line-height: 1.14; }
-    a { color: var(--accent); text-underline-offset: .24em; }
-    a:hover { text-decoration-thickness: .14em; }
-    a:focus-visible { outline: .15rem solid currentColor; outline-offset: .25rem; }
-    .wrap { width: min(72rem, calc(100% - clamp(2rem, 8vw, 8rem))); margin-inline: auto; }
-    .skip { position: absolute; left: 1rem; top: 1rem; z-index: 1; padding: .5rem 1rem; background: #fff; transform: translateY(-200%); }
-    .skip:focus { transform: none; }
-    .site-header { border-bottom: 1px solid var(--line); }
-    .header-inner, .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .65rem 2rem; padding-block: .85rem; }
-    .brand { color: var(--ink); font-weight: 750; text-decoration: none; }
-    .brand::before { content: ''; display: inline-block; width: .65rem; height: .65rem; margin-right: .6rem; border-radius: 50%; background: var(--accent); vertical-align: .07em; }
-    nav { display: flex; flex-wrap: wrap; gap: .1rem clamp(.8rem, 2vw, 1.65rem); }
-    nav a { display: inline-block; padding-block: .35rem; color: var(--muted); font-size: .9375rem; font-weight: 620; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    .hero { background: radial-gradient(ellipse at 92% 5%, #235452 0%, transparent 66%), var(--forest); color: #fff; }
-    .hero-inner { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(0, .82fr); align-items: center; gap: clamp(2rem, 6vw, 6rem); padding-block: clamp(3.5rem, 8vw, 7rem); }
-    .hero h1 { max-width: 12ch; font: 500 clamp(2.65rem, 6.6vw, 5.7rem)/.98 Georgia, serif; letter-spacing: -.045em; text-wrap: balance; }
-    .subtitle { margin-top: 1.2rem; color: #d4e8e6; font-size: clamp(1.05rem, 2vw, 1.4rem); line-height: 1.45; }
-    .hero-link { display: inline-block; margin-top: 1.65rem; padding: .55rem .9rem; border: 1px solid #7eae9e; border-radius: .35rem; color: var(--mint); font-weight: 650; }
-    .scope { padding: clamp(1.15rem, 3vw, 2rem); border: 1px solid #739690; border-top: .2rem solid var(--mint); border-radius: .5rem; background: #143837; }
-    .scope-label { color: var(--mint); font-size: .875rem; font-weight: 700; }
-    .scope h2 { margin-block: .6rem .85rem; color: #fff; font-size: clamp(1.4rem, 2.45vw, 2rem); letter-spacing: -.025em; text-wrap: balance; }
-    .scope p:last-child { color: #d6e8e6; }
-    .section { padding-block: clamp(2.25rem, 5vw, 4rem); }
-    .section + .section { border-top: 1px solid var(--line); }
-    [id] { scroll-margin-top: 1rem; }
-    .section h2 { margin-bottom: .8rem; font: 500 clamp(1.85rem, 4vw, 2.75rem)/1.12 Georgia, serif; letter-spacing: -.028em; }
-    .intro { max-width: 69ch; color: var(--muted); }
-    .focus-grid, .workspace { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-    .focus-grid { margin: 1.5rem 0 0; padding: 0; list-style: none; }
-    .focus-grid li { padding: 1.15rem 1.2rem; background: var(--surface); border-top: 2px solid #448879; border-radius: .25rem; }
-    h3 { margin-bottom: .55rem; font-size: 1.1rem; }
-    .focus-grid p, .workspace p, .steps { color: var(--muted); }
-    .workspace { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .workspace section { padding: clamp(1rem, 3vw, 1.7rem); border: 1px solid var(--line); border-radius: .5rem; }
-    .workspace h2 { font-size: clamp(1.55rem, 3.1vw, 2.15rem); }
-    .workspace .status { display: inline-block; margin-bottom: .75rem; padding: .1rem .55rem; border-radius: .25rem; background: #e5f2ed; color: #205442; font-size: .875rem; font-weight: 700; }
-    .steps { max-width: 75ch; margin: .85rem 0 0; padding-inline-start: 1.4rem; }
-    .steps li + li { margin-top: .5rem; }
-    .steps strong { color: var(--ink); }
-    footer { border-top: 1px solid var(--line); background: var(--surface); color: var(--muted); }
-    .footer-inner { padding-block: 1.25rem; }
-    @media (max-width: 51rem) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .scope { max-width: 37rem; }
-      .focus-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 39rem) {
-      .header-inner { align-items: flex-start; flex-direction: column; }
-      .workspace { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/">
+
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="./">Digital Market Signals</a>
-      <nav aria-label="Project sections">
-        <a href="#overview">Overview</a>
-        <a href="#focus-areas">Focus Areas</a>
-        <a href="#tracker">Tracker</a>
-        <a href="#library">Library</a>
-        <a href="#methodology">Methodology</a>
+      <a class="wordmark" href="./">Digital Market Signals</a>
+      <nav aria-label="Main navigation" class="site-nav">
+        <a href="./" aria-current="page">Home</a>
+        <a href="market-signals.html">Market Signals</a>
+        <a href="intelligence-brief.html">Intelligence Brief</a>
+        <a href="data-explorer.html">Data Explorer</a>
+        <a href="methodology.html">Methodology</a>
       </nav>
     </div>
   </header>
-  <main id="main" tabindex="-1">
-    <div class="hero">
-      <div class="wrap hero-inner">
-        <div>
-          <h1>Digital Market Signals</h1>
-          <p class="subtitle">AI-assisted Technology Intelligence &amp; Knowledge Hub</p>
-          <a class="hero-link" href="#overview">Explore the project</a>
-        </div>
-        <aside class="scope" aria-labelledby="research-focus">
-          <p class="scope-label">Initial research focus</p>
-          <h2 id="research-focus">AI Infrastructure &amp; Cloud Markets in Emerging Economies</h2>
-          <p>What shapes where AI and cloud capacity is built, and who can access it?</p>
-        </aside>
+  <main class="wrap page" id="main" tabindex="-1">
+<header class="hero">
+      <p class="eyebrow">AI-assisted Technology Intelligence &amp; Knowledge Hub</p>
+      <h1>Digital Market Signals</h1>
+      <p class="focus">AI Infrastructure &amp; Cloud Markets in Emerging Economies</p>
+      <p class="lede">When should emerging economies rely on cloud providers for AI compute, and when does investing in local or shared capacity make sense?</p>
+    </header>
+
+    <section class="section" aria-labelledby="takeaways-title">
+      <h2 id="takeaways-title">Key takeaways</h2>
+      <ul class="takeaways">
+        <li><strong>Local cloud regions expand hosting choices.</strong> Google opened in Querétaro and Azure made Indonesia Central generally available. Workload owners still need to verify which services and accelerators are offered. <a href="signal.html?id=mexico-google-cloud-region">Mexico</a> · <a href="signal.html?id=indonesia-azure-region">Indonesia</a></li>
+        <li><strong>Public programs can create another route to compute.</strong> India launched a portal for subsidized access. Actual availability, allocation and cost are the questions to track. <a href="signal.html?id=india-ai-compute-portal">India</a></li>
+        <li><strong>Project status matters for delivery planning.</strong> Kenya’s proposed Olkaria cloud campus illustrates how an investment announcement can precede unresolved implementation questions. <a href="signal.html?id=kenya-g42-olkaria-plan">Kenya</a></li>
+      </ul>
+    </section>
+
+    <section class="section feature" aria-labelledby="featured-brief">
+      <p class="eyebrow">Featured Technology Market Intelligence Brief</p>
+      <h2 id="featured-brief">Build or Buy? Access to AI Compute and Cloud Infrastructure in Emerging Economies</h2>
+      <p>Compare a commercial cloud launch, a subsidized compute program and a proposed data center campus. The brief turns those cases into questions for infrastructure investment and procurement.</p>
+      <a class="button primary" href="intelligence-brief.html">Read the intelligence brief</a>
+    </section>
+
+    <section class="section" aria-labelledby="featured-signals">
+      <h2 id="featured-signals">Featured market signals</h2>
+      <div class="cards">
+        <article class="card">
+          <p class="metadata">Indonesia · Cloud markets</p>
+          <h3><a href="signal.html?id=indonesia-azure-region">Azure makes Indonesia Central generally available</a></h3>
+          <p>A local deployment option opens up, while workload owners still need to check the regional service catalog.</p>
+        </article>
+        <article class="card">
+          <p class="metadata">India · AI compute access</p>
+          <h3><a href="signal.html?id=india-ai-compute-portal">India launches a portal for subsidized AI compute</a></h3>
+          <p>A shared access program offers a way to support users who cannot justify buying their own accelerators.</p>
+        </article>
+        <article class="card">
+          <p class="metadata">Kenya · Data center investment</p>
+          <h3><a href="signal.html?id=kenya-g42-olkaria-plan">Kenya’s proposed Olkaria cloud campus faces reported delays</a></h3>
+          <p>The case shows why investment announcements and usable cloud capacity belong in different categories.</p>
+        </article>
       </div>
-    </div>
-    <div class="wrap">
-      <section class="section" id="overview" aria-labelledby="overview-title">
-        <h2 id="overview-title">Project Overview</h2>
-        <p class="intro">Digital Market Signals is an independent portfolio project in development. It aims to help readers follow technology market developments and assess their relevance to digital infrastructure and access in emerging economies.</p>
-      </section>
-      <section class="section" id="focus-areas" aria-labelledby="focus-title">
-        <h2 id="focus-title">Focus Areas</h2>
-        <ul class="focus-grid">
-          <li><h3>AI infrastructure</h3><p>Where is compute capacity planned or deployed? How might power, connectivity and hardware availability shape those decisions?</p></li>
-          <li><h3>Cloud markets</h3><p>Which providers and partnerships are expanding local service availability? What can customers deploy locally?</p></li>
-          <li><h3>Policy and access</h3><p>How might data governance, procurement and affordability influence who can use these services?</p></li>
-        </ul>
-      </section>
-      <div class="section workspace">
-        <section id="tracker" aria-labelledby="tracker-title">
-          <h2 id="tracker-title">Market Intelligence Tracker</h2>
-          <p class="status">In development</p>
-          <p>Planned scope includes dated market developments with their geography, source, and status. No tracker entries or interactive features are available yet.</p>
-        </section>
-        <section id="library" aria-labelledby="library-title">
-          <h2 id="library-title">Knowledge Library</h2>
-          <p class="status">In development</p>
-          <p>Planned scope includes annotated references, definitions, and research briefs. No sources or briefs are published yet.</p>
-        </section>
-      </div>
-      <section class="section" id="methodology" aria-labelledby="methodology-title">
-        <h2 id="methodology-title">Methodology</h2>
-        <p class="intro">Proposed research and review process</p>
-        <ol class="steps">
-          <li><strong>Capture the evidence.</strong> Record the source, date, geography, and scope for each development.</li>
-          <li><strong>Verify the claim.</strong> Check original disclosures where available, corroborate material claims, and distinguish announced projects from operating capacity.</li>
-          <li><strong>Synthesize and document.</strong> Use AI to assist with organizing and drafting where appropriate. Review claims against cited sources and disclose AI use and evidence gaps in published work.</li>
-        </ol>
-      </section>
-    </div>
+      <a class="button" href="market-signals.html">Search all market signals</a>
+    </section>
+
+    <section class="section compact" aria-labelledby="explorer-preview">
+      <h2 id="explorer-preview">Data Explorer</h2>
+      <p>Compare internet use in the seven economies covered by the signals using a common reference year and ITU data published in World Development Indicators.</p>
+      <a href="data-explorer.html">Explore the 2024 connectivity comparison</a>
+    </section>
+
+    <section class="section compact" aria-labelledby="method-preview">
+      <h2 id="method-preview">Methodology</h2>
+      <p>Each signal records the original source and date, the delivery status, and what the evidence leaves open. The methodology shows how the Indonesia record was verified and discloses where AI assisted.</p>
+      <a href="methodology.html">Read the research methodology</a>
+    </section>
   </main>
-  <footer>
+  <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p>Digital Market Signals · Independent portfolio project</p>
-      <a href="https://github.com/YX-12345/digital-market-signals">View the GitHub repository</a>
+      <p>Independent research portfolio. The views are the project’s own and do not represent the World Bank Group or any organization cited.</p>
+      <a href="https://github.com/YX-12345/digital-market-signals">GitHub repository</a>
     </div>
   </footer>
 </body>

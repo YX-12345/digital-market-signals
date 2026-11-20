@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How this independent research project discovers, verifies, classifies and updates market intelligence.">
+  <title>Methodology | Digital Market Signals</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/methodology.html">
+
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="./">Digital Market Signals</a>
+      <nav aria-label="Main navigation" class="site-nav">
+        <a href="./">Home</a>
+        <a href="market-signals.html">Market Signals</a>
+        <a href="intelligence-brief.html">Intelligence Brief</a>
+        <a href="data-explorer.html">Data Explorer</a>
+        <a href="methodology.html" aria-current="page">Methodology</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap page" id="main" tabindex="-1">
+<article class="prose">
+      <header class="page-intro">
+        <h1>Methodology</h1>
+        <p class="lede">How we turn a dated source into a searchable market signal and show where the evidence ends.</p>
+      </header>
+
+      <h2>Research workflow</h2>
+      <ol class="workflow">
+        <li><strong>Discover and select sources.</strong> The first edition used targeted web searches for operator announcements, government notices and regulatory texts. Cases were selected to illustrate different access routes and implementation stages. Attributed secondary reporting was used for the later Kenya update.</li>
+        <li><strong>Extract and organize.</strong> Each initial record captures the original publication date, geography, topic, milestone, supporting URL and material qualifications. Follow-up sources retain their own dates.</li>
+        <li><strong>Use AI assistance selectively.</strong> OpenAI Codex assisted with finding candidate public sources, organizing notes, drafting the research text and building the website. The published site serves static files and uses client-side filtering.</li>
+        <li><strong>Verify against original documents.</strong> The source-checking pass compared milestone dates, figures and conditions with the cited document. For an operator release, verification establishes what the operator disclosed. The record retains the source’s reporting limits.</li>
+        <li><strong>Interpret and review.</strong> The factual summary sits separately from why a signal might matter and what to watch. The first edition received an AI-assisted source-checking pass. An independent human review of the research has yet to be documented.</li>
+        <li><strong>Classify and publish.</strong> Records use consistent geography, topic and status labels. Each has a stable identifier that powers both the searchable list and its detail URL.</li>
+        <li><strong>Update and correct.</strong> Source changes are maintained in GitHub. When a milestone changes, keep the original date, add the dated follow-up evidence, and update the status. Record material corrections in the commit history and in the entry when the correction changes its interpretation.</li>
+      </ol>
+
+      <h2>Verification example · Indonesia Central</h2>
+      <p>Microsoft published an April 15, 2025 availability notice and a May 27 announcement tied to a public launch event. Comparing the two versions resolved what each date referred to. The April notice says customers could select Indonesia Central in Azure from that date and identifies three availability zones. The record therefore uses April 15 for general availability, lists the May event separately, and leaves GPU capacity and utilization as unknowns.</p>
+      <ul class="source-list">
+        <li><a href="https://news.microsoft.com/id-id/2025/04/15/general-availability-of-indonesia-central-cloud-region/">Microsoft · April general-availability notice</a></li>
+        <li><a href="https://news.microsoft.com/id-id/2025/05/27/microsoft-opens-indonesia-central/">Microsoft · May launch-event announcement</a></li>
+        <li><a href="signal.html?id=indonesia-azure-region">See the resulting Indonesia market signal</a></li>
+      </ul>
+
+      <h2>Evidence labels</h2>
+      <dl class="definitions">
+        <dt>Verified fact</dt><dd>A claim traceable to a cited source and stated within that source’s scope. For company-reported launches, the attribution stays visible.</dd>
+        <dt>Announced plan</dt><dd>A commitment, target or proposed milestone whose delivery requires further evidence.</dd>
+        <dt>Analysis</dt><dd>The project’s interpretation of why a development could matter or what a practitioner should verify before acting.</dd>
+        <dt>Uncertainty</dt><dd>Missing, provisional or disputed evidence. Entries explain the gaps and identify what could resolve them.</dd>
+      </dl>
+      <h2>Independent research</h2>
+      <p>This is an independent portfolio project. The interpretations are the project’s own and do not represent the World Bank Group or any organization cited. The library is a curated sample of public developments.</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Independent research portfolio. The views are the project’s own and do not represent the World Bank Group or any organization cited.</p>
+      <a href="https://github.com/YX-12345/digital-market-signals">GitHub repository</a>
+    </div>
+  </footer>
+</body>
+</html>
