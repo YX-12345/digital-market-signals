@@ -102,6 +102,7 @@
     form.addEventListener('reset', () => setTimeout(render, 0));
     render();
     form.hidden = false;
+    document.getElementById('chart-fallback').hidden = true;
   }
 
   fetch('internet-use-2024.csv')
@@ -113,6 +114,6 @@
     .then(initialize)
     .catch(() => {
       chart.closest('figure').hidden = true;
-      status.textContent = 'The chart data could not load. The CSV is available under Data and comparability.';
+      status.textContent = 'The 2024 data file could not load. The infrastructure cases above remain available.';
     });
 })();

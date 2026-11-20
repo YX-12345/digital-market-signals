@@ -1,5 +1,6 @@
 (() => {
   const records = window.DMS_SIGNALS;
+  if (!Array.isArray(records) || !records.length) return;
   const byId = id => document.getElementById(id);
   const dateFormat = new Intl.DateTimeFormat('en', { dateStyle: 'medium', timeZone: 'UTC' });
   const dateText = iso => dateFormat.format(new Date(iso));
@@ -25,20 +26,35 @@
   }
 
   function describe(record) {
-    return record.country + ' · ' + record.region + ' · ' + record.topic;
+    return [record.geographyLabel || record.countries.join(', '), record.topic].join(' · ');
+  }
+
+  function recordDates(record) {
+    const dates = element('p', 'Original source published ', 'metadata record-dates');
+    dates.append(time(record.date), ' · Last reviewed ', time(record.reviewed));
+    return dates;
+  }
+
+  function recordStatus(record) {
+    const description = record.status === record.stage ? record.stage : record.stage + ' · ' + record.status;
+    return element('p', description, 'status');
+  }
+
+  function sourceLine(source, includeDate = true) {
+    const line = element('span', source.type + ' · ');
+    line.append(link(source.label, source.url));
+    if (includeDate && source.date) line.append(' · ', time(source.date));
+    return line;
   }
 
   function card(record) {
     const item = element('article', '', 'card signal-card');
     const heading = element('h2', '');
     heading.append(link(record.headline, signalLink(record.id)));
-    const meta = element('p', describe(record) + ' · ', 'metadata');
-    meta.append(time(record.date));
-    const attribution = element('p', '');
-    attribution.append('Original source: ', link(record.sources[0][0], record.sources[0][2]));
-    attribution.className = 'source-line';
-    item.append(meta, heading, element('p', record.takeaway),
-      element('p', record.status, 'status'), attribution);
+    const attribution = element('p', '', 'source-line');
+    attribution.append(sourceLine(record.sources[0], false));
+    item.append(element('p', describe(record), 'metadata'), heading, element('p', record.takeaway),
+      recordStatus(record), recordDates(record), attribution);
     return item;
   }
 
@@ -49,21 +65,22 @@
     const sort = byId('sort');
     const results = byId('results');
     const count = byId('result-count');
-    const alphabetical = field => [...new Set(records.map(record => record[field]))].sort();
+    const alphabetical = field => [...new Set(records.flatMap(record => record[field]))].sort();
 
     alphabetical('topic').forEach(value => topic.add(new Option(value)));
     const regions = element('optgroup', '');
     regions.label = 'Regions';
-    alphabetical('region').forEach(value => regions.append(new Option(value)));
+    alphabetical('regions').forEach(value => regions.append(new Option(value)));
     const countries = element('optgroup', '');
     countries.label = 'Countries';
-    alphabetical('country').forEach(value => countries.append(new Option(value)));
+    alphabetical('countries').forEach(value => countries.append(new Option(value)));
     geography.append(regions, countries);
 
     const searchable = records.map(record => ({
       record,
       text: [record.headline, describe(record), record.status, record.takeaway, record.summary,
-        record.evidence, record.why, record.watch, record.limits, ...record.sources.flat()]
+        record.evidence, record.why, record.watch, record.limits, record.stage, ...record.countries,
+        ...record.regions, ...record.sources.flatMap(source => [source.label, source.type])]
         .join(' ').normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase()
     }));
 
@@ -72,7 +89,7 @@
         .toLowerCase().trim().split(/\s+/).filter(Boolean);
       const matching = searchable.filter(({ record, text }) =>
         (!topic.value || record.topic === topic.value) &&
-        (!geography.value || record.country === geography.value || record.region === geography.value) &&
+        (!geography.value || record.countries.includes(geography.value) || record.regions.includes(geography.value)) &&
         terms.every(term => text.includes(term))
       ).map(({ record }) => record);
 
@@ -90,6 +107,7 @@
     form.addEventListener('reset', () => setTimeout(render, 0));
     render();
     form.hidden = false;
+    byId('library-fallback').hidden = true;
   }
 
   function initializeDetail(article) {
@@ -101,21 +119,31 @@
       return;
     }
     document.title = record.headline + ' | Digital Market Signals';
-    const meta = element('p', describe(record) + ' · ', 'metadata');
-    meta.append(time(record.date));
-    article.replaceChildren(meta, element('h1', record.headline),
-      element('p', record.status, 'status'), element('p', record.takeaway, 'lede'));
+    article.replaceChildren(element('p', describe(record), 'metadata'),
+      element('h1', record.headline), recordStatus(record), recordDates(record),
+      element('p', record.takeaway, 'lede'));
     const sections = [
-      ['Factual summary', record.summary], ['Evidence', record.evidence],
+      ['Factual summary', record.summary], ['Evidence and attribution', record.evidence],
       ['Why This Matters', record.why], ['What to Watch', record.watch],
       ['Uncertainties and limitations', record.limits]
     ];
     sections.forEach(([heading, text]) => article.append(element('h2', heading), element('p', text)));
 
+    if (record.history?.length) {
+      const history = element('ol', '', 'source-list');
+      record.history.forEach(event => {
+        const item = element('li', '');
+        const source = record.sources[event.source];
+        item.append(time(event.date), ' · ' + event.text + ' ', link(source.label, source.url));
+        history.append(item);
+      });
+      article.append(element('h2', 'Update history'), history);
+    }
+
     const sources = element('ul', '', 'source-list');
-    record.sources.forEach(([label, date, url]) => {
+    record.sources.forEach(source => {
       const item = element('li', '');
-      item.append(link(label, url), ' · ', time(date));
+      item.append(sourceLine(source));
       sources.append(item);
     });
     article.append(element('h2', 'Sources'), sources);

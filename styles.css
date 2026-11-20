@@ -106,3 +106,37 @@ td { text-align: right; font-variant-numeric: tabular-nums; }
   .site-nav a { padding-inline: .48rem; }
 }
 @media (max-width: 30rem) { .filters { grid-template-columns: 1fr; } }
+
+.record-dates { margin-bottom: .35rem; }
+.record-dates time { white-space: nowrap; }
+.source-line { overflow-wrap: anywhere; }
+.brief { max-width: 64rem; }
+.brief > p, .brief > ul, .brief > ol.findings, .brief-summary > p { max-width: 74ch; }
+.brief-summary { background: var(--light); }
+.brief-summary h2, .digest .section h2 { margin-top: 0; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: .4rem; }
+.comparison-table { margin: 0; min-width: 43rem; width: 100%; }
+.comparison-table th, .comparison-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: .65rem .75rem;
+  font-variant-numeric: normal;
+}
+.comparison-table thead { background: var(--light); }
+.comparison-table tbody tr:last-child > * { border-bottom: 0; }
+.comparison-table tbody th { width: 18%; color: var(--ink); }
+.case-table { min-width: 36rem; }
+.case-table tbody th { width: 24%; }
+.case-table tbody td:last-child { width: 23%; }
+.table-hint { display: none; color: var(--muted); font-size: .9rem; }
+.infrastructure { padding-top: 0; }
+.infrastructure > p { max-width: 75ch; }
+.digest .section { padding-block: 1.1rem; }
+.digest .section:first-of-type { border-top: 1px solid var(--line); }
+@media (max-width: 48rem) {
+  .table-hint { display: block; }
+}
+@media (max-width: 24rem) {
+  .chart-row, .chart-axis { grid-template-columns: 4.55rem minmax(0, 1fr) 2.9rem; gap: .35rem; }
+  .chart-ticks span:nth-child(2), .chart-ticks span:nth-child(4) { display: none; }
+}

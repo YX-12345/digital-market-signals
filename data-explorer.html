@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Compare 2024 internet use in seven case economies, using ITU data published in World Development Indicators.">
   <title>Data Explorer | Digital Market Signals</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3">
   <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/data-explorer.html">
-  <script defer src="explorer.js?v=2"></script>
+  <script defer src="explorer.js?v=3"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -17,7 +17,7 @@
       <nav aria-label="Main navigation" class="site-nav">
         <a href="./">Home</a>
         <a href="market-signals.html">Market Signals</a>
-        <a href="intelligence-brief.html">Intelligence Brief</a>
+        <a href="https://yx-12345.github.io/digital-market-signals/intelligence-brief.html">Intelligence Brief</a>
         <a href="data-explorer.html" aria-current="page">Data Explorer</a>
         <a href="methodology.html">Methodology</a>
       </nav>
@@ -26,12 +26,31 @@
   <main class="wrap page" id="main" tabindex="-1">
 <header class="page-intro">
       <h1>Data Explorer</h1>
-      <p class="lede">Compare internet use across the seven economies covered in the Market Signals library.</p>
+      <p class="lede">Compare selected AI infrastructure milestones, then explore internet use as a separate measure of connectivity.</p>
     </header>
 
+    <section class="section infrastructure" aria-labelledby="infrastructure-title">
+      <h2 id="infrastructure-title">Infrastructure status in selected cases</h2>
+      <p>These curated examples compare the milestone supported by each record. They do not measure total national capacity, market coverage or AI readiness.</p>
+      <p class="table-hint">Scroll the table horizontally to see the evidence links.</p>
+      <div class="table-scroll" role="region" aria-labelledby="infrastructure-title" tabindex="0">
+        <table class="comparison-table case-table">
+          <thead><tr><th scope="col">Economy and access route</th><th scope="col">Supported milestone</th><th scope="col">Evidence</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Indonesia · commercial cloud</th><td>Operational. Microsoft reported general availability in April 2025. Workload-specific services and quotas need checking.</td><td><a href="signal.html?id=indonesia-azure-region">Indonesia Central record</a></td></tr>
+            <tr><th scope="row">India · shared compute</th><td>Program launched. The March 2025 government release describes subsidized access. Realized allocations and wait times are separate questions.</td><td><a href="signal.html?id=india-ai-compute-portal">AI Compute Portal record</a></td></tr>
+            <tr><th scope="row">India · local infrastructure</th><td>Proposed. An October letter of intent and a November report identify different Bihar sites. The published evidence does not resolve the relationship.</td><td><a href="signal.html?id=india-ctrls-bihar-data-center">Bihar proposals record</a></td></tr>
+            <tr><th scope="row">Nigeria · local infrastructure</th><td>Feasibility study funded. USTDA announced study funding in September 2026 for two proposed sites.</td><td><a href="signal.html?id=nigeria-ustda-afridata-feasibility-2026">AFRIDATA study record</a></td></tr>
+            <tr><th scope="row">Kenya · local infrastructure</th><td>Proposed, with a later delay reported. The cited evidence establishes neither commissioning nor cancellation.</td><td><a href="signal.html?id=kenya-g42-olkaria-plan">Olkaria proposal record</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="explorer panel" aria-labelledby="chart-title">
-      <h2 id="chart-title">Individuals using the Internet</h2>
+      <h2 id="chart-title">Connectivity context · Individuals using the Internet</h2>
       <p class="metadata">Share of population (%) · 2024 · World Development Indicators / ITU</p>
+      <p>This measures internet use among individuals. It does not measure cloud capacity or access to AI compute.</p>
       <form id="country-form" hidden>
         <fieldset>
           <legend>Choose countries</legend>
@@ -40,12 +59,12 @@
         <button type="reset">Select all countries</button>
       </form>
       <p id="chart-status" class="result-count" role="status"></p>
-      <figure aria-labelledby="chart-title">
+      <figure aria-labelledby="chart-title" hidden>
         <div id="chart" aria-hidden="true"></div>
         <figcaption>Bars use a fixed 0–100% scale. Values are rounded to one decimal place.</figcaption>
       </figure>
       <div id="chart-table"></div>
-      <noscript><p>Enable JavaScript for the interactive chart, or <a href="internet-use-2024.csv">download the source observations</a>.</p></noscript>
+      <p id="chart-fallback">The interactive chart is unavailable. Enable JavaScript or reload to try again. <a href="internet-use-2024.csv">Download the source observations</a>.</p>
     </section>
 
     <section class="section compact">
@@ -54,7 +73,7 @@
     </section>
     <section class="section compact">
       <h2>Data and comparability</h2>
-      <p>Indicator <code>IT.NET.USER.ZS</code> measures people who used the internet from any location in the previous three months as a share of the population. We use 2024 because it is the most recent reference year present for all seven selected economies in the 20 November 2026 retrieval. Countries were selected for their coverage in the research library.</p>
+      <p>Indicator <code>IT.NET.USER.ZS</code> measures people who used the internet from any location in the previous three months as a share of the population. We use 2024 because it is the most recent reference year present for all seven selected economies in the 20 November 2026 retrieval. The seven economies are the original connectivity sample. The qualitative cases above include other economies.</p>
       <p>All observations use the same indicator and reference year. Reporting methods and data quality can still differ. National figures conceal subnational differences and do not capture connection quality, affordability, cloud availability, or access to accelerators.</p>
       <ul class="source-list">
         <li><a href="https://data.worldbank.org/indicator/IT.NET.USER.ZS">World Development Indicators · indicator page (original provider: ITU)</a></li>

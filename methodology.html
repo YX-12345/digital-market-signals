@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="How this independent research project discovers, verifies, classifies and updates market intelligence.">
   <title>Methodology | Digital Market Signals</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3">
   <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/methodology.html">
 
 </head>
@@ -17,7 +17,7 @@
       <nav aria-label="Main navigation" class="site-nav">
         <a href="./">Home</a>
         <a href="market-signals.html">Market Signals</a>
-        <a href="intelligence-brief.html">Intelligence Brief</a>
+        <a href="https://yx-12345.github.io/digital-market-signals/intelligence-brief.html">Intelligence Brief</a>
         <a href="data-explorer.html">Data Explorer</a>
         <a href="methodology.html" aria-current="page">Methodology</a>
       </nav>
@@ -30,31 +30,42 @@
         <p class="lede">How we turn a dated source into a searchable market signal and show where the evidence ends.</p>
       </header>
 
-      <h2>Research workflow</h2>
+      <h2 id="example">Worked example · Indonesia Central</h2>
       <ol class="workflow">
-        <li><strong>Discover and select sources.</strong> The first edition used targeted web searches for operator announcements, government notices and regulatory texts. Cases were selected to illustrate different access routes and implementation stages. Attributed secondary reporting was used for the later Kenya update.</li>
-        <li><strong>Extract and organize.</strong> Each initial record captures the original publication date, geography, topic, milestone, supporting URL and material qualifications. Follow-up sources retain their own dates.</li>
-        <li><strong>Use AI assistance selectively.</strong> OpenAI Codex assisted with finding candidate public sources, organizing notes, drafting the research text and building the website. The published site serves static files and uses client-side filtering.</li>
-        <li><strong>Verify against original documents.</strong> The source-checking pass compared milestone dates, figures and conditions with the cited document. For an operator release, verification establishes what the operator disclosed. The record retains the source’s reporting limits.</li>
-        <li><strong>Interpret and review.</strong> The factual summary sits separately from why a signal might matter and what to watch. The first edition received an AI-assisted source-checking pass. An independent human review of the research has yet to be documented.</li>
-        <li><strong>Classify and publish.</strong> Records use consistent geography, topic and status labels. Each has a stable identifier that powers both the searchable list and its detail URL.</li>
-        <li><strong>Update and correct.</strong> Source changes are maintained in GitHub. When a milestone changes, keep the original date, add the dated follow-up evidence, and update the status. Record material corrections in the commit history and in the entry when the correction changes its interpretation.</li>
+        <li><strong>Original source.</strong> Microsoft’s <a href="https://news.microsoft.com/id-id/2025/04/15/general-availability-of-indonesia-central-cloud-region/">April 15, 2025 availability notice</a> says organizations could select Indonesia Central in Azure and identifies three availability zones.</li>
+        <li><strong>Extracted claim.</strong> Record the operator, region, date, three zones and the milestone of general availability.</li>
+        <li><strong>Verification.</strong> Compare the first release with Microsoft’s <a href="https://news.microsoft.com/id-id/2025/05/27/microsoft-opens-indonesia-central/">May 27 launch-event announcement</a>. The events have different dates and describe different milestones. Both accounts are from the operator.</li>
+        <li><strong>Analysis.</strong> An in-country cloud region is a location that a buyer can evaluate. The notices supply no customer-level GPU quotas, measured latency or utilization.</li>
+        <li><strong>Published record.</strong> The <a href="signal.html?id=indonesia-azure-region">Indonesia Central signal</a> keeps April 15 as the original source date, records the May event in its history and shows the limitations alongside the analysis.</li>
       </ol>
 
-      <h2>Verification example · Indonesia Central</h2>
-      <p>Microsoft published an April 15, 2025 availability notice and a May 27 announcement tied to a public launch event. Comparing the two versions resolved what each date referred to. The April notice says customers could select Indonesia Central in Azure from that date and identifies three availability zones. The record therefore uses April 15 for general availability, lists the May event separately, and leaves GPU capacity and utilization as unknowns.</p>
-      <ul class="source-list">
-        <li><a href="https://news.microsoft.com/id-id/2025/04/15/general-availability-of-indonesia-central-cloud-region/">Microsoft · April general-availability notice</a></li>
-        <li><a href="https://news.microsoft.com/id-id/2025/05/27/microsoft-opens-indonesia-central/">Microsoft · May launch-event announcement</a></li>
-        <li><a href="signal.html?id=indonesia-azure-region">See the resulting Indonesia market signal</a></li>
-      </ul>
+      <h2>Source checks and AI assistance</h2>
+      <p><strong>AI-assisted work.</strong> OpenAI Codex supported source discovery, extraction, categorization, drafting and site implementation.</p>
+      <p><strong>AI-supported source checks.</strong> Dates, claims, units and milestones were checked against the cited material. Where a party makes a claim, the record names that party. When accounts differ, as in Bihar, the discrepancy stays visible. “Last reviewed” dates the most recent source check on the record.</p>
+      <p><strong>Independent human review.</strong> An independent human review has yet to be documented. The checklist below is for the portfolio owner to apply to specific claims and record before any human-review label is published.</p>
+
+      <h2 id="review-checklist">Human-review checklist</h2>
+      <ol class="workflow">
+        <li>Open the original document. Confirm issuer, publication date, effective date if relevant, and the specific passage supporting the claim.</li>
+        <li>Check the name, geography, project identity, units and scope. Verify whether the figure refers to proposed capacity, IT load, delivered equipment or use.</li>
+        <li>Confirm the stage and attribution. Separate reported milestones, future targets and the portfolio’s interpretation. Keep contradictions and evidence gaps visible.</li>
+        <li>Record the signal ID, claims checked, source passages, reviewer, review date and outcome in a review note. Publish a human-review label only for the approved scope.</li>
+      </ol>
+
+      <h2 id="maintenance">How records are maintained and corrected</h2>
+      <ol class="workflow">
+        <li>Find or add the record in <code>signals-data.js</code>. Keep the record ID and original source publication date stable.</li>
+        <li>Add the follow-up source, with its type and date. Log the dated change in the record history and distinguish an observed milestone from a reported or planned one. Change the last-reviewed date after the source check.</li>
+        <li>Correct affected text in the record and any related homepage insight, brief, digest or comparison. Describe material changes in the record history and repository commit.</li>
+        <li>Preview search, geography, links and any amended data. After publishing, reopen the live record and confirm the dates, sources and status.</li>
+      </ol>
 
       <h2>Evidence labels</h2>
       <dl class="definitions">
-        <dt>Verified fact</dt><dd>A claim traceable to a cited source and stated within that source’s scope. For company-reported launches, the attribution stays visible.</dd>
-        <dt>Announced plan</dt><dd>A commitment, target or proposed milestone whose delivery requires further evidence.</dd>
+        <dt>Source-checked fact</dt><dd>A statement supported within the scope of the cited document, such as a published rule or a documented study agreement.</dd>
+        <dt>Operator or government claim</dt><dd>An attributed statement from the party making it, including reported availability and announced targets.</dd>
         <dt>Analysis</dt><dd>The project’s interpretation of why a development could matter or what a practitioner should verify before acting.</dd>
-        <dt>Uncertainty</dt><dd>Missing, provisional or disputed evidence. Entries explain the gaps and identify what could resolve them.</dd>
+        <dt>Uncertainty</dt><dd>Missing, provisional or disputed evidence, with the next check stated where possible.</dd>
       </dl>
       <h2>Independent research</h2>
       <p>This is an independent portfolio project. The interpretations are the project’s own and do not represent the World Bank Group or any organization cited. The library is a curated sample of public developments.</p>
