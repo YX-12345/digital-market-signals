@@ -4,12 +4,17 @@ An independent research portfolio by Phoebe Wang on AI infrastructure and cloud 
 
 | Navigation | Product |
 | --- | --- |
-| Home | Research question, three current developments and featured products |
-| Market Signals | Searchable evidence records with stable `signal.html?id=<record-id>` links |
-| Intelligence Brief | Beyond the Announcement: What Makes AI Compute Accessible? Evidence from cloud launches, shared compute programs, and infrastructure proposals |
-| Dashboard | Interactive Tableau charts, WDI findings and [data downloads](data-explorer.html) |
+| Home | Featured research and a guide to the portfolio |
+| Research | [When Does Reserved AI Compute Pay Off?](research.html), an IndiaAI pricing article and interactive scenario explorer |
+| Market Monitor | Searchable evidence records with stable `signal.html?id=<record-id>` links |
+| Data Lab | Interactive Tableau charts, WDI findings and [data downloads](data-explorer.html) |
+| Methods & Sources | [Research workflow](methodology.html) and [owner review checklist](docs/owner-review.md) |
 
-The November 2026 digest is available as [HTML](digital-market-digest-2026-11.html) and [email-ready text](digital-market-digest-2026-11.txt). See the [research workflow](methodology.html) and [owner review checklist](docs/owner-review.md). The [Indonesia country case](intelligence-brief.html#indonesia-case) connects the brief, market records and WDI data.
+The [earlier brief](intelligence-brief.html), its [Indonesia country case](intelligence-brief.html#indonesia-case), and the November 2026 digest in [HTML](digital-market-digest-2026-11.html) and [email-ready text](digital-market-digest-2026-11.txt) remain available. The [pre-redesign site snapshot](https://github.com/YX-12345/digital-market-signals/tree/cb17c6fc6d78e920e2e2a8d3de6bc3ef9dc91fad) is retained in the repository history.
+
+## Reproduce the IndiaAI cost model
+
+The [pricing snapshot](data/research/indiaai_pricing_snapshot.json) contains the six selected instance records and reservation periods. On November 21, 2026, the 24 rates were checked against both the [official calculator](https://compute.indiaai.gov.in/indiaaipricecalculator) and the [official price list](https://compute.indiaai.gov.in/pricelist). Use `node --test tests/compute-cost.test.mjs` to check the stated examples, all annual thresholds and both usage extremes for every term. Serve the repository root over HTTP to use the explorer. Research text, the annual chart, rate table and citations work with JavaScript disabled.
 
 ## Reproduce the WDI dataset
 
