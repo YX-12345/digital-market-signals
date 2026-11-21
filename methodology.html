@@ -34,7 +34,17 @@
       <h2>How developments are selected</h2>
       <p>Priority goes to developments that materially change what is known about availability, access, or project status. Useful records have specific, traceable evidence and an observable point for follow-up, such as a service listing, reported allocation, or commissioning notice. Repeated announcements earn a place when they add evidence or expose a discrepancy.</p>
 
-      <h2 id="example">Worked example · Indonesia Central</h2>
+      <h2 id="indiaai">Featured research · IndiaAI reservation costs</h2>
+      <p>The <a href="research.html">IndiaAI study</a> estimates when reserving a GPU costs less than paying for use on demand. The comparison holds the configuration fixed and varies billable hours and the reservation term.</p>
+      <ol class="workflow">
+        <li><strong>Capture the posted rates.</strong> Match the same six single-GPU instance IDs in the <a href="https://compute.indiaai.gov.in/pricelist">IndiaAI price list</a> and <a href="https://compute.indiaai.gov.in/indiaaipricecalculator">price calculator</a>. Record the four rates per instance in INR per instance-hour. The <a href="data/research/indiaai_pricing_snapshot.json" download>November 21, 2026 snapshot</a> preserves those 24 rates. The selection illustrates differences in pricing and has no claim to market representativeness.</li>
+        <li><strong>Model like-for-like costs.</strong> Multiply expected hours by the on-demand rate and full term hours by the reserved rate. Use the portal’s 720, 4,320 and 8,760 billed hours. Divide the reserved rate by the on-demand rate to find the share of the term where charges match. The <a href="research.html#scenario">scenario explorer</a> excludes GST, add-ons and subsidies, and assumes on-demand availability.</li>
+        <li><strong>Check what the sources establish.</strong> Use the portal’s policy, FAQ and service agreement for access rules. Preserve each progress figure’s date, unit and stage. Listings, approvals, allocations and logged usage answer different questions. Measuring utilization would require actual hours used and available hours over the same period and scope.</li>
+        <li><strong>Update the evidence and analysis together.</strong> When listed rates change, record a new dated snapshot, check both sources and rerun the cost-model tests. Reconcile the chart, rate table and hypothetical example with the snapshot. The study’s <a href="research.html#notes">methods and sources</a> document the formulas, assumptions and evidence gaps.</li>
+      </ol>
+
+      <h2 id="example">Archived worked example · Indonesia Central</h2>
+      <p>The <a href="intelligence-brief.html#indonesia-case">Indonesia case</a> uses a separate method to trace a reported market milestone from the original notice to a published signal.</p>
       <ol class="workflow">
         <li><strong>Original source.</strong> Microsoft’s <a href="https://news.microsoft.com/id-id/2025/04/15/general-availability-of-indonesia-central-cloud-region/">April 15, 2025 availability notice</a> says organizations could select Indonesia Central in Azure and identifies three availability zones.</li>
         <li><strong>Extracted claim.</strong> Record the operator, region, date, three zones and the milestone of general availability.</li>

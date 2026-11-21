@@ -6,7 +6,7 @@
   <meta name="description" content="Compare modeled break-even usage at official IndiaAI rates and explore costs without subsidies for six single-GPU instances.">
   <title>When Does Reserved AI Compute Pay Off? | Digital Market Signals</title>
   <link rel="stylesheet" href="styles.css?v=6">
-  <link rel="stylesheet" href="publication.css?v=1">
+  <link rel="stylesheet" href="publication.css?v=2">
   <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/research.html">
   <script type="module" src="compute-scenario.mjs"></script>
 </head>
@@ -42,15 +42,15 @@
       </header>
 
       <section class="finding" aria-label="Main finding">
-        <p>At published base rates, annual reservations for six selected single-GPU instances break even at <strong class="finding-range">50.5% to 86.4%</strong> usage. For each instance, that is the share of the term at which on-demand and reservation charges match.</p>
-        <p class="caption">Modeled thresholds · 12-month term · <a href="https://compute.indiaai.gov.in/pricelist">IndiaAI price list</a></p>
+        <p><strong>A reservation can cut your hourly rate and still raise your bill.</strong> If your project runs in bursts, paying only for the time you use can cost less than reserving a GPU for the whole term.</p>
+        <p><strong>Hypothetical one-month example.</strong> A project expecting 360 hours on a single H100 SXM would pay <strong>₹55,080 on demand</strong> at IndiaAI’s listed rates. Reserving that same GPU for the full 720-hour term would cost <strong>₹96,552</strong>, or ₹41,472 more. These modeled base charges exclude taxes, add-ons and subsidies. <a class="source-ref" href="#source-1" aria-label="Source 1">[1]</a></p>
       </section>
 
       <figure class="evidence-figure" id="annual-thresholds" aria-labelledby="chart-title">
         <figcaption>
           <p class="kicker">Annual reservation economics</p>
           <h2 id="chart-title">How much of the year would you need to use?</h2>
-          <p class="chart-label">Modeled break-even usage share of 8,760 billable hours</p>
+          <p class="chart-label">At the published rates, on-demand and annual reservation costs match at <strong>50.5% to 86.4%</strong> of the 8,760-hour term, depending on the configuration.</p>
         </figcaption>
         <div class="bar-axis" aria-hidden="true"><span></span><div><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div><span></span></div>
         <ol class="evidence-bars" aria-label="Annual thresholds, lowest to highest">
@@ -89,8 +89,8 @@
       </figure>
 
       <section class="research-copy" aria-labelledby="terms-title">
-        <h2 id="terms-title">A lower hourly rate comes with a fixed commitment</h2>
-        <p>IndiaAI lists an on-demand rate and separate rates for one-, six- and twelve-month reservations. Its calculator uses 720, 4,320 and 8,760 billed hours for those terms. An on-demand bill scales with the hours used. A reservation charges for the full term. As a result, the same hourly discount can mean very different things for a workload that runs occasionally and one that requires sustained access. The threshold makes that trade-off visible using the portal’s own billing periods. <a class="source-ref" href="#source-1" aria-label="Source 1">[1]</a></p>
+        <h2 id="terms-title">How IndiaAI bills for reservations</h2>
+        <p>IndiaAI’s calculator uses 720, 4,320 and 8,760 billed hours for one-, six- and twelve-month reservations. The threshold is the point where the on-demand charge catches up with the fixed reservation charge. Below it, on demand costs less. Above it, the reservation costs less at the listed base rates. <a class="source-ref" href="#source-1" aria-label="Source 1">[1]</a></p>
         <p>For a single H100 SXM instance, the annual rate is ₹117 per instance-hour, about 23.5% below the ₹153 on-demand rate. The full reservation costs ₹1,024,920, equivalent to about 6,699 on-demand hours or 76.5% of the year. The MI325X and B200 SXM sit at opposite ends of the six-entry range because their reserved-to-on-demand price ratios differ. Their memory, performance and suitability for particular tasks require separate evidence. This comparison keeps the hardware fixed and changes the billing arrangement. <a class="source-ref" href="#source-2" aria-label="Source 2">[2]</a></p>
       </section>
 
@@ -155,7 +155,7 @@
 
       <section class="research-copy" aria-labelledby="example-title">
         <h2 id="example-title">What changes when usage changes?</h2>
-        <p>Take the H100 SXM for one month. At 360 hours, half of the term, on-demand use would cost ₹55,080 at ₹153 per hour. The reservation would cost ₹96,552 for 720 billed hours at ₹134.10 per hour. At the full 720 hours, the on-demand charge would rise to ₹110,160, and the fixed charge would stay the same. The same pricing pair therefore produces a different result when hours change. These are scenarios based on listed rates, with no assumption about how often any actual customer uses the service. <a class="source-ref" href="#source-1" aria-label="Source 1">[1]</a></p>
+        <p>At the full 720 hours in the opening example, the on-demand charge would rise to ₹110,160 while the reservation would still cost ₹96,552. The lower-cost option switches as the project uses more hours. These scenarios model charges at listed rates for hypothetical use. <a class="source-ref" href="#source-1" aria-label="Source 1">[1]</a></p>
         <p>Break-even hours can be easier to interpret than a percentage when a team has an estimate of its workload. The term matters in both measures. A longer reservation may have a lower hourly rate while requiring more total hours to recover the fixed charge. In the explorer, changing the term carries forward the selected usage share, and the expected hours adjust to match. That makes it possible to compare commitment lengths while holding the assumed share of the term constant.</p>
       </section>
 
@@ -196,7 +196,7 @@
           <div><dt>Break-even hours</dt><dd>Reserved base cost ÷ on-demand hourly rate</dd></div>
         </dl>
         <p>The model assumes a single instance and hypothetical on-demand availability. It excludes GST, storage, network charges, platform add-ons, negotiated prices and subsidies. It uses 30, 180 and 365 billable days for the three terms. It estimates base charges only. Availability, invoice totals and real workload performance remain outside its scope.</p>
-        <p>No applications, provisioning tests or interviews were conducted. Actual invoices and utilization records were outside the evidence reviewed. AI assisted with public-source research, calculations, editing and site development. See <a href="methodology.html">site methodology</a>.</p>
+        <p>No applications, provisioning tests or interviews were conducted. Actual invoices and utilization records were outside the evidence reviewed. AI assisted with public-source research, calculations, editing and site development. See the <a href="methodology.html#indiaai">IndiaAI research workflow</a>.</p>
         <details class="publication-details" id="rates" open>
           <summary>Snapshot rates by instance</summary>
           <div class="table-scroll" role="region" aria-label="IndiaAI rates by instance and term" tabindex="0">
@@ -224,7 +224,10 @@
           <li id="source-6"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298788&amp;lang=1&amp;reg=6">India Government Press Information Bureau</a><span>August 13, 2026 factsheet with dated capacity and project figures.</span></li>
           <li id="source-7"><a href="https://economictimes.indiatimes.com/tech/artificial-intelligence/underused-gpus-raise-questions-about-indiaai-capacity-build-out/articleshow/128981840.cms">The Economic Times</a><span>March 4, 2026 reporting on committed, allocated and used GPUs.</span></li>
         </ol>
-        <p class="related-article"><a href="intelligence-brief.html">Read the earlier brief on AI compute access</a></p>
+      </section>
+      <section class="research-copy related-article" aria-labelledby="archive-title">
+        <h2 id="archive-title">Research archive</h2>
+        <p>The <a href="intelligence-brief.html">earlier brief on AI compute access</a> examines what cloud openings, shared compute programs and infrastructure announcements establish about access. Its <a href="intelligence-brief.html#indonesia-case">Indonesia case</a> shows how to assess a cloud-region launch alongside regulation and connectivity evidence.</p>
       </section>
     </article>
   </main>

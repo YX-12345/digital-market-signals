@@ -40,7 +40,6 @@
 .study-contents { display: flex; flex-direction: column; gap: .45rem; padding: .35rem 0 .35rem 1.1rem; border-inline-start: 1px solid var(--rule); font-size: .9rem; }
 .finding { margin-block: clamp(1.6rem, 3.5vw, 2.65rem) 1.5rem; border-block: 1px solid var(--rule); padding-block: 1.05rem; }
 .finding > p:first-child { font: 1.18rem/1.6 var(--sans); max-width: 79ch; }
-.finding-range { color: var(--teal); font-weight: 780; }
 .evidence-figure { background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--teal); padding: clamp(1rem, 3vw, 2rem); }
 .evidence-figure figcaption { margin: 0; }
 .evidence-figure h2 { margin-bottom: .4rem; }
@@ -117,8 +116,8 @@
 .range-graphic > div { height: .65rem; position: relative; background: #d7e2d8; }
 .range-graphic > div span { position: absolute; height: 100%; inset-inline-start: 50.5%; width: 35.9%; background: var(--teal); }
 .range-graphic p { display: flex; justify-content: space-between; color: var(--secondary); font-size: .76rem; margin: .2rem 0 .6rem; }
-.publication-button, .publication-button:visited { display: inline-block; margin-top: .6rem; padding: .55rem .85rem; background: var(--teal); color: white; font-weight: 700; text-decoration: none; }
-.publication-button:hover { background: #10483f; }
+.publication a.publication-button { display: inline-block; margin-top: .6rem; padding: .55rem .85rem; background: var(--teal); color: white; font-weight: 700; text-decoration: none; }
+.publication a.publication-button:hover { background: #10483f; }
 .home-monitor, .home-products { border-top: 1px solid var(--rule); margin-top: clamp(1.65rem,4vw,3rem); padding-top: 1.25rem; }
 .home-section-heading { display: flex; justify-content: space-between; gap: .5rem 1rem; align-items: baseline; flex-wrap: wrap; }
 .preview-stories, .home-products { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem 1.5rem; }
