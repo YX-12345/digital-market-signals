@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare modeled break-even usage at official IndiaAI rates and explore costs without subsidies for six single-GPU instances.">
+  <title>When Does Reserved AI Compute Pay Off? | Digital Market Signals</title>
+  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="publication.css?v=2">
+  <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/research.html">
+  <script type="module" src="compute-scenario.mjs"></script>
+</head>
+<body class="publication">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header publication-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="./">Digital Market Signals</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./">Home</a>
+        <a href="research.html" aria-current="page">Research</a>
+        <a href="market-signals.html">Market Monitor</a>
+        <a href="data-explorer.html">Data Lab</a>
+        <a href="methodology.html" class="secondary-nav">Methods &amp; Sources</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="wrap publication-main" tabindex="-1">
+    <article>
+      <header class="study-hero">
+        <div>
+          <p class="kicker">Featured research <span> / </span> India</p>
+          <h1>When Does Reserved AI Compute Pay Off?</h1>
+          <p class="subtitle">Evidence from India’s IndiaAI Compute Portal</p>
+          <p class="article-meta">Phoebe Wang <span>·</span> Research reviewed <time datetime="2026-11-21">November 21, 2026</time></p>
+        </div>
+        <nav class="study-contents" aria-label="In this research">
+          <a href="#annual-thresholds">Annual thresholds</a>
+          <a href="#scenario">Cost scenario explorer</a>
+          <a href="#access">Access and allocation</a>
+          <a href="#notes">Methods and sources</a>
+        </nav>
+      </header>
+
+      <section class="finding" aria-label="Main finding">
+        <p><strong>A reservation can cut your hourly rate and still raise your bill.</strong> If your project runs in bursts, paying only for the time you use can cost less than reserving a GPU for the whole term.</p>
+        <p><strong>Hypothetical one-month example.</strong> A project expecting 360 hours on a single H100 SXM would pay <strong>₹55,080 on demand</strong> at IndiaAI’s listed rates. Reserving that same GPU for the full 720-hour term would cost <strong>₹96,552</strong>, or ₹41,472 more. These modeled base charges exclude taxes, add-ons and subsidies. <a class="source-ref" href="#source-1" aria-label="Source 1">[1]</a></p>
+      </section>
+
+      <figure class="evidence-figure" id="annual-thresholds" aria-labelledby="chart-title">
+        <figcaption>
+          <p class="kicker">Annual reservation economics</p>
+          <h2 id="chart-title">How much of the year would you need to use?</h2>
+          <p class="chart-label">At the published rates, on-demand and annual reservation costs match at <strong>50.5% to 86.4%</strong> of the 8,760-hour term, depending on the configuration.</p>
+        </figcaption>
+        <div class="bar-axis" aria-hidden="true"><span></span><div><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div><span></span></div>
+        <ol class="evidence-bars" aria-label="Annual thresholds, lowest to highest">
+          <li>
+            <span class="bar-name">MI325X<span class="sr-only"> annual break-even usage share</span></span>
+            <span class="bar-track-main" aria-hidden="true"><span style="--threshold: 50.5%"></span></span>
+            <strong>50.5%</strong>
+          </li>
+          <li>
+            <span class="bar-name">L4<span class="sr-only"> annual break-even usage share</span></span>
+            <span class="bar-track-main" aria-hidden="true"><span style="--threshold: 53.5%"></span></span>
+            <strong>53.5%</strong>
+          </li>
+          <li>
+            <span class="bar-name">A100 80GB<span class="sr-only"> annual break-even usage share</span></span>
+            <span class="bar-track-main" aria-hidden="true"><span style="--threshold: 59.6%"></span></span>
+            <strong>59.6%</strong>
+          </li>
+          <li>
+            <span class="bar-name">L40S<span class="sr-only"> annual break-even usage share</span></span>
+            <span class="bar-track-main" aria-hidden="true"><span style="--threshold: 66.7%"></span></span>
+            <strong>66.7%</strong>
+          </li>
+          <li>
+            <span class="bar-name">H100 SXM<span class="sr-only"> annual break-even usage share</span></span>
+            <span class="bar-track-main" aria-hidden="true"><span style="--threshold: 76.5%"></span></span>
+            <strong>76.5%</strong>
+          </li>
+          <li>
+            <span class="bar-name">B200 SXM<span class="sr-only"> annual break-even usage share</span></span>
+            <span class="bar-track-main" aria-hidden="true"><span style="--threshold: 86.4%"></span></span>
+            <strong>86.4%</strong>
+          </li>
+        </ol>
+        <p class="caption chart-note">Source: <a href="https://compute.indiaai.gov.in/indiaaipricecalculator">IndiaAI published rates</a>, reviewed November 21, 2026. Independent calculations for six selected single-card instances exclude GST, storage and subsidies. The bars measure cost equivalence within each configuration. They show neither observed utilization nor GPU performance.</p>
+      </figure>
+
+      <section class="research-copy" aria-labelledby="terms-title">
+        <h2 id="terms-title">How IndiaAI bills for reservations</h2>
+        <p>IndiaAI’s calculator uses 720, 4,320 and 8,760 billed hours for one-, six- and twelve-month reservations. The threshold is the point where the on-demand charge catches up with the fixed reservation charge. Below it, on demand costs less. Above it, the reservation costs less at the listed base rates. <a class="source-ref" href="#source-1" aria-label="Source 1">[1]</a></p>
+        <p>For a single H100 SXM instance, the annual rate is ₹117 per instance-hour, about 23.5% below the ₹153 on-demand rate. The full reservation costs ₹1,024,920, equivalent to about 6,699 on-demand hours or 76.5% of the year. The MI325X and B200 SXM sit at opposite ends of the six-entry range because their reserved-to-on-demand price ratios differ. Their memory, performance and suitability for particular tasks require separate evidence. This comparison keeps the hardware fixed and changes the billing arrangement. <a class="source-ref" href="#source-2" aria-label="Source 2">[2]</a></p>
+      </section>
+
+      <section class="scenario-section" id="scenario" aria-labelledby="scenario-title">
+        <header class="section-head">
+          <p class="kicker">Interactive cost model</p>
+          <h2 id="scenario-title">Compute Cost Scenario Explorer</h2>
+          <p>Choose one instance and vary the expected hours. Compare modeled base charges in Indian rupees before taxes, add-ons and subsidies.</p>
+        </header>
+        <p class="scenario-fallback" id="scenario-fallback">The interactive model requires JavaScript and the pricing snapshot. The <a href="#rates">published rates</a> and <a href="#notes">calculation methods</a> are available below.</p>
+        <div class="scenario-layout" id="scenario-app" hidden>
+          <form id="scenario-controls" class="scenario-controls">
+            <label for="scenario-instance">GPU configuration</label>
+            <select id="scenario-instance"></select>
+            <label for="scenario-term">Reservation term</label>
+            <select id="scenario-term">
+              <option value="1">1 month</option>
+              <option value="6">6 months</option>
+              <option value="12">12 months</option>
+            </select>
+            <label for="scenario-hours">Expected instance-hours</label>
+            <input id="scenario-hours" type="number" step="1" min="0" inputmode="numeric" aria-describedby="usage-summary usage-error">
+            <input id="scenario-slider" type="range" step="1" min="0" aria-label="Expected instance-hours slider" aria-describedby="usage-summary">
+            <p class="caption" id="usage-summary"></p>
+            <p class="input-error" id="usage-error" role="status" hidden></p>
+            <p class="caption" id="scenario-rates"></p>
+            <p class="caption"><a id="scenario-source" href="https://compute.indiaai.gov.in/indiaaipricecalculator">IndiaAI rate source</a> · <a href="#rates">Rate table</a></p>
+          </form>
+          <div class="scenario-results">
+            <dl class="scenario-totals">
+              <div><dt>On demand</dt><dd><output id="cost-demand" for="scenario-instance scenario-term scenario-hours scenario-slider"></output></dd></div>
+              <div><dt>Full reservation</dt><dd><output id="cost-reserved" for="scenario-instance scenario-term"></output></dd></div>
+              <div><dt>Break-even usage</dt><dd><output id="cost-threshold" for="scenario-instance scenario-term"></output></dd></div>
+            </dl>
+            <figure class="cost-chart">
+              <svg id="cost-plot" role="img" aria-labelledby="plot-title plot-desc" viewBox="0 0 420 212">
+                <title id="plot-title">Modeled base charges by usage share</title>
+                <desc id="plot-desc"></desc>
+                <g class="plot-grid" aria-hidden="true">
+                  <path d="M65 37H393 M65 99.5H393 M65 162H393"></path>
+                  <path class="plot-axis" d="M65 29V162H393"></path>
+                  <text x="65" y="19">Base cost (INR)</text>
+                  <text id="plot-max-cost" x="58" y="41" text-anchor="end"></text>
+                  <text id="plot-mid-cost" x="58" y="104" text-anchor="end"></text>
+                  <text x="58" y="166" text-anchor="end">₹0</text>
+                  <text x="65" y="181">0%</text><text x="229" y="181" text-anchor="middle">50%</text><text x="393" y="181" text-anchor="end">100%</text>
+                  <text x="229" y="205" text-anchor="middle">Share of term used</text>
+                </g>
+                <line class="plot-demand" id="plot-demand" x1="65" y1="162" x2="393" y2="37"></line>
+                <line class="plot-reserved" id="plot-reserved" x1="65" x2="393"></line>
+                <line class="plot-usage" id="plot-usage" y1="29" y2="162"></line>
+                <circle id="plot-usage-point" class="usage-point" r="4"></circle>
+                <circle id="plot-crossing" class="crossing-point" r="5"></circle>
+                <text id="plot-cross-label" class="cross-label" y="0" text-anchor="end">Break-even</text>
+              </svg>
+              <figcaption class="plot-key"><span><i></i> On demand</span><span><i></i> Full reservation</span><span><i></i> Your scenario</span></figcaption>
+            </figure>
+            <p id="scenario-result" class="scenario-result" role="status"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-copy" aria-labelledby="example-title">
+        <h2 id="example-title">What changes when usage changes?</h2>
+        <p>At the full 720 hours in the opening example, the on-demand charge would rise to ₹110,160 while the reservation would still cost ₹96,552. The lower-cost option switches as the project uses more hours. These scenarios model charges at listed rates for hypothetical use. <a class="source-ref" href="#source-1" aria-label="Source 1">[1]</a></p>
+        <p>Break-even hours can be easier to interpret than a percentage when a team has an estimate of its workload. The term matters in both measures. A longer reservation may have a lower hourly rate while requiring more total hours to recover the fixed charge. In the explorer, changing the term carries forward the selected usage share, and the expected hours adjust to match. That makes it possible to compare commitment lengths while holding the assumed share of the term constant.</p>
+      </section>
+
+      <section class="research-copy" id="access" aria-labelledby="access-title">
+        <p class="kicker">Access conditions</p>
+        <h2 id="access-title">From eligibility to allocation</h2>
+        <p>IndiaAI’s public listings are one step in a program with eligibility checks and approval. Applicants provide documents according to their category, which can include students, researchers, startups or government entities. After user approval, the applicant submits a project or compute request. The February 2025 policy distinguishes requests by GPU-hours, GPU count and whether a subsidy is sought. Committee review applies in some cases. The current FAQ gives a shorter overview, so both sources matter when reading the sequence. <a class="source-ref" href="#source-3" aria-label="Source 3">[3]</a> <a class="source-ref" href="#source-4" aria-label="Source 4">[4]</a></p>
+        <ol class="access-flow">
+          <li>Eligibility and documents</li><li>User approval</li><li>Compute request</li><li>Review, if applicable</li><li>Resource allocation</li>
+        </ol>
+        <p>The service-level agreement starts its allocation clock when the compute request is approved. It states two days for requests below 100 compute hours and seven days for requests above 100. Those windows describe a post-approval commitment. Registration, assessment and the time to run a workload are outside that published measure. Actual wait times were outside the scope of this review. <a class="source-ref" href="#source-5" aria-label="Source 5">[5]</a></p>
+        <p>The calculator shows a subsidy of up to 40% subject to approval. The 2025 policy gives inconsistent percentage language and says users bear the cost of unused reserved capacity. An applicable rate and what it covers depend on the approval and billing terms. This is why the explorer compares base charges before any subsidy. A user-specific net cost would require the approved terms and evidence of actual use. <a class="source-ref" href="#source-1" aria-label="Source 1">[1]</a> <a class="source-ref" href="#source-3" aria-label="Source 3">[3]</a></p>
+      </section>
+
+      <section class="research-copy" id="evidence" aria-labelledby="evidence-title">
+        <p class="kicker">Program evidence</p>
+        <h2 id="evidence-title">Capacity, allocation and use answer different questions</h2>
+        <p>India’s August 2026 government factsheet reported more than 45,000 GPUs in shared compute capacity as of June and described 237 projects that had accessed subsidized computing, covering 9.318 million GPU-hours, by August. The factsheet gives the program’s reported scale and activity. It does not establish that every hour in the stated total represents measured consumption. <a class="source-ref" href="#source-6" aria-label="Source 6">[6]</a></p>
+        <p><em>The Economic Times</em> reported separately in March 2026 on GPUs committed, allocated and in use. That report describes a different snapshot. A count of devices and a total of project-hours also use different units, so dividing the August hours by a June device count cannot establish program utilization. A usable utilization measure would pair logged consumption with available capacity over the same period and scope. <a class="source-ref" href="#source-7" aria-label="Source 7">[7]</a></p>
+        <dl class="evidence-matrix">
+          <div><dt>Public catalog</dt><dd>Configurations and posted rates that readers can inspect. A listing establishes what is offered in the catalog. Stock when a request is made remains a separate question.</dd></div>
+          <div><dt>Committed supply</dt><dd>Resources providers have pledged or that the program reports as included in its capacity. Check the reporting date and whether the count covers active equipment.</dd></div>
+          <div><dt>Approved requests</dt><dd>Projects or requests that received authorization. Compare project counts and approved hours only within their stated scope.</dd></div>
+          <div><dt>Allocated compute</dt><dd>Resources assigned or made available to an approved user. Assignment can precede a workload running.</dd></div>
+          <div><dt>Consumed compute</dt><dd>Hours actually used within a defined period, supported by usage or billing records. Use a matching capacity denominator to calculate utilization.</dd></div>
+        </dl>
+        <p>The portal’s rates make it possible to model when a reserved price pays off for a specific instance. The access rules explain why a posted price alone cannot predict what an applicant will receive. Progress figures are most useful when they retain their date, unit and stage. Together, these sources support a narrow conclusion about reservation economics and identify the evidence needed to assess access in practice.</p>
+      </section>
+
+      <section class="research-copy" id="notes" aria-labelledby="notes-title">
+        <p class="kicker">Research documentation</p>
+        <h2 id="notes-title">Methods, assumptions and original sources</h2>
+        <p>The <a href="data/research/indiaai_pricing_snapshot.json" download>downloadable pricing snapshot</a> records six selected single-card instances and is an independent transcription. Both IndiaAI pricing pages matched all 24 values on November 21, 2026. The portal footer shows November 14, 2026, a site-level date. Effective dates for individual rates remain unspecified.</p>
+        <dl class="formula-list">
+          <div><dt>On-demand base cost</dt><dd>Used instance-hours × on-demand hourly rate</dd></div>
+          <div><dt>Reserved base cost</dt><dd>Full term hours × reserved hourly rate</dd></div>
+          <div><dt>Break-even usage share</dt><dd>Reserved hourly rate ÷ on-demand hourly rate</dd></div>
+          <div><dt>Break-even hours</dt><dd>Reserved base cost ÷ on-demand hourly rate</dd></div>
+        </dl>
+        <p>The model assumes a single instance and hypothetical on-demand availability. It excludes GST, storage, network charges, platform add-ons, negotiated prices and subsidies. It uses 30, 180 and 365 billable days for the three terms. It estimates base charges only. Availability, invoice totals and real workload performance remain outside its scope.</p>
+        <p>No applications, provisioning tests or interviews were conducted. Actual invoices and utilization records were outside the evidence reviewed. See the <a href="methodology.html#indiaai">IndiaAI research workflow</a> and the <a href="methodology.html#ai-assistance">disclosure on AI assistance</a>.</p>
+        <details class="publication-details" id="rates" open>
+          <summary>Snapshot rates by instance</summary>
+          <div class="table-scroll" role="region" aria-label="IndiaAI rates by instance and term" tabindex="0">
+            <table class="rate-table">
+              <caption>INR per instance-hour · one GPU per instance</caption>
+              <thead><tr><th scope="col">Instance</th><th scope="col">On demand</th><th scope="col">1 month</th><th scope="col">6 months</th><th scope="col">12 months</th></tr></thead>
+              <tbody>
+              <tr><th scope="row">MI325X<small>MI325X.1X</small></th><td>₹169.20</td><td>₹123.30</td><td>₹102.60</td><td>₹85.50</td></tr>
+              <tr><th scope="row">L4<small>L4.1x</small></th><td>₹44.86</td><td>₹28.95</td><td>₹26.75</td><td>₹24.00</td></tr>
+              <tr><th scope="row">A100 80GB<small>A100.80GB.1x</small></th><td>₹135.90</td><td>₹89.10</td><td>₹85.50</td><td>₹81.00</td></tr>
+              <tr><th scope="row">L40S<small>L40S.1x</small></th><td>₹67.50</td><td>₹49.50</td><td>₹49.50</td><td>₹45.00</td></tr>
+              <tr><th scope="row">H100 SXM<small>H100SXM.1x</small></th><td>₹153.00</td><td>₹134.10</td><td>₹125.10</td><td>₹117.00</td></tr>
+              <tr><th scope="row">B200 SXM<small>B200SXM.1x</small></th><td>₹290.70</td><td>₹277.20</td><td>₹263.70</td><td>₹251.10</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <h3>Sources</h3>
+        <ol class="publication-sources">
+          <li id="source-1"><a href="https://compute.indiaai.gov.in/indiaaipricecalculator">IndiaAI price calculator</a><span>Published rates, billing formulas and subsidy display.</span></li>
+          <li id="source-2"><a href="https://compute.indiaai.gov.in/pricelist">IndiaAI price list</a><span>Cross-check for the six instance configurations and all four rates.</span></li>
+          <li id="source-3"><a href="https://compute.indiaai.gov.in/files/end-user-policy.pdf">IndiaAI End-User Policy (PDF)</a><span>February 2025 policy on eligibility, review, subsidy and unused reserved capacity.</span></li>
+          <li id="source-4"><a href="https://compute.indiaai.gov.in/login">IndiaAI portal FAQ</a><span>Public overview of registration, approval and resource requests.</span></li>
+          <li id="source-5"><a href="https://compute.indiaai.gov.in/sla">IndiaAI Service-Level Agreement</a><span>Allocation windows measured from compute-request approval.</span></li>
+          <li id="source-6"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298788&amp;lang=1&amp;reg=6">India Government Press Information Bureau</a><span>August 13, 2026 factsheet with dated capacity and project figures.</span></li>
+          <li id="source-7"><a href="https://economictimes.indiatimes.com/tech/artificial-intelligence/underused-gpus-raise-questions-about-indiaai-capacity-build-out/articleshow/128981840.cms">The Economic Times</a><span>March 4, 2026 reporting on committed, allocated and used GPUs.</span></li>
+        </ol>
+      </section>
+      <section class="research-copy related-article" aria-labelledby="archive-title">
+        <h2 id="archive-title">Research archive</h2>
+        <p>The <a href="intelligence-brief.html">earlier brief on AI compute access</a> examines what cloud openings, shared compute programs and infrastructure announcements establish about access. Its <a href="intelligence-brief.html#indonesia-case">Indonesia case</a> shows how to assess a cloud-region launch alongside regulation and connectivity evidence.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer publication-footer">
+    <div class="wrap footer-inner">
+      <p>Independent research portfolio by Phoebe Wang</p>
+      <nav aria-label="Footer">
+        <a href="methodology.html">Methods &amp; Sources</a>
+        <a href="https://github.com/YX-12345/digital-market-signals">GitHub repository</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

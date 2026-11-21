@@ -4,6 +4,12 @@ Use [Tableau Public web authoring](https://public.tableau.com/) in the portfolio
 
 The [published workbook](https://public.tableau.com/app/profile/yu1607/viz/DigitalInfrastructureinEmergingEconomies/Dashboard1) is embedded on the [Dashboard page](https://yx-12345.github.io/digital-market-signals/data-explorer.html). It shows internet-use trends, the 2024 fixed-broadband comparison, and a 2024 scatterplot. The remaining instructions describe the build and optional controls.
 
+## Public workbook check · November 21, 2026
+
+The public view lists November 20, 2026 as its last publication date. The default trend shows India, Indonesia, Kenya and Nigeria. All 40 values in its View Data summary matched the frozen CSV to the four decimals shown. Selecting the 2024 scatterplot marks counted 49 points. The Brazil and Malaysia tooltips matched both CSV measures to two decimals. No discrepancies appeared in these checks.
+
+The full workbook and crosstab downloads did not complete in the review browser. The full extract, missingness and source-file identity remain unverified. To close that check, sign in as the workbook owner, open the public view and choose **Download → Tableau Workbook → Current**. Open the downloaded workbook in Tableau Desktop and inspect the Data Source tab or export its source data for comparison with `data/processed/wdi_tableau.csv`. Compare the 770 economy-year keys, all three indicator columns, and the 146 missing values. If the extract differs and should match the frozen release, connect the committed CSV in Tableau Desktop, use **Data → Replace Data Source**, and recheck the filters, saved layouts and 49 scatterplot marks before any authorized republish.
+
 ## Worksheets
 
 **Infrastructure Trends Over Time.** Place continuous Year on Columns and AVG(Selected value) on Rows. Put Country on Color and the country filter on this worksheet only. Start with India, Indonesia, Kenya and Nigeria. Add a string parameter called Indicator with values **Internet use (% of population)**, **Fixed broadband (subscriptions per 100 people)** and **Electricity access (% of population)**. Use it in a CASE calculation on those three labels, returning `[internet_use_pct]`, `[fixed_broadband_per_100]` or `[electricity_access_pct]` respectively. Set the title to the selected parameter or include the unit in the title. Keep null measurements null and use the special-value option that breaks lines at missing observations. Verify the gap behavior with an economy whose series has an interior blank.
