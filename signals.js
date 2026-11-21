@@ -3,10 +3,16 @@
   if (!Array.isArray(records) || !records.length) return;
   const byId = id => document.getElementById(id);
   const dateFormat = new Intl.DateTimeFormat('en', { dateStyle: 'medium', timeZone: 'UTC' });
-  const dateText = iso => dateFormat.format(new Date(iso));
   const signalLink = id => 'signal.html?id=' + encodeURIComponent(id);
+  const normalize = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase();
+  const tierLabels = { featured: 'Featured', current: 'Current coverage', reference: 'Reference' };
 
-  function element(tag, text, className) {
+  function materialDate(record) {
+    const milestone = record.milestone.date;
+    return record.lastUpdate && record.lastUpdate > milestone ? record.lastUpdate : milestone;
+  }
+
+  function element(tag, text = '', className) {
     const node = document.createElement(tag);
     node.textContent = text;
     if (className) node.className = className;
@@ -20,7 +26,7 @@
   }
 
   function time(iso) {
-    const label = element('time', dateText(iso));
+    const label = element('time', dateFormat.format(new Date(iso)));
     label.dateTime = iso;
     return label;
   }
@@ -29,75 +35,96 @@
     return [record.geographyLabel || record.countries.join(', '), record.topic].join(' · ');
   }
 
-  function recordDates(record) {
-    const dates = element('p', 'Original source published ', 'metadata record-dates');
-    dates.append(time(record.date), ' · Last reviewed ', time(record.reviewed));
-    return dates;
+  function status(record) {
+    if (record.status === record.stage) return record.stage;
+    return [record.stage, record.status].join(' · ');
   }
 
-  function recordStatus(record) {
-    const description = record.status === record.stage ? record.stage : record.stage + ' · ' + record.status;
-    return element('p', description, 'status');
-  }
-
-  function sourceLine(source, includeDate = true) {
-    const line = element('span', source.type + ' · ');
-    line.append(link(source.label, source.url));
-    if (includeDate && source.date) line.append(' · ', time(source.date));
-    return line;
+  function sourceLine(source, original) {
+    const sourceName = element('span', '');
+    sourceName.append(link(source.label, source.url));
+    if (source.alternate) sourceName.append(' · ', link('Read syndicated copy', source.alternate));
+    const annotation = [original ? 'Original source' : '', source.type].filter(Boolean).join(' · ');
+    const detail = element('span', annotation + ' · ', 'source-annotation');
+    detail.append(source.date ? time(source.date) : 'Publication date unspecified');
+    sourceName.append(detail);
+    return sourceName;
   }
 
   function card(record) {
-    const item = element('article', '', 'card signal-card');
-    const heading = element('h2', '');
+    const item = element('article', '', 'library-record');
+    const heading = element('h3');
     heading.append(link(record.headline, signalLink(record.id)));
-    const attribution = element('p', '', 'source-line');
-    attribution.append(sourceLine(record.sources[0], false));
-    item.append(element('p', describe(record), 'metadata'), heading, element('p', record.takeaway),
-      recordStatus(record), recordDates(record), attribution);
+    const context = element('p', '', 'record-context');
+    context.append(element('strong', tierLabels[record.editorialTier]), ' · ', describe(record));
+    const dates = element('p', '', 'caption record-dates');
+    const labels = [
+      ['Latest material development', materialDate(record)],
+      ['Original publication', record.date],
+      ['Last source review', record.reviewed]
+    ];
+    labels.forEach(([label, date]) => {
+      const part = element('span', label + ' ');
+      part.append(time(date));
+      dates.append(part);
+    });
+    const attribution = element('p', status(record) + ' · ', 'caption');
+    const source = record.sources[0];
+    attribution.append(link(source.publisher, source.url), ' (' + source.type.toLowerCase() + ')');
+    item.append(context, heading, element('p', record.takeaway), attribution, dates);
     return item;
+  }
+
+  function addGroup(select, label, values) {
+    const group = element('optgroup');
+    group.label = label;
+    values.forEach(item => group.append(new Option(item)));
+    select.append(group);
   }
 
   function initializeLibrary(form) {
     const keyword = byId('keyword');
     const topic = byId('topic');
     const geography = byId('geography');
+    const milestone = byId('milestone');
     const sort = byId('sort');
     const results = byId('results');
     const count = byId('result-count');
-    const alphabetical = field => [...new Set(records.flatMap(record => record[field]))].sort();
+    const alphabetical = (field, items = records) => [...new Set(items.flatMap(record => record[field]))].sort();
 
     alphabetical('topic').forEach(value => topic.add(new Option(value)));
-    const regions = element('optgroup', '');
-    regions.label = 'Regions';
-    alphabetical('regions').forEach(value => regions.append(new Option(value)));
-    const countries = element('optgroup', '');
-    countries.label = 'Countries';
-    alphabetical('countries').forEach(value => countries.append(new Option(value)));
-    geography.append(regions, countries);
+    addGroup(geography, 'Regions', alphabetical('regions'));
+    addGroup(geography, 'Countries', alphabetical('countries'));
+    alphabetical('stageType').forEach(type => {
+      addGroup(milestone, type, alphabetical('stage', records.filter(record => record.stageType === type)));
+    });
 
     const searchable = records.map(record => ({
       record,
-      text: [record.headline, describe(record), record.status, record.takeaway, record.summary,
+      text: normalize([record.headline, describe(record), record.status, record.takeaway, record.summary,
         record.evidence, record.why, record.watch, record.limits, record.stage, ...record.countries,
-        ...record.regions, ...record.sources.flatMap(source => [source.label, source.type])]
-        .join(' ').normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase()
+        ...record.regions, ...record.sources.flatMap(source => [source.label, source.type])].join(' '))
     }));
 
     function render() {
-      const terms = keyword.value.normalize('NFKD').replace(/\p{M}/gu, '')
-        .toLowerCase().trim().split(/\s+/).filter(Boolean);
+      const terms = normalize(keyword.value).trim().split(/\s+/).filter(Boolean);
       const matching = searchable.filter(({ record, text }) =>
         (!topic.value || record.topic === topic.value) &&
         (!geography.value || record.countries.includes(geography.value) || record.regions.includes(geography.value)) &&
+        (!milestone.value || record.stage === milestone.value) &&
         terms.every(term => text.includes(term))
       ).map(({ record }) => record);
 
       const direction = sort.value === 'oldest' ? 1 : -1;
-      matching.sort((a, b) => direction * a.date.localeCompare(b.date) || a.headline.localeCompare(b.headline));
-      count.textContent = matching.length + ' of ' + records.length + ' signals';
+      matching.sort((a, b) => {
+        const primary = sort.value === 'material'
+          ? materialDate(b).localeCompare(materialDate(a))
+          : 0;
+        return primary || direction * a.date.localeCompare(b.date) || a.headline.localeCompare(b.headline);
+      });
+      count.textContent = matching.length + ' of ' + records.length + ' records';
       results.replaceChildren(...matching.map(card));
-      if (!matching.length) results.append(element('p', 'No signals match. Try another keyword or reset the filters.'));
+      if (!matching.length) results.append(element('p', 'No records match. Try another keyword or reset the filters.'));
     }
 
     form.addEventListener('submit', event => event.preventDefault());
@@ -110,53 +137,86 @@
     byId('library-fallback').hidden = true;
   }
 
+  function section(article, heading, ...body) {
+    const block = element('section', '', 'milestone-section');
+    block.append(element('h2', heading), ...body);
+    article.append(block);
+  }
+
+  function evidenceFacts(record) {
+    const facts = element('dl', '', 'evidence-facts');
+    const entries = [
+      ['Milestone', status(record)],
+      ['Latest material development', time(materialDate(record))],
+      ['Original publication date', time(record.date)],
+      ['Last source review', time(record.reviewed)]
+    ];
+    if (record.milestone.date !== materialDate(record) && record.milestone.date !== record.date) {
+      entries.splice(1, 0, [record.milestone.label, time(record.milestone.date)]);
+    }
+    entries.forEach(([label, value]) => {
+      const group = element('div');
+      const detail = element('dd');
+      detail.append(value);
+      group.append(element('dt', label), detail);
+      facts.append(group);
+    });
+    return facts;
+  }
+
   function initializeDetail(article) {
     const id = new URLSearchParams(window.location.search).get('id');
     const record = records.find(item => item.id === id);
     if (!record) {
-      article.replaceChildren(element('h1', 'Signal unavailable'),
-        element('p', 'Choose a record from the Market Signals library.'));
+      const guidance = element('p', 'Choose a record from the ');
+      guidance.append(link('Evidence Library', 'market-signals.html#evidence-library'), '.');
+      article.replaceChildren(element('h1', 'Record unavailable'), guidance);
       return;
     }
+
     document.title = record.headline + ' | Digital Market Signals';
-    article.replaceChildren(element('p', describe(record), 'metadata'),
-      element('h1', record.headline), recordStatus(record), recordDates(record),
-      element('p', record.takeaway, 'lede'));
-    const sections = [
-      ['Factual summary', record.summary], ['Evidence and attribution', record.evidence],
-      ['Why This Matters', record.why], ['What to Watch', record.watch],
-      ['Uncertainties and limitations', record.limits]
-    ];
-    sections.forEach(([heading, text]) => article.append(element('h2', heading), element('p', text)));
+    const context = element('p', '', 'record-context');
+    context.append(element('strong', tierLabels[record.editorialTier]), ' · ', describe(record));
+    article.replaceChildren(context, element('h1', record.headline),
+      element('p', record.takeaway, 'lede'), evidenceFacts(record));
 
-    if (record.history?.length) {
-      const history = element('ol', '', 'source-list');
-      record.history.forEach(event => {
-        const item = element('li', '');
-        const source = record.sources[event.source];
-        item.append(time(event.date), ' · ' + event.text + ' ', link(source.label, source.url));
-        history.append(item);
-      });
-      article.append(element('h2', 'Update history'), history);
-    }
+    section(article, 'What changed', element('p', record.summary));
+    const evidence = element('p', record.evidence + ' ');
+    evidence.append(link('See sources', '#sources'));
+    section(article, 'Evidence and attribution', evidence);
+    section(article, 'Why it matters', element('p', record.why));
+    section(article, 'Evidence limits', element('p', record.limits));
 
-    const sources = element('ul', '', 'source-list');
-    record.sources.forEach(source => {
-      const item = element('li', '');
-      item.append(sourceLine(source));
+    const sources = element('ol', '', 'source-list');
+    record.sources.forEach((source, index) => {
+      const item = element('li');
+      item.id = 'source-' + (index + 1);
+      item.append(sourceLine(source, index === 0));
       sources.append(item);
     });
-    article.append(element('h2', 'Sources'), sources);
+    section(article, 'Sources', sources);
+    sources.parentElement.id = 'sources';
 
     if (record.related?.length) {
       const related = element('ul', '', 'source-list');
       record.related.forEach(({ label, url }) => {
-        const item = element('li', '');
+        const item = element('li');
         item.append(link(label, url));
         related.append(item);
       });
-      article.append(element('h2', 'Related analysis'), related);
+      section(article, 'Related analysis', related);
     }
+
+    section(article, 'Next evidence to check', element('p', record.watch));
+    const history = element('ol', '', 'source-list');
+    record.history.forEach(event => {
+      const item = element('li');
+      const source = record.sources[event.source];
+      item.append(time(event.date), ' · ' + event.text + ' ',
+        link(source.publisher + ' source', '#source-' + (event.source + 1)));
+      history.append(item);
+    });
+    section(article, 'Update history', history);
   }
 
   const library = byId('library-form');

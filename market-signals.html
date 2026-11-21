@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Search source-linked technology market developments by topic, geography and date.">
-  <title>Market Signals | Digital Market Signals</title>
+  <meta name="description" content="Explore selected cloud, compute, infrastructure and regulatory milestones. Search public evidence by topic, market, and milestone.">
+  <title>Market Monitor | Digital Market Signals</title>
   <link rel="stylesheet" href="styles.css?v=6">
   <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/market-signals.html">
-  <script defer src="signals-data.js?v=6"></script>
-  <script defer src="signals.js?v=4"></script>
-  <link rel="stylesheet" href="publication.css?v=1">
+  <script defer src="signals-data.js?v=7"></script>
+  <script defer src="signals.js?v=6"></script>
+  <link rel="stylesheet" href="publication.css?v=2">
+  <link rel="stylesheet" href="market-monitor.css?v=2">
 </head>
-<body>
+<body class="publication monitor-page">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header publication-header">
     <div class="wrap header-inner">
@@ -25,33 +26,141 @@
       </nav>
     </div>
   </header>
-  <main class="wrap page" id="main" tabindex="-1">
-<header class="page-intro">
-      <h1>Market Signals</h1>
-      <p class="lede">Explore selected developments in cloud services, AI compute, infrastructure, and regulation. Each record explains what changed and links to the evidence.</p>
-      <p class="muted">Sort by original source publication. Each record shows its last source check and any later milestone. <a href="methodology.html#maintenance">How records are maintained and corrected</a>. <a href="digital-market-digest-2026-11.html">November Market Digest</a>.</p>
+  <main class="wrap publication-main monitor" id="main" tabindex="-1">
+    <header class="monitor-intro">
+      <p class="kicker">Market Monitor</p>
+      <h1>What changed in digital infrastructure markets?</h1>
+      <p class="subtitle">Selected developments in cloud availability, compute access, infrastructure investment and market rules across emerging economies.</p>
+      <p class="caption">Research reviewed <time datetime="2026-11-21">November 21, 2026</time> · Curated snapshot</p>
+      <a class="publication-button" href="#evidence-library">Search the Evidence Library</a>
     </header>
-    <form class="filters panel" id="library-form" aria-label="Filter market signals" hidden>
-      <label class="search">Keyword search
-        <input id="keyword" type="search" placeholder="e.g. GPUs, Querétaro, data transfers">
-      </label>
-      <label>Topic
-        <select id="topic"><option value="">All topics</option></select>
-      </label>
-      <label>Country or region
-        <select id="geography"><option value="">All geographies</option></select>
-      </label>
-      <label>Publication date
-        <select id="sort">
-          <option value="newest">Newest first</option>
-          <option value="oldest">Oldest first</option>
-        </select>
-      </label>
-      <button type="reset">Reset filters</button>
-    </form>
-    <p id="result-count" class="result-count" role="status"></p>
-    <div id="results" class="signal-list"></div>
-    <p id="library-fallback" class="panel">The interactive library is unavailable. Enable JavaScript or reload to try again. You can still read the <a href="https://yx-12345.github.io/digital-market-signals/intelligence-brief.html">Intelligence Brief</a> and <a href="digital-market-digest-2026-11.html">November Market Digest</a>.</p>
+
+    <section class="monitor-section" aria-labelledby="featured-title">
+      <header class="monitor-section-head">
+        <h2 id="featured-title">Featured Updates</h2>
+      </header>
+      <div class="monitor-grid">
+        <article class="featured-update">
+          <p class="kicker">Export controls</p>
+          <h3><a href="signal.html?id=bis-advanced-ai-chip-controls-2026">U.S. chip rule adds licensing requirements in five markets</a></h3>
+          <p class="caption update-meta">Rule effective <time datetime="2026-11-19">Nov 19, 2026</time> · <a href="https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm">Federal Register</a></p>
+          <p>The U.S. rule added licensing requirements for covered items in five markets and separate end-use controls involving certain remote access to compute.</p>
+          <p><strong>Why it matters.</strong> An effect on hardware delivery or cloud services depends on the items, parties and transaction.</p>
+          <p><strong>Next check.</strong> BIS guidance and evidence of changes to covered shipments or named services.</p>
+        </article>
+        <article class="featured-update">
+          <p class="kicker">Data center investment</p>
+          <h3><a href="signal.html?id=india-ctrls-bihar-data-center">Bihar’s AI data center proposal moves from letter of intent to MoU</a></h3>
+          <p class="caption update-meta">MoU signed <time datetime="2026-11-20">Nov 20, 2026</time> · <a href="https://www.ctrls.com/press-release-ctrls-signs-mou-bihar-150-mw-ai-datacenter/">CtrlS</a></p>
+          <p>CtrlS linked the November MoU to its October letter of intent for a proposed 150 MW facility and identified the Patna area as its preferred location.</p>
+          <p><strong>Why it matters.</strong> The releases describe one evolving proposal. CtrlS separately reported the inauguration of a 12 MW Patna facility.</p>
+          <p><strong>Next check.</strong> Final site, financing and construction milestones.</p>
+        </article>
+        <article class="featured-update">
+          <p class="kicker">Cloud availability</p>
+          <h3><a href="signal.html?id=chile-aws-region-early-access-2026">AWS opens its Chile region to selected customers</a></h3>
+          <p class="caption update-meta">Early access announced <time datetime="2026-11-11">Nov 11, 2026</time> · <a href="https://www.aboutamazon.com/news/aws/aws-south-america-chile-region-launch">About Amazon</a></p>
+          <p>AWS reported limited early access and expected general availability by year-end. It gave a separate timetable for Bedrock and SageMaker AI.</p>
+          <p><strong>Why it matters.</strong> Eligibility to use a region and availability of a specific AI service are separate milestones.</p>
+          <p><strong>Next check.</strong> A dated general-availability notice and the regional service catalog.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="monitor-section" aria-labelledby="questions-title">
+      <header class="monitor-section-head">
+        <h2 id="questions-title">Questions We’re Tracking</h2>
+      </header>
+      <div class="monitor-grid tracking-grid">
+        <article class="tracking-question cloud-comparison" id="cloud-availability">
+          <h3>When can customers use a new cloud region for specific AI workloads?</h3>
+          <p>These announcements document different stages of regional availability. Each AI workload still needs a service or instance check in the region where it would run.</p>
+          <dl class="cloud-cases">
+            <div>
+              <dt><a href="signal.html?id=chile-aws-region-early-access-2026">AWS Chile</a></dt>
+              <dd><strong>Limited early access.</strong> AWS reported access for selected customers on <a href="https://www.aboutamazon.com/news/aws/aws-south-america-chile-region-launch">November 11, 2026</a>.</dd>
+              <dd><strong>Evidence needed.</strong> A general availability notice and regional listings for Bedrock and SageMaker AI.</dd>
+            </div>
+            <div>
+              <dt><a href="signal.html?id=brazil-alibaba-cloud-region-launch-2026">Alibaba Cloud Brazil</a></dt>
+              <dd><strong>Core cloud services launched.</strong> Alibaba Cloud listed core services and described its agentic AI suite as planned on <a href="https://www.alibabacloud.com/en/press-room/alibaba-cloud-launch-first-cloud-region-in-brazil">August 27, 2026</a>.</dd>
+              <dd><strong>Evidence needed.</strong> A dated Brazil catalog for named AI products and accelerator instances.</dd>
+            </div>
+            <div>
+              <dt><a href="signal.html?id=indonesia-azure-region">Azure Indonesia</a></dt>
+              <dd><strong>General availability.</strong> Microsoft said customers could select Indonesia Central on <a href="https://news.microsoft.com/id-id/2025/04/15/general-availability-of-indonesia-central-cloud-region/">April 15, 2025</a>.</dd>
+              <dd><strong>Evidence needed.</strong> Regional GPU instance listings and the quotas available to customers.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="tracking-question">
+          <h3>Which infrastructure proposals advance toward operating capacity?</h3>
+          <p>Follow each project from study or agreement through financing, construction and commissioning.</p>
+          <ul class="tracking-links" aria-label="Infrastructure investment records">
+            <li><a href="signal.html?id=india-ctrls-bihar-data-center">CtrlS Bihar</a></li>
+            <li><a href="signal.html?id=nigeria-ustda-afridata-feasibility-2026">Nigeria feasibility study</a></li>
+            <li><a href="signal.html?id=kenya-g42-olkaria-plan">Kenya Olkaria proposal</a></li>
+          </ul>
+        </article>
+        <article class="tracking-question">
+          <h3>How do rules shape who can access technology and on what terms?</h3>
+          <p>Trace export licensing for covered transactions and, separately, eligibility and allocation under a public compute service.</p>
+          <ul class="tracking-links" aria-label="Technology access records">
+            <li><a href="signal.html?id=bis-advanced-ai-chip-controls-2026">U.S. chip licensing</a></li>
+            <li><a href="signal.html?id=india-ai-compute-portal">IndiaAI Compute Portal</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="monitor-section" id="evidence-library" aria-labelledby="evidence-library-title">
+      <header class="monitor-section-head">
+        <h2 id="evidence-library-title">Evidence Library</h2>
+        <p>By default, records are sorted by their latest documented milestone or substantive update. Original publication is a separate sort option. The last source review records when the evidence was checked. <a href="methodology.html#maintenance">How records are maintained</a></p>
+      </header>
+      <form class="filters panel monitor-filters" id="library-form" aria-label="Filter the Evidence Library" hidden>
+        <label class="search">Keyword search
+          <input id="keyword" type="search" placeholder="e.g. GPUs, Querétaro">
+        </label>
+        <label>Topic
+          <select id="topic"><option value="">All topics</option></select>
+        </label>
+        <label>Country or region
+          <select id="geography"><option value="">All geographies</option></select>
+        </label>
+        <label>Milestone
+          <select id="milestone"><option value="">All milestones</option></select>
+        </label>
+        <label class="library-sort">Sort by
+          <select id="sort">
+            <option value="material">Latest Material Development</option>
+            <option value="newest">Original Publication Date · newest</option>
+            <option value="oldest">Original Publication Date · oldest</option>
+          </select>
+        </label>
+        <button type="reset">Reset filters</button>
+      </form>
+      <p id="result-count" class="result-count" role="status"></p>
+      <div id="results" class="signal-list"></div>
+      <div id="library-fallback" class="monitor-fallback">
+        <p>Search and individual records require JavaScript. You can open the original source for each record below.</p>
+        <ul class="source-list" id="original-sources">
+          <li>U.S. advanced-chip rule adds licensing requirements in five markets · <a href="https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm">Federal Register · Addressing Remote Access to Advanced Semiconductors</a> · <time datetime="2026-11-19">2026-11-19</time></li>
+          <li>AWS opens its Chile region to selected customers ahead of general availability · <a href="https://www.aboutamazon.com/news/aws/aws-south-america-chile-region-launch">About Amazon · AWS South America (Chile) Region early access</a> · <time datetime="2026-11-11">2026-11-11</time></li>
+          <li>CtrlS advances Bihar’s proposed 150 MW AI data center from letter of intent to MoU · <a href="https://www.ctrls.com/press-release-ctrls-plan-to-invest-rs-10000-crore-bihar-patna-datacenter/">CtrlS · Bihar letter of intent and Patna inauguration</a> · <time datetime="2026-10-16">2026-10-16</time></li>
+          <li>USTDA funds feasibility work for two proposed data centers in Nigeria · <a href="https://ustda.gov/ustda-backs-ai-ready-data-center-development-in-nigeria/">USTDA · Agreement and locations of proposed facilities</a> · <time datetime="2026-09-23">2026-09-23</time></li>
+          <li>Alibaba Cloud launches a Brazil region with core services and plans further AI offerings · <a href="https://www.alibabacloud.com/en/press-room/alibaba-cloud-launch-first-cloud-region-in-brazil">Alibaba Cloud · First cloud region in Brazil</a> · <time datetime="2026-08-27">2026-08-27</time></li>
+          <li>Azure makes Indonesia Central generally available · <a href="https://news.microsoft.com/id-id/2025/04/15/general-availability-of-indonesia-central-cloud-region/">Microsoft Indonesia · General availability</a> · <time datetime="2025-04-15">2025-04-15</time></li>
+          <li>India launches a portal for subsidized AI compute · <a href="https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2108961&amp;lang=2&amp;reg=48">India Press Information Bureau · Portal launch</a> · <time datetime="2025-03-06">2025-03-06</time></li>
+          <li>AWS opens a three-zone cloud region in Thailand · <a href="https://aws.amazon.com/blogs/aws/announcing-the-new-aws-asia-pacific-thailand-region/">AWS News Blog · Thailand region launch</a> · <time datetime="2025-01-07">2025-01-07</time></li>
+          <li>Google Cloud opens a region in Querétaro · <a href="https://cloud.google.com/blog/products/infrastructure/google-cloud-announces-41st-cloud-region-in-mexico">Google Cloud · Querétaro region opening</a> · <time datetime="2024-12-04">2024-12-04</time></li>
+          <li>Brazil’s data regulator sets out cross-border transfer mechanisms · <a href="https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024">ANPD · Resolution 19/2024, Articles 9 and 16 and Annex II (Portuguese)</a> · <time datetime="2024-08-23">2024-08-23</time></li>
+          <li>AWS makes its Malaysia region generally available · <a href="https://aws.amazon.com/blogs/aws/now-open-aws-asia-pacific-malaysia-region/">AWS News Blog · Malaysia region launch</a> · <time datetime="2024-08-21">2024-08-21</time></li>
+          <li>Kenya’s proposed Olkaria cloud campus faces reported delays · <a href="https://news.microsoft.com/source/2024/05/22/microsoft-and-g42-announce-1-billion-comprehensive-digital-ecosystem-initiative-for-kenya/">Microsoft · Kenya digital investment announcement</a> · <time datetime="2024-05-22">2024-05-22</time></li>
+        </ul>
+      </div>
+    </section>
+    <p class="caption monitor-end"><a href="digital-market-digest-2026-11.html">November 20 digest, with a dated Bihar source correction</a></p>
   </main>
   <footer class="site-footer publication-footer">
     <div class="wrap footer-inner">

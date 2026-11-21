@@ -43,6 +43,9 @@
         <li><strong>Update the evidence and analysis together.</strong> When listed rates change, record a new dated snapshot, check both sources and rerun the cost-model tests. Reconcile the chart, rate table and hypothetical example with the snapshot. The study’s <a href="research.html#notes">methods and sources</a> document the formulas, assumptions and evidence gaps.</li>
       </ol>
 
+      <h2>Data Lab · World Development Indicators</h2>
+      <p>The <a href="data-explorer.html#data-heading">Data Lab methods, datasets and reproduction steps</a> document how economies and indicators were selected, how missing values were handled, and how to verify the findings using the frozen data.</p>
+
       <h2 id="example">Archived worked example · Indonesia Central</h2>
       <p>The <a href="intelligence-brief.html#indonesia-case">Indonesia case</a> uses a separate method to trace a reported market milestone from the original notice to a published signal.</p>
       <ol class="workflow">
@@ -53,12 +56,14 @@
         <li><strong>Published record.</strong> The <a href="signal.html?id=indonesia-azure-region">Indonesia Central signal</a> keeps April 15 as the original source date, records the May event in its history and shows the limitations alongside the analysis.</li>
       </ol>
 
-      <h2>Sources and AI assistance</h2>
-      <p>OpenAI Codex assisted with finding and organizing sources, checking claims against cited documents and data, drafting text, preparing data and building the site.</p>
+      <h2 id="ai-assistance">Sources and AI assistance</h2>
+      <p>AI tools assisted with finding and checking sources, preparing data and calculations, drafting and editing, and building the site. The cited sources, datasets and methods let readers verify the findings.</p>
       <p>Records link to original sources, identify who made each claim and retain conflicts or gaps. “Last reviewed” is the date of the most recent source check.</p>
       <p id="review-checklist"><a href="https://github.com/YX-12345/digital-market-signals/blob/main/docs/owner-review.md">Repository review checklist</a></p>
 
       <h2 id="maintenance">How records are maintained and corrected</h2>
+      <p>The <a href="market-signals.html#evidence-library">Evidence Library</a> defaults to Latest Material Development. It uses the documented milestone date or a later substantive update cited in the history, such as attributed reporting on a delay. A later announcement of the same event or a ceremonial launch keeps the original milestone date for sorting. Original Publication Date sorts by the date of the first source. Last Source Review records when the evidence was checked.</p>
+      <p>Milestones are grouped by cloud availability, infrastructure investment, regulation and compute service. A study grant, signed agreement and operating facility represent distinct evidence. Reference records keep earlier milestones accessible for comparison. Featured updates are editorial selections based on the significance of the change and the evidence available.</p>
       <ol class="workflow">
         <li>Find or add the record in <code>signals-data.js</code>. Keep the record ID and original source publication date stable.</li>
         <li>Add the follow-up source, with its type and date. Log the dated change in the record history and distinguish an observed milestone from a reported or planned one. Change the last-reviewed date after the source check.</li>
