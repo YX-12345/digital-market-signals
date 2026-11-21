@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent exploration of internet use, fixed broadband, and electricity access in 77 economies using World Development Indicators.">
-  <title>Digital Infrastructure &amp; Connectivity: Cross-Country Data Explorer | Digital Market Signals</title>
+  <meta name="description" content="Two findings on internet use and fixed broadband across 77 selected economies, with electricity access context and reproducible World Development Indicators data.">
+  <title>Digital Access: Three Measures, Different Stories | Digital Market Signals</title>
   <link rel="stylesheet" href="styles.css?v=6">
   <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/data-explorer.html">
   <script defer src="explorer.js?v=4"></script>
-  <link rel="stylesheet" href="publication.css?v=1">
+  <link rel="stylesheet" href="publication.css?v=2">
+  <link rel="stylesheet" href="data-lab.css?v=1">
 </head>
-<body>
+<body class="publication">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header publication-header">
     <div class="wrap header-inner">
@@ -24,32 +25,116 @@
       </nav>
     </div>
   </header>
-  <main class="wrap page" id="main" tabindex="-1">
-    <header class="page-intro">
-      <h1>Digital Infrastructure &amp; Connectivity: Cross-Country Data Explorer</h1>
-      <p class="lede">An independent exploration of internet use, fixed broadband, and electricity access across 77 selected emerging economies from 2015 to 2024.</p>
+  <main class="wrap publication-main data-lab" id="main" tabindex="-1">
+    <header class="data-lab-intro">
+      <p class="kicker">Data Lab · World Development Indicators</p>
+      <h1>Digital Access: Three Measures, Different Stories</h1>
+      <p class="subtitle">Internet use, fixed broadband subscriptions and electricity access across 77 selected economies, 2015–2024.</p>
+      <p>What changes when we measure who goes online, how many fixed broadband subscriptions exist or who has electricity? The same economy can look different on each measure.</p>
+      <p class="caption">Frozen snapshot retrieved <time datetime="2026-11-20">November 20, 2026</time> · <a href="#data-heading">Methods and data</a></p>
     </header>
 
-    <section class="section tableau-section" aria-labelledby="tableau-title">
-      <h2 id="tableau-title">Interactive Tableau dashboard</h2>
-      <p>Use <strong>Country</strong> to filter the internet-use trend, or <strong>Region</strong> and <strong>Income Group</strong> to filter the 2024 fixed broadband comparison. Hover or tap a mark for details.</p>
+    <section class="lab-section" aria-labelledby="wdi-findings">
+      <div class="lab-split">
+        <div class="lab-copy">
+          <h2 id="wdi-findings">Internet use grew at different speeds</h2>
+          <p>Internet use increased in all <strong>67 economies</strong> with observations in both 2015 and 2024. The median increase was <strong>26.5 percentage points</strong>. Ten of the 77 selected economies lacked a reading at one or both endpoints.</p>
+          <p>Indonesia and India each gained about 50 points. Nigeria and Kenya gained about 19. These four economies illustrate variation within the matched sample.</p>
+        </div>
+        <table class="lab-table">
+          <caption>Change in internet use · 2015 to 2024</caption>
+          <thead><tr><th scope="col">Illustrative economy</th><th scope="col">Percentage points</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Indonesia</th><td>+50.7</td></tr>
+            <tr><th scope="row">India</th><td>+50.0</td></tr>
+            <tr><th scope="row">Nigeria</th><td>+18.7</td></tr>
+            <tr><th scope="row">Kenya</th><td>+18.4</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="lab-split lab-second-finding">
+        <div class="lab-copy">
+          <h2 id="internet-and-broadband">More people online can coexist with fewer fixed subscriptions</h2>
+          <p>In 2024, internet use was <strong>98.0% in Malaysia</strong> and <strong>84.5% in Brazil</strong>. Malaysia had <strong>13.5 fixed broadband subscriptions per 100 people</strong>, compared with <strong>24.1 in Brazil</strong>.</p>
+          <p>Internet use counts people going online by any means. Fixed broadband counts subscriptions, which households and organizations can share. The comparison leaves open why the rates differ and how much people rely on mobile access.</p>
+        </div>
+        <figure class="access-scatter">
+          <img src="assets/wdi-access-scatter-2024.svg" width="420" height="282" alt="Scatterplot of 49 economies in 2024. Malaysia has higher internet use than Brazil, while Brazil has more fixed broadband subscriptions per 100 people. Both country values are given in the text.">
+          <figcaption class="caption">2024 · One point per economy. The <strong>49 of 77</strong> economies shown have both observations. The other 28 lack at least one. Source: frozen WDI snapshot.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="lab-section tableau-section" aria-labelledby="tableau-title">
+      <h2 id="tableau-title">Explore the Tableau dashboard</h2>
+      <p class="lab-copy">Use <strong>Country</strong> to compare internet-use trends, or <strong>Region</strong> and <strong>Income Group</strong> to filter the 2024 fixed-broadband bars. Hover or tap a mark for its values. The phone layout shortens some axis labels. The figure above spells out both units.</p>
+      <p class="caption lab-copy" id="tableau-verification">All 40 values in the four default internet-use trends, the 49-point scatterplot count, and the Brazil and Malaysia readings matched the frozen CSV at displayed precision. Full extract and missingness verification is still open.</p>
       <p><a href="https://public.tableau.com/app/profile/yu1607/viz/DigitalInfrastructureinEmergingEconomies/Dashboard1">Open the dashboard on Tableau Public</a></p>
-      <iframe class="tableau-frame" src="https://public.tableau.com/views/DigitalInfrastructureinEmergingEconomies/Dashboard1?:embed=y&amp;:showVizHome=n&amp;:tabs=n" title="Interactive Tableau dashboard: Digital Infrastructure in Emerging Economies" width="1100" height="1380" allowfullscreen></iframe>
+      <iframe class="tableau-frame" src="https://public.tableau.com/views/DigitalInfrastructureinEmergingEconomies/Dashboard1?:embed=y&amp;:showVizHome=n&amp;:tabs=n" title="Tableau dashboard with internet-use trends, 2024 broadband bars and a 2024 internet-use versus broadband scatterplot" aria-describedby="tableau-verification" width="1100" height="1380" loading="lazy" allowfullscreen></iframe>
     </section>
 
-    <section class="section" aria-labelledby="wdi-findings">
-      <h2 id="wdi-findings">Three findings from the WDI data</h2>
-      <ol class="findings">
-        <li><strong>Internet use increased across the matched sample.</strong> All 67 economies with observations in both 2015 and 2024 showed gains. The median increase was 26.5 percentage points. Ten economies lacked an observation in at least one of those years.</li>
-        <li><strong>High internet use can coexist with fewer fixed subscriptions.</strong> In 2024, Malaysia had higher internet use than Brazil (98.0% versus 84.5%) and fewer fixed broadband subscriptions per 100 people (13.5 versus 24.1). Internet use counts people who went online by any means. Fixed broadband counts subscriptions, which households or organizations may share. Differences in mobile use, fixed-network coverage, or affordability could contribute. Comparing household access by connection type, network coverage, prices, and measured speeds would help assess those explanations.</li>
-        <li><strong>Electricity access describes population coverage.</strong> From 2015 to 2024, access rose from 41.6% to 77.0% in Kenya and from 52.5% to 62.5% in Nigeria. A facility’s power supply and reliability require site-level data on grid capacity, interruptions, and backup systems.</li>
-      </ol>
-      <p class="metadata">Source: World Development Indicators, retrieved 20 November 2026. Changes are descriptive, and the cross-country comparisons use the stated reference year.</p>
+    <section class="lab-section" aria-labelledby="electricity-context">
+      <div class="lab-split">
+        <div class="lab-copy">
+          <h2 id="electricity-context">Electricity access measures population coverage</h2>
+          <p>Access rose from 41.6% to 77.0% in Kenya and from 52.5% to 62.5% in Nigeria. To assess power at a specific facility, look for utility and engineering evidence on outages, firm capacity and energy costs.</p>
+        </div>
+        <table class="lab-table">
+          <caption>Population with electricity access (%)</caption>
+          <thead><tr><th scope="col">Economy</th><th scope="col">2015</th><th scope="col">2024</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Kenya</th><td>41.6</td><td>77.0</td></tr>
+            <tr><th scope="row">Nigeria</th><td>52.5</td><td>62.5</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <section class="section compact" id="indonesia-spotlight" aria-labelledby="indonesia-spotlight-title">
-      <h2 id="indonesia-spotlight-title">Country Spotlight: Indonesia</h2>
-      <table class="spotlight-table">
+    <section class="lab-section" aria-labelledby="data-heading">
+      <h2 id="data-heading">Methods, definitions and data</h2>
+      <div class="lab-methods">
+        <div>
+          <h3>Sample and preparation</h3>
+          <p>The 77-economy selection includes 25 low-income and 47 lower-middle-income economies from the FY2027 classification, plus Brazil, Indonesia, Malaysia, Mexico and Thailand. The same income labels apply to each observation year. This is a targeted sample of economies.</p>
+          <p>The processing script excludes aggregates, joins WDI values by economy code and year, and validates identifiers and values. The wide file has 770 economy-year rows. The long file has 2,310 indicator rows, with 2,164 reported values and 146 blanks.</p>
+          <p>Internet-use changes use matched 2015 and 2024 observations. The scatterplot uses complete 2024 pairs. Both exclude missing observations from the relevant comparison and retain reported zeros.</p>
+          <p class="caption">WDI retrieval <time datetime="2026-11-20">November 20, 2026</time> · API update <time datetime="2026-11-11">November 11, 2026</time> · Latest common observation year 2024</p>
+        </div>
+        <div>
+          <h3>Indicators and units</h3>
+          <dl class="lab-definitions">
+            <dt>Internet use · <a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/IT.NET.USER.ZS">IT.NET.USER.ZS</a></dt>
+            <dd>Percent of people who used the internet from any location in the previous three months.</dd>
+            <dt>Fixed broadband · <a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/IT.NET.BBND.P2">IT.NET.BBND.P2</a></dt>
+            <dd>Fixed subscriptions per 100 people, including subscriptions held by households and organizations.</dd>
+            <dt>Electricity access · <a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/EG.ELC.ACCS.ZS">EG.ELC.ACCS.ZS</a></dt>
+            <dd>Percent of the population with access to electricity.</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="lab-downloads">
+        <h3>Verify the findings</h3>
+        <p>Run <code>python3 scripts/verify_wdi_findings.py</code> from the repository root to check the figures against the frozen CSVs. The verifier uses local files. The original processing script documents the WDI pipeline.</p>
+        <ul class="source-list">
+          <li><a href="data/processed/wdi_tableau.csv" download>Download Tableau-ready wide CSV</a></li>
+          <li><a href="data/processed/wdi_long.csv" download>Download long-format CSV</a></li>
+          <li><a href="data/processed/wdi_coverage.json">Annual coverage and source API URLs</a></li>
+          <li><a href="scripts/verify_wdi_findings.py" download>Download the offline verification script</a></li>
+          <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/docs/wdi-data.md">Data dictionary, selection and validation</a></li>
+          <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/scripts/prepare_wdi.py">Original Python processing script</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="lab-section lab-copy" aria-labelledby="market-context">
+      <h2 id="market-context">Reading these figures alongside market evidence</h2>
+      <p>These national indicators describe use, subscriptions and electricity access. Questions about data-center commissioning, GPU inventory, cloud service eligibility and workload prices require facility or provider evidence, such as the <a href="signal.html?id=indonesia-azure-region">Azure Indonesia market record</a> and the <a href="research.html">IndiaAI pricing study</a>.</p>
+    </section>
+
+    <details class="section archive">
+      <summary id="indonesia-spotlight-title">Archived WDI country spotlight · Indonesia</summary>
+      <table class="spotlight-table" id="indonesia-spotlight">
         <caption class="metadata">Indonesia · World Development Indicators, rounded to one decimal</caption>
         <thead><tr><th scope="col">Indicator</th><th scope="col">2015</th><th scope="col">2024</th></tr></thead>
         <tbody>
@@ -61,42 +146,10 @@
       <p>Indonesia’s largest change here was in internet use. The indicators describe national infrastructure and adoption. The country case uses provider and regulatory documents to examine cloud services and compute access.</p>
       <p>In the <a href="#tableau-title">Tableau trend chart</a>, open <strong>Country</strong> and select Indonesia. To isolate its line, clear the other selected countries.</p>
       <p><a href="intelligence-brief.html#indonesia-case">Read the archived Indonesia country case</a></p>
-    </section>
-
-    <section class="section compact" aria-labelledby="market-context">
-      <h2 id="market-context">Related market evidence</h2>
-      <p>Market Signals tracks developments at the level of a service, program, or proposed facility. These records provide context alongside the country indicators.</p>
-      <ul>
-        <li><a href="signal.html?id=indonesia-azure-region">Microsoft Azure in Indonesia</a> records general availability and the later public launch event.</li>
-        <li>The <a href="signal.html?id=nigeria-ustda-afridata-feasibility-2026">Nigeria feasibility study</a> and <a href="signal.html?id=india-ctrls-bihar-data-center">Bihar disclosures</a> document different steps in infrastructure development.</li>
-        <li><a href="signal.html?id=india-ai-compute-portal">India’s shared compute program</a> documents a route to apply for subsidized capacity.</li>
-      </ul>
-      <p><a href="intelligence-brief.html">Read the archived brief, Beyond the Announcement</a></p>
-    </section>
-
-    <section class="section compact" aria-labelledby="data-heading">
-      <h2 id="data-heading">Data, definitions and downloads</h2>
-      <p>The dataset includes 77 economies in six World Bank regions and 770 country-year rows for 2015–2024. It covers all low- and lower-middle-income economies in the FY2027 classification plus five upper-middle-income Market Signals economies. Aggregates are excluded.</p>
-      <dl class="definitions">
-        <dt><a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/IT.NET.USER.ZS">Internet use · IT.NET.USER.ZS</a></dt>
-        <dd>Percent of people who used the internet from any location in the previous three months.</dd>
-        <dt><a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/IT.NET.BBND.P2">Fixed broadband · IT.NET.BBND.P2</a></dt>
-        <dd>Fixed subscriptions per 100 people, including household and organizational subscriptions.</dd>
-        <dt><a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/EG.ELC.ACCS.ZS">Electricity access · EG.ELC.ACCS.ZS</a></dt>
-        <dd>Percent of the population with access to electricity.</dd>
-      </dl>
-      <p>The 2024 scatterplot includes 49 of the 77 economies. The other 28 lack at least one of its two observations. Missing values are kept blank in the CSV files. The indicators measure use, subscriptions, and electricity access. Data on GPU supply and cloud capacity come from other sources.</p>
-      <ul class="source-list">
-        <li><a href="data/processed/wdi_tableau.csv" download>Download Tableau-ready wide CSV</a></li>
-        <li><a href="data/processed/wdi_long.csv" download>Download long-format CSV</a></li>
-        <li><a href="data/processed/wdi_coverage.json">Annual coverage and source API URLs</a></li>
-        <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/docs/wdi-data.md">Data dictionary, inclusion rules and validation</a></li>
-        <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/scripts/prepare_wdi.py">Python processing script</a></li>
-      </ul>
-    </section>
+    </details>
 
     <details class="section archive">
-      <summary id="infrastructure-title">Evidence table · Five selected project milestones</summary>
+      <summary id="infrastructure-title">Archived evidence table · Five selected project milestones</summary>
       <p>These curated examples compare the milestone supported by each record. They do not measure total national capacity, market coverage or AI readiness.</p>
       <p class="table-hint">Scroll the table horizontally to see the evidence links.</p>
       <div class="table-scroll" role="region" aria-labelledby="infrastructure-title" tabindex="0">

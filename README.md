@@ -7,7 +7,7 @@ An independent research portfolio by Phoebe Wang on AI infrastructure and cloud 
 | Home | Featured research and a guide to the portfolio |
 | Research | [When Does Reserved AI Compute Pay Off?](research.html), an IndiaAI pricing article and interactive scenario explorer |
 | Market Monitor | [Featured updates, research questions and searchable evidence](market-signals.html) with stable `signal.html?id=<record-id>` links |
-| Data Lab | Interactive Tableau charts, WDI findings and [data downloads](data-explorer.html) |
+| Data Lab | [Digital Access: Three Measures, Different Stories](data-explorer.html), with WDI findings, a Tableau dashboard and data downloads |
 | Methods & Sources | [Research workflow](methodology.html) and [owner review checklist](docs/owner-review.md) |
 
 The [earlier brief](intelligence-brief.html), its [Indonesia country case](intelligence-brief.html#indonesia-case), and the November 2026 digest in [HTML](digital-market-digest-2026-11.html) and [email-ready text](digital-market-digest-2026-11.txt) remain available. The [pre-redesign site snapshot](https://github.com/YX-12345/digital-market-signals/tree/cb17c6fc6d78e920e2e2a8d3de6bc3ef9dc91fad) is retained in the repository history.
@@ -17,6 +17,8 @@ The [earlier brief](intelligence-brief.html), its [Indonesia country case](intel
 The [pricing snapshot](data/research/indiaai_pricing_snapshot.json) contains the six selected instance records and reservation periods. On November 21, 2026, the 24 rates were checked against both the [official calculator](https://compute.indiaai.gov.in/indiaaipricecalculator) and the [official price list](https://compute.indiaai.gov.in/pricelist). Use `node --test tests/compute-cost.test.mjs` to check the stated examples, all annual thresholds and both usage extremes for every term. Serve the repository root over HTTP to use the explorer. Research text, the annual chart, rate table and citations work with JavaScript disabled.
 
 ## Reproduce the WDI dataset
+
+Run `python3 scripts/verify_wdi_findings.py` to verify the Data Lab figures and scatterplot against the committed November 20, 2026 CSVs. This check runs offline. To regenerate only the scatterplot, add `--write-scatter`.
 
 Run `python3 scripts/prepare_wdi.py` with Python 3.10 or later. The script retrieves three WDI indicators and country metadata, selects eligible economies, joins on ISO3, validates values and writes analysis-ready CSVs. The committed release covers 77 economies, 2015–2024, 770 country-year rows and 2,310 possible observations. Of those, 2,164 are reported and 146 are blank.
 
