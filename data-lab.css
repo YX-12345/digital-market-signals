@@ -15,8 +15,12 @@
 .access-scatter { margin: 0; border-top: 3px solid var(--teal); padding: .5rem .25rem .6rem; background: var(--surface); }
 .access-scatter img { display: block; width: 100%; height: auto; }
 .access-scatter figcaption { padding-inline: .8rem; }
+.tableau-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1rem; }
+.tableau-actions .tableau-link { display: inline-block; padding: .47rem .75rem; border: 1px solid currentColor; border-radius: .25rem; font-weight: 700; }
+.tableau-phone-note { display: none; max-width: 70ch; }
 .tableau-section .tableau-frame { margin-block-start: 1rem; border-color: var(--rule); background: var(--surface); }
-.lab-methods h3, .lab-downloads h3 { margin-bottom: .55rem; font-size: 1.25rem; }
+.lab-methods h3, .lab-downloads h3, .lab-verification h3 { margin-bottom: .55rem; font-size: 1.25rem; }
+.lab-verification { margin-block-start: 1.3rem; }
 .lab-definitions { margin: 0; }
 .lab-definitions dt { color: var(--navy); font-weight: 720; }
 .lab-definitions dd { margin: .18rem 0 .75rem; }
@@ -28,4 +32,8 @@
   .lab-split, .lab-methods, .lab-downloads ul { grid-template-columns: minmax(0, 1fr); }
   .data-lab { padding-block-start: 1.45rem; }
   .lab-second-finding { margin-top: 1.4rem; }
+}
+@media (max-width: 35rem) {
+  .tableau-phone-note { display: block; }
+  .tableau-section .tableau-frame { width: calc(100% + 1.25rem); margin-inline: -.625rem; }
 }

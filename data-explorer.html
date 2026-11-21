@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/data-explorer.html">
   <script defer src="explorer.js?v=4"></script>
   <link rel="stylesheet" href="publication.css?v=2">
-  <link rel="stylesheet" href="data-lab.css?v=1">
+  <link rel="stylesheet" href="data-lab.css?v=2">
 </head>
 <body class="publication">
   <a class="skip" href="#main">Skip to content</a>
@@ -68,10 +68,10 @@
 
     <section class="lab-section tableau-section" aria-labelledby="tableau-title">
       <h2 id="tableau-title">Explore the Tableau dashboard</h2>
-      <p class="lab-copy">Use <strong>Country</strong> to compare internet-use trends, or <strong>Region</strong> and <strong>Income Group</strong> to filter the 2024 fixed-broadband bars. Hover or tap a mark for its values. The phone layout shortens some axis labels. The figure above spells out both units.</p>
-      <p class="caption lab-copy" id="tableau-verification">All 40 values in the four default internet-use trends, the 49-point scatterplot count, and the Brazil and Malaysia readings matched the frozen CSV at displayed precision. Full extract and missingness verification is still open.</p>
-      <p><a href="https://public.tableau.com/app/profile/yu1607/viz/DigitalInfrastructureinEmergingEconomies/Dashboard1">Open the dashboard on Tableau Public</a></p>
-      <iframe class="tableau-frame" src="https://public.tableau.com/views/DigitalInfrastructureinEmergingEconomies/Dashboard1?:embed=y&amp;:showVizHome=n&amp;:tabs=n" title="Tableau dashboard with internet-use trends, 2024 broadband bars and a 2024 internet-use versus broadband scatterplot" aria-describedby="tableau-verification" width="1100" height="1380" loading="lazy" allowfullscreen></iframe>
+      <p class="lab-copy">Use <strong>Country</strong> to compare internet-use trends, or <strong>Region</strong> and <strong>Income Group</strong> to filter the 2024 fixed-broadband bars. Hover or tap a mark for its values.</p>
+      <p class="tableau-actions"><a class="tableau-link" href="https://public.tableau.com/app/profile/yu1607/viz/DigitalInfrastructureinEmergingEconomies/Dashboard1">Open on Tableau Public</a><a href="#tableau-verification">Workbook verification</a></p>
+      <p class="caption tableau-phone-note" id="tableau-units">The Tableau phone layout shortens some axis labels. Internet use is shown as a share of the population (%) and fixed broadband as subscriptions per 100 people. The <a href="#internet-and-broadband">static comparison</a> shows both full labels.</p>
+      <iframe class="tableau-frame" src="https://public.tableau.com/views/DigitalInfrastructureinEmergingEconomies/Dashboard1?:embed=y&amp;:showVizHome=n&amp;:tabs=n" title="Tableau dashboard with internet-use trends, 2024 broadband bars and a 2024 internet-use versus broadband scatterplot" aria-describedby="tableau-units" width="1100" height="1380" loading="lazy" allowfullscreen></iframe>
     </section>
 
     <section class="lab-section" aria-labelledby="electricity-context">
@@ -124,6 +124,11 @@
           <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/docs/wdi-data.md">Data dictionary, selection and validation</a></li>
           <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/scripts/prepare_wdi.py">Original Python processing script</a></li>
         </ul>
+      </div>
+      <div class="lab-verification lab-copy" id="tableau-verification">
+        <h3>Tableau workbook verification</h3>
+        <p>On <time datetime="2026-11-21">November 21, 2026</time>, all 40 displayed values in the four default internet-use trends, the 49-point scatterplot count, and both indicator readings for Brazil and Malaysia matched the frozen CSV at displayed precision. The full Tableau extract and its missing values remain unverified.</p>
+        <p><a href="https://github.com/YX-12345/digital-market-signals/blob/main/docs/tableau-authoring.md">Read the verification details and full-extract check</a></p>
       </div>
     </section>
 
