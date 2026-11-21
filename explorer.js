@@ -1,4 +1,15 @@
 (() => {
+  const tableau = document.querySelector('.tableau-frame');
+  if (tableau && 'ResizeObserver' in window) {
+    const desktopSource = tableau.getAttribute('src');
+    const compactSource = desktopSource + '&:device=phone';
+    const workbookWidth = Number(tableau.width);
+    new ResizeObserver(([{ contentRect }]) => {
+      const source = contentRect.width < workbookWidth ? compactSource : desktopSource;
+      if (tableau.getAttribute('src') !== source) tableau.src = source;
+    }).observe(tableau);
+  }
+
   const form = document.getElementById('country-form');
   const options = document.getElementById('country-options');
   const chart = document.getElementById('chart');
