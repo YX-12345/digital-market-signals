@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 282" role="img" aria-labelledby="title desc">
+<title id="title">Internet use and fixed broadband subscriptions, 2024</title>
+<desc id="desc">Forty-nine economies with both observations. Malaysia has higher internet use than Brazil, while Brazil has more fixed subscriptions per 100 people.</desc>
+<rect width="420" height="282" fill="#fffefa"/>
+<g font-family="system-ui, sans-serif" font-size="13" fill="#465866">
+<text x="48" y="20">Fixed subscriptions per 100 people</text>
+<path d="M 48 222 h 352" stroke="#e0e6e0"/>
+<text x="39" y="226" text-anchor="end">0</text>
+<path d="M 48 175.5 h 352" stroke="#e0e6e0"/>
+<text x="39" y="179.5" text-anchor="end">10</text>
+<path d="M 48 129 h 352" stroke="#e0e6e0"/>
+<text x="39" y="133" text-anchor="end">20</text>
+<path d="M 48 82.5 h 352" stroke="#e0e6e0"/>
+<text x="39" y="86.5" text-anchor="end">30</text>
+<path d="M 48 36 h 352" stroke="#e0e6e0"/>
+<text x="39" y="40" text-anchor="end">40</text>
+<path d="M 48 36 v 186" stroke="#e0e6e0"/>
+<text x="48" y="243" text-anchor="middle">0</text>
+<path d="M 136 36 v 186" stroke="#e0e6e0"/>
+<text x="136" y="243" text-anchor="middle">25</text>
+<path d="M 224 36 v 186" stroke="#e0e6e0"/>
+<text x="224" y="243" text-anchor="middle">50</text>
+<path d="M 312 36 v 186" stroke="#e0e6e0"/>
+<text x="312" y="243" text-anchor="middle">75</text>
+<path d="M 400 36 v 186" stroke="#e0e6e0"/>
+<text x="400" y="243" text-anchor="middle">100</text>
+<path d="M 48 36 v 186 h 352" stroke="#7f8d87" fill="none"/>
+<text x="224" y="267" text-anchor="middle">Individuals using the internet (% of population)</text>
+<circle cx="191.28" cy="220.31" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="167.62" cy="220.71" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="147.45" cy="218.04" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="236.04" cy="184.38" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="328.56" cy="165.87" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="369.30" cy="208.42" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="193.84" cy="214.55" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="117.25" cy="221.85" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="310.76" cy="167.65" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="125.23" cy="219.24" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="302.06" cy="218.91" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="222.22" cy="219.59" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="152.82" cy="220.20" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="254.35" cy="200.71" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="304.19" cy="199.11" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="276.60" cy="207.35" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="171.12" cy="207.85" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="371.94" cy="185.74" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="289.03" cy="202.72" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="362.83" cy="221.84" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="230.32" cy="220.24" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="369.02" cy="188.04" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="340.59" cy="120.92" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="120.26" cy="221.34" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="209.14" cy="217.60" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="114.74" cy="221.60" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="276.36" cy="208.82" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="102.76" cy="221.48" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="193.06" cy="221.63" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="264.11" cy="195.14" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="211.05" cy="175.19" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="249.53" cy="215.18" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="114.22" cy="220.92" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="159.60" cy="219.23" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="259.61" cy="203.22" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="256.09" cy="208.08" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="271.18" cy="210.34" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="92.45" cy="222.00" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="186.98" cy="215.42" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="367.85" cy="152.78" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="317.28" cy="152.37" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="157.69" cy="220.85" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="79.50" cy="221.03" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="363.06" cy="60.47" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="317.91" cy="161.81" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="108.20" cy="218.33" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="194.58" cy="212.99" r="3.1" fill="#98aeb0" stroke="#fffefa"/>
+<circle cx="345.31" cy="110.03" r="5" fill="#a44c2b" stroke="#fffefa"/>
+<text x="337.31" y="103.03" text-anchor="end" fill="#a44c2b" font-weight="700" paint-order="stroke" stroke="#fffefa" stroke-width="3">Brazil</text>
+<circle cx="393.03" cy="159.01" r="5" fill="#145c55" stroke="#fffefa"/>
+<text x="385.03" y="152.01" text-anchor="end" fill="#145c55" font-weight="700" paint-order="stroke" stroke="#fffefa" stroke-width="3">Malaysia</text>
+</g>
+</svg>
