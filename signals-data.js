@@ -19,16 +19,22 @@ window.DMS_SIGNALS = [
     "topic": "Export controls",
     "stage": "Rule in force",
     "status": "Interim final rule",
-    "headline": "U.S. advanced-chip controls add licensing risk for Southeast Asian projects",
-    "takeaway": "Separate a facility’s opening date from the delivery and lawful use of the accelerators the workload requires.",
+    "headline": "U.S. advanced-chip rule adds licensing requirements in five markets",
+    "takeaway": "Chip licensing can affect hardware supply even where a data center has already opened.",
     "summary": "The U.S. Bureau of Industry and Security (BIS) issued an interim final rule effective November 19, 2026. It adds destination-based license requirements for specified advanced chips and related items to or within Indonesia, Malaysia, Singapore, Thailand and Brazil.",
     "evidence": "The Federal Register text separates the destination-based controls from a distinct remote-access end-use control. Scope depends on the items, transaction and applicable authorizations. BIS released its announcement on November 16, ahead of the rule’s publication and effective date.",
-    "why": "For projects that depend on covered hardware, licensing and supplier commitments may affect procurement timing and the mix of services an operator can offer. A project team should verify whether those dependencies affect the actual workload and delivery schedule.",
-    "watch": "Official guidance, relevant authorizations, contractual delivery milestones and operators’ published accelerator availability.",
-    "limits": "The rule establishes legal requirements. It does not quantify realized delays, added costs, affected workloads or cancellations. This entry summarizes the policy at a market level.",
+    "why": "For a data center sourcing covered hardware, the need for a license can affect when equipment arrives. Whether a customer’s cloud service is affected depends on the service and the underlying transaction.",
+    "watch": "BIS implementation guidance and operator disclosures on whether specific hardware orders or service launches are affected.",
+    "limits": "The rule describes licensing requirements. The cited documents give no measured change in delivery times, prices, or available services.",
     "related": [
-      { "label": "Indonesia country case: commercial cloud and export controls", "url": "intelligence-brief.html#indonesia-case" },
-      { "label": "November digest: advanced-chip controls", "url": "digital-market-digest-2026-11.html#chip-controls" }
+      {
+        "label": "Indonesia country case: commercial cloud and export controls",
+        "url": "intelligence-brief.html#indonesia-case"
+      },
+      {
+        "label": "November digest: advanced-chip controls",
+        "url": "digital-market-digest-2026-11.html#chip-controls"
+      }
     ],
     "sources": [
       {
@@ -83,12 +89,12 @@ window.DMS_SIGNALS = [
     "stage": "Proposed",
     "status": "Letter of intent and later pact reported",
     "headline": "CtrlS’s Bihar data center plans leave the site and scope open",
-    "takeaway": "A 150 MW proposal signals investment intent. Clarify the site and whether disclosures refer to one project before counting future capacity.",
+    "takeaway": "Two disclosures describe proposals of the same scale and name different sites. The link between them is unresolved.",
     "summary": "An October CtrlS release described a letter of intent with the Bihar government for a proposed ₹100 billion (₹10,000 crore), 150 MW facility in Bodh Gaya. On November 20, Reuters reported a pact for a proposed facility with the same stated size and investment and identified Patna.",
     "evidence": "The October operator release is dated October 16 and datelined October 13. It separately reports the inauguration of an existing Patna data center with 12 MW of IT load. Reuters cited the operator’s November statement for the later pact and reported 2029–30 as an expected commercial opening.",
-    "why": "Tracking project identity helps avoid treating repeated announcements or differing locations as additive supply. For procurement, look for a confirmed site, grid connection and commissioning schedule before using a proposed project in delivery plans.",
-    "watch": "An operator or government document clarifying whether the proposed sites represent separate projects, plus permits, power commitments, financing and construction milestones.",
-    "limits": "The November statement or signed agreement was not available for direct inspection. The public sources differ on location. The ₹100 billion and 150 MW are proposal figures. The release and reporting do not establish construction, commissioned capacity or availability of AI accelerators for either proposed location.",
+    "why": "Counting the figures as separate additions could overstate expected supply if the disclosures describe the same investment. The existing 12 MW Patna site is a separate milestone from either proposed 150 MW facility.",
+    "watch": "A dated site list or agreement that identifies which projects each disclosure covers and clarifies whether scope or location changed.",
+    "limits": "The cited sources leave the relationship between the proposals open. The November pact and underlying operator statement were unavailable for direct inspection. The 150 MW figures are proposals.",
     "sources": [
       {
         "label": "CtrlS · Bihar letter of intent and Patna inauguration",
@@ -130,12 +136,12 @@ window.DMS_SIGNALS = [
     "stage": "Feasibility study funded",
     "status": "Facilities proposed",
     "headline": "USTDA funds feasibility work for two proposed data centers in Nigeria",
-    "takeaway": "Study funding moves a proposal toward due diligence. It creates a point to check power, demand and commercial viability before any build decision.",
+    "takeaway": "The grant funds an assessment of two sites. The capacity figures describe the scope of that study.",
     "summary": "In a September 23 release, the U.S. Trade and Development Agency (USTDA) said it signed an agreement with INFRAGORA to fund feasibility work for proposed AI-ready data centers in Lagos and Delta states.",
     "evidence": "A September 17 U.S. procurement notice identifies the AFRIDATA study and its deadline. USTDA’s published request for proposals describes 60–70 MW of combined capacity for assessment and possible expansion. The figures are part of the study scope.",
-    "why": "A feasibility study can test whether firm power, connectivity, a credible customer base and the financing model support the proposed build. This is an earlier milestone than financing or commissioning.",
-    "watch": "Completion and conclusions of the study, credible power and fiber plans, customer demand, financing and any formal decision to proceed.",
-    "limits": "The evidence covers a study agreement and procurement notice. It does not establish that the study has been completed, either facility has been financed, or any capacity is under construction or operating.",
+    "why": "The study brings technical and financial assessment into the public record. Its findings could help explain which sites and scale, if any, the sponsors pursue.",
+    "watch": "A study award or published findings, followed by a decision on whether to develop either site.",
+    "limits": "The cited documents cover study funding and procurement. They give no status on study completion or a commitment to build.",
     "sources": [
       {
         "label": "USTDA · Agreement and locations of proposed facilities",
@@ -170,15 +176,21 @@ window.DMS_SIGNALS = [
     "stage": "Operational",
     "status": "Generally available",
     "headline": "Azure makes Indonesia Central generally available",
-    "takeaway": "A local deployment option opens up, while workload owners still need to check the regional service catalog.",
-    "summary": "Microsoft said its first Indonesian cloud region was generally available on 15 April 2025 and selectable in the Azure portal. The region has three availability zones.",
+    "takeaway": "Customers gained an Indonesian deployment location in Azure. The announcement gives no account-level GPU availability.",
+    "summary": "Microsoft announced on April 15, 2025, that customers could select its first Indonesian cloud region, Indonesia Central, in the Azure portal. It reported three availability zones.",
     "evidence": "The April notice establishes the date of general availability. Microsoft’s May 27 launch-event release describes the public launch and is a separate milestone.",
-    "why": "In-country deployment creates an option for workloads that need local processing or seek lower network latency. Buyers still need to check the specific services and redundancy options available for their architecture.",
-    "watch": "Regional availability of the required managed services, accelerator types, and quotas, plus the location of backups and support access.",
-    "limits": "Provider disclosures establish the launch and listed zones. They give no comparable measure of available GPU capacity, observed latency, or customer uptake.",
+    "why": "A selectable region matters to organizations that want to host a service in Indonesia. Whether it supports their work depends on the regional service catalog and account-level access.",
+    "watch": "Regional listings for named GPU instances and evidence of what customers can reserve or use.",
+    "limits": "The operator announcements establish the reported availability date and zone count. They give no customer-level figures on GPU supply, prices, or usage.",
     "related": [
-      { "label": "Indonesia country case: from cloud availability to AI compute access", "url": "intelligence-brief.html#indonesia-case" },
-      { "label": "Indonesia country data and Tableau dashboard", "url": "data-explorer.html#indonesia-spotlight" }
+      {
+        "label": "Indonesia country case: from cloud availability to AI compute access",
+        "url": "intelligence-brief.html#indonesia-case"
+      },
+      {
+        "label": "Indonesia country data and Tableau dashboard",
+        "url": "data-explorer.html#indonesia-spotlight"
+      }
     ],
     "sources": [
       {
@@ -221,12 +233,12 @@ window.DMS_SIGNALS = [
     "stage": "Program launched",
     "status": "Program launched",
     "headline": "India launches a portal for subsidized AI compute",
-    "takeaway": "A shared access program offers a way to support users who cannot justify buying their own accelerators.",
+    "takeaway": "The portal gives eligible users a route to request subsidized computing time. The launch figures describe its proposed scale.",
     "summary": "India’s Ministry of Electronics and Information Technology launched the AI Compute Portal under the IndiaAI Mission as a way for startups, researchers and enterprises to obtain subsidized compute services.",
     "evidence": "The ministry said the portal would initially provide access to 10,000 GPUs, with another 8,693 planned. The figures describe the ministry’s stated rollout at launch.",
-    "why": "Pooling access could help smaller teams trial workloads before committing to hardware or long contracts. Program design determines which users benefit.",
-    "watch": "Eligibility, approval times, effective hourly cost, available GPU types and successful allocations to smaller teams.",
-    "limits": "The announcement gives initial and planned access figures. It does not supply an independently measured count of simultaneous GPU availability, actual utilization or geographic distribution.",
+    "why": "A subsidy can make it easier for users to afford computing time. Allocation rules and available slots determine how much access those users receive.",
+    "watch": "Allocations by user group, time from application to access, and the cost of a completed job.",
+    "limits": "The ministry described initial and planned access. Actual allocations, simultaneous availability, and utilization are unspecified in the release.",
     "sources": [
       {
         "label": "India Press Information Bureau · Portal launch",
@@ -250,12 +262,12 @@ window.DMS_SIGNALS = [
     "stage": "Operational",
     "status": "Generally available",
     "headline": "AWS opens a three-zone cloud region in Thailand",
-    "takeaway": "Multiple local zones create a deployment option for resilience, subject to service availability and application design.",
+    "takeaway": "AWS opened a region with three zones in Thailand, giving customers a local option for spreading an application across zones.",
     "summary": "AWS announced general availability of its Asia Pacific (Thailand) Region, with three availability zones and the identifier ap-southeast-7.",
     "evidence": "The AWS launch post identifies the region and zones. A separate AWS release describes a plan to invest more than US$5 billion in Thailand.",
-    "why": "A multi-zone region gives users a local option for distributing workloads across zones. Resilience still depends on how customers deploy applications and how they handle recovery outside the region.",
-    "watch": "Regional service coverage, disaster recovery options, workload pricing and evidence of investment execution.",
-    "limits": "The investment figure is a provider plan. The launch disclosure does not measure realized spending, utilization or the stock of AI accelerators.",
+    "why": "Running parts of an application in separate zones can limit the effect of an outage if the required services are available in multiple zones and the application is configured to switch between them.",
+    "watch": "Which services support deployments across local zones and what recovery options the provider documents.",
+    "limits": "AWS’s investment figure describes a plan. The launch material gives the region design and leaves actual investment, service reliability, and GPU supply unmeasured.",
     "sources": [
       {
         "label": "AWS News Blog · Thailand region launch",
@@ -285,12 +297,12 @@ window.DMS_SIGNALS = [
     "stage": "Operational",
     "status": "Region opened",
     "headline": "Google Cloud opens a region in Querétaro",
-    "takeaway": "A local Google Cloud region adds a hosting option for buyers evaluating where to process covered workloads.",
+    "takeaway": "Google’s Querétaro opening adds a hosting location in Mexico. Its end-user performance and available services require different evidence.",
     "summary": "Google Cloud announced the opening of its Querétaro region in December 2024. Its Mexico-facing announcement said the region was already operating.",
     "evidence": "The company’s global launch post identifies Querétaro and describes the launch. Google’s Spanish-language announcement adds local context and confirms that the region was in operation when announced.",
-    "why": "The opening gives buyers another location to evaluate for local workloads. Procurement teams can compare the scope of services, portability, data handling and end-to-end costs across deployment options.",
-    "watch": "Which managed services and accelerator instances are actually listed, and how local hosting costs compare with other locations for a defined workload.",
-    "limits": "Both launch posts come from the same company. They establish the company-reported opening and provide no independent measurement of capacity, costs or use.",
+    "why": "Customers can evaluate hosting a service closer to some users. Whether network performance improves depends on where those users connect from and how traffic is routed.",
+    "watch": "Regional service listings and measured latency for users in different parts of Mexico.",
+    "limits": "Both launch notices come from Google. They establish the reported opening and give no independent measures of performance, capacity, or use.",
     "sources": [
       {
         "label": "Google Cloud · Querétaro region opening",
@@ -320,12 +332,12 @@ window.DMS_SIGNALS = [
     "stage": "Rule adopted",
     "status": "Rule adopted",
     "headline": "Brazil’s data regulator sets out cross-border transfer mechanisms",
-    "takeaway": "The choice of cloud region sits alongside a separate assessment of how personal data move across borders.",
+    "takeaway": "Brazil’s transfer framework matters when personal data crosses borders, including in some cloud backup or support arrangements.",
     "summary": "Brazil’s national data protection authority, ANPD, adopted Resolution 19/2024 on international transfers of personal data and approved standard contractual clauses.",
     "evidence": "Article 9 sets out the relationship between a legal basis and a valid transfer mechanism. The resolution lists several mechanisms, and its annex contains the regulator’s standard clauses.",
-    "why": "Buyers should map where personal data are stored and where they may be accessed before choosing a hosting arrangement. Backups and remote support can matter to that review.",
-    "watch": "ANPD guidance and decisions, sector-specific obligations, and whether cloud contracts reflect how data are routed and accessed.",
-    "limits": "This entry summarizes one legal instrument. Obligations depend on the particular processing arrangement and applicable rules. It offers no legal advice.",
+    "why": "The address of the primary cloud region tells only part of the story. Backup storage or remote support can involve other locations, depending on the service.",
+    "watch": "ANPD guidance and service documentation on where data are stored and from where support teams can access them.",
+    "limits": "This entry covers Resolution 19/2024. The relevant mechanism and any other obligations depend on the processing arrangement and applicable rules.",
     "sources": [
       {
         "label": "ANPD · Resolution 19/2024, Articles 9 and 16 and Annex II (Portuguese)",
@@ -349,12 +361,12 @@ window.DMS_SIGNALS = [
     "stage": "Operational",
     "status": "Generally available",
     "headline": "AWS makes its Malaysia region generally available",
-    "takeaway": "A local cloud launch creates an option to test service fit for Malaysian workloads, including recovery requirements.",
+    "takeaway": "AWS’s region opening establishes local availability. The investment projection describes a longer-term spending plan.",
     "summary": "AWS announced that its Asia Pacific (Malaysia) Region was generally available with three availability zones and the identifier ap-southeast-5.",
     "evidence": "AWS’s launch documentation gives the region code and zone count and describes the zone design. The AWS press release separately describes projected investment through 2038.",
-    "why": "Organizations can evaluate whether a local region meets their latency, data location and continuity needs. The useful unit for procurement is the actual workload and the services it requires.",
-    "watch": "Coverage of managed services and accelerators, cost of replication, and whether local demand supports a broader service catalog.",
-    "limits": "These are company disclosures. Zone counts describe region architecture and do not provide a measure of available GPUs, prices or market share.",
+    "why": "The opening and the spending estimate answer different questions about market presence and intended expansion. Only the opening is a reported operating milestone.",
+    "watch": "Dated investment or expansion milestones and changes to the regional service catalog.",
+    "limits": "These operator disclosures give the region and zone count. They leave realized spending and the scale of use unmeasured.",
     "sources": [
       {
         "label": "AWS News Blog · Malaysia region launch",
@@ -384,12 +396,12 @@ window.DMS_SIGNALS = [
     "stage": "Proposed",
     "status": "Delay reported",
     "headline": "Kenya’s proposed Olkaria cloud campus faces reported delays",
-    "takeaway": "The case shows why investment announcements and usable cloud capacity belong in different categories.",
+    "takeaway": "A later report raises questions about the proposed campus’s timeline and the payments discussed for its capacity.",
     "summary": "Microsoft and G42 announced a Kenyan digital investment initiative that included a proposed geothermal-powered data center campus in Olkaria to support a new Azure region for East Africa. Reuters relayed a subsequent report of delays in May 2026.",
     "evidence": "Microsoft’s original announcement described an initial US$1 billion for the wider package and tied its proposed operating timeline to definitive agreements. In May 2026 Reuters relayed Bloomberg reporting on a delay linked to payment guarantees and noted it had not independently verified that reporting.",
-    "why": "A proposed facility can signal interest in a market. Decisions about planned service delivery depend on whether the facility is financed, commissioned and open to customers.",
-    "watch": "A participant’s confirmation of definitive agreements, revised scope or timeline, construction milestones, and eventual service availability.",
-    "limits": "The initial amount was for the wider package. The later delay is attributed secondary reporting, with no confirmed opening or cancellation in the sources cited here.",
+    "why": "If the reported payment issue is confirmed, it would help explain why an announced opening schedule depended on agreements that were still being negotiated.",
+    "watch": "A statement from the parties on payment commitments, agreement status, or a revised timetable.",
+    "limits": "The initial investment amount covered the wider package. The delay is attributed reporting. The cited sources establish neither an opening nor a cancellation.",
     "sources": [
       {
         "label": "Microsoft · Kenya digital investment announcement",

@@ -1,25 +1,25 @@
 Subject: Digital Market Digest — November 2026
 
 Digital Market Signals | 20 November 2026
-Track hardware availability, site commitments and operating readiness separately when evaluating AI infrastructure.
+Three developments illustrate different milestones. A rule changes licensing, a pact records an investment plan, and a grant funds a study.
 
 SOUTHEAST ASIA AND BRAZIL | ADVANCED-CHIP CONTROLS
-A U.S. interim final rule effective November 19 adds license requirements for specified advanced chips and related items to or within Indonesia, Malaysia, Singapore, Thailand and Brazil.
-Why it matters: For affected transactions, hardware delivery and compliance can shape a project schedule even where the facility itself is ready.
+A U.S. rule that took effect November 19 added licensing requirements for specified advanced computing items sent to or transferred within Indonesia, Malaysia, Singapore, Thailand, and Brazil.
+Why it matters: The requirements can affect when covered equipment reaches a data center. An operating site and a licensed hardware transaction are distinct milestones.
 Research: https://yx-12345.github.io/digital-market-signals/signal.html?id=bis-advanced-ai-chip-controls-2026
 Federal Register: https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm
 Indonesia country case: https://yx-12345.github.io/digital-market-signals/intelligence-brief.html#indonesia-case
 
 INDIA | BIHAR DATA CENTER PROPOSALS
-CtrlS described a proposed 150 MW facility in Bodh Gaya in October. On November 20 Reuters identified Patna in reporting a later pact for the same stated scale.
-Why it matters: Resolve the site and project identity before counting these proposals in a regional supply pipeline.
+CtrlS’s October release named Bodh Gaya for a 150 MW proposal. On November 20, Reuters reported a pact of the same stated scale and named Patna.
+Why it matters: The disclosures leave the relationship between the proposals unresolved. Counting both as new capacity would assume they are separate.
 Research: https://yx-12345.github.io/digital-market-signals/signal.html?id=india-ctrls-bihar-data-center
 CtrlS: https://www.ctrls.com/press-release-ctrls-plan-to-invest-rs-10000-crore-bihar-patna-datacenter/
 Reuters: https://www.reuters.com/world/india/indias-ctrls-invest-over-1-billion-build-data-centre-bihar-2026-11-20/
 
 NIGERIA | FEASIBILITY FUNDING
-USTDA announced an agreement to fund feasibility work for two proposed facilities in Lagos and Delta states.
-Why it matters: The study offers a point to assess power, demand and financing before assuming a build will proceed.
+The U.S. Trade and Development Agency announced a grant for feasibility work on proposed data centers in Lagos and Delta states.
+Why it matters: The study brings technical and financial assessment into the public record. A decision on which sites to develop would be a later milestone.
 Research: https://yx-12345.github.io/digital-market-signals/signal.html?id=nigeria-ustda-afridata-feasibility-2026
 USTDA: https://ustda.gov/ustda-backs-ai-ready-data-center-development-in-nigeria/
 

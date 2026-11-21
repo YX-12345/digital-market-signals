@@ -6,7 +6,7 @@ An independent research portfolio by Phoebe Wang on AI infrastructure and cloud 
 | --- | --- |
 | Home | Research question, three current developments and featured products |
 | Market Signals | Searchable evidence records with stable `signal.html?id=<record-id>` links |
-| Intelligence Brief | Build or Buy? A comparison of commercial cloud, shared compute and local infrastructure |
+| Intelligence Brief | Beyond the Announcement: What Makes AI Compute Accessible? Evidence from cloud launches, shared compute programs, and infrastructure proposals |
 | Dashboard | Interactive Tableau charts, WDI findings and [data downloads](data-explorer.html) |
 
 The November 2026 digest is available as [HTML](digital-market-digest-2026-11.html) and [email-ready text](digital-market-digest-2026-11.txt). See the [research workflow](methodology.html) and [owner review checklist](docs/owner-review.md). The [Indonesia country case](intelligence-brief.html#indonesia-case) connects the brief, market records and WDI data.
