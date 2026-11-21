@@ -2,7 +2,7 @@
 
 Use [Tableau Public web authoring](https://public.tableau.com/) in the portfolio owner's account. Connect [wdi_tableau.csv](../data/processed/wdi_tableau.csv) and create an extract. Set country, ISO3, region and income group to dimensions. Set year to a whole-number dimension and the indicators to decimal measures. The input contains one row per economy and reference year.
 
-This document is a build and verification guide. The workbook, public URL and embed will be recorded here when tested.
+The [published workbook](https://public.tableau.com/app/profile/yu1607/viz/DigitalInfrastructureinEmergingEconomies/Dashboard1) is embedded on the [Dashboard page](https://yx-12345.github.io/digital-market-signals/data-explorer.html). It shows internet-use trends, the 2024 fixed-broadband comparison, and a 2024 scatterplot. The remaining instructions describe the build and optional controls.
 
 ## Worksheets
 

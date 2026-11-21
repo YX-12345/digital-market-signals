@@ -145,6 +145,7 @@ td { text-align: right; font-variant-numeric: tabular-nums; }
 .project-note { font-size: .9rem; }
 .action-links { display: flex; flex-wrap: wrap; gap: .5rem; }
 .action-links .button { margin-top: 0; }
-.availability { padding: .75rem 1rem; border-inline-start: 3px solid #b4ccea; background: var(--light); }
+.tableau-section { padding-top: .5rem; }
+.tableau-frame { display: block; width: 100%; border: 1px solid var(--line); border-radius: .4rem; }
 .archive > summary { cursor: pointer; color: var(--link); font-weight: 650; }
 .archive[open] > summary { margin-bottom: .75rem; }

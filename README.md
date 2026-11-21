@@ -7,7 +7,7 @@ An independent research portfolio by Phoebe Wang on AI infrastructure and cloud 
 | Home | Research question, three current developments and featured products |
 | Market Signals | Searchable evidence records with stable `signal.html?id=<record-id>` links |
 | Intelligence Brief | Build or Buy? A comparison of commercial cloud, shared compute and local infrastructure |
-| Dashboard | WDI findings and data files at `data-explorer.html` |
+| Dashboard | Interactive Tableau charts, WDI findings and [data downloads](data-explorer.html) |
 
 The November 2026 digest is available as [HTML](digital-market-digest-2026-11.html) and [email-ready text](digital-market-digest-2026-11.txt). The [research workflow and review checklist](methodology.html) remain at their original URL.
 
@@ -21,7 +21,7 @@ Run `python3 scripts/prepare_wdi.py` with Python 3.10 or later. The script retri
 - [Data dictionary, definitions, scope and validation](docs/wdi-data.md)
 - [Tableau Public build and verification guide](docs/tableau-authoring.md)
 
-The data and findings are published. Tableau Public workbook authoring and publication require a signed-in owner account. The original seven-economy connectivity chart is available under an archive disclosure on the Dashboard page.
+The published [Tableau Public workbook](https://public.tableau.com/app/profile/yu1607/viz/DigitalInfrastructureinEmergingEconomies/Dashboard1) is embedded on the [Dashboard page](data-explorer.html), which also includes the earlier seven-economy connectivity chart in the archive.
 
 ## Maintain Market Signals
 
@@ -30,11 +30,3 @@ The data and findings are published. Tableau Public workbook authoring and publi
 3. Add source objects with label, type, URL and date when documented. For substantive updates, append a chronological `history` item referencing its zero-based source index. Update the stage only when the evidence supports it. Preserve conflicts, uncertainties and follow-up questions.
 4. Check related prose in Home, the brief, the dashboard and both digest formats. Revisit the research question when a detail changes. Update the browser asset query versions for changed JavaScript or CSS.
 5. Preview from the root with `python3 -m http.server 8000`. After GitHub Pages publishes from `main`, check the four main routes, brief direct link, ten record links, filters, reset, document downloads and responsive layout.
-
-## AI assistance and independent review
-
-AI assisted with discovery, organizing evidence, drafting, Python data preparation and validation, HTML/JavaScript development, and QA. Source checks and independent API spot checks are documented. Independent human review is pending.
-
-For a human review, select the claims and observations to check. Open original evidence and confirm the dates, scope, units, and milestone. Re-fetch sample country-year values, including nulls. Record the reviewer, date, evidence and decision. Update any changed claims across all products before adding a human-review label.
-
-WDI measures national infrastructure context. Service availability and facility readiness require deal- or workload-level evidence. The portfolio is independent and its views do not represent the World Bank Group or the cited organizations.
