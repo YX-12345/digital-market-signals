@@ -9,7 +9,7 @@ An independent research portfolio by Phoebe Wang on AI infrastructure and cloud 
 | Intelligence Brief | Build or Buy? A comparison of commercial cloud, shared compute and local infrastructure |
 | Dashboard | Interactive Tableau charts, WDI findings and [data downloads](data-explorer.html) |
 
-The November 2026 digest is available as [HTML](digital-market-digest-2026-11.html) and [email-ready text](digital-market-digest-2026-11.txt). The [research workflow and review checklist](methodology.html) remain at their original URL.
+The November 2026 digest is available as [HTML](digital-market-digest-2026-11.html) and [email-ready text](digital-market-digest-2026-11.txt). See the [research workflow](methodology.html) and [owner review checklist](docs/owner-review.md). The [Indonesia country case](intelligence-brief.html#indonesia-case) connects the brief, market records and WDI data.
 
 ## Reproduce the WDI dataset
 

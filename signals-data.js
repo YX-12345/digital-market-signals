@@ -26,6 +26,10 @@ window.DMS_SIGNALS = [
     "why": "For projects that depend on covered hardware, licensing and supplier commitments may affect procurement timing and the mix of services an operator can offer. A project team should verify whether those dependencies affect the actual workload and delivery schedule.",
     "watch": "Official guidance, relevant authorizations, contractual delivery milestones and operators’ published accelerator availability.",
     "limits": "The rule establishes legal requirements. It does not quantify realized delays, added costs, affected workloads or cancellations. This entry summarizes the policy at a market level.",
+    "related": [
+      { "label": "Indonesia country case: commercial cloud and export controls", "url": "intelligence-brief.html#indonesia-case" },
+      { "label": "November digest: advanced-chip controls", "url": "digital-market-digest-2026-11.html#chip-controls" }
+    ],
     "sources": [
       {
         "label": "Federal Register · Addressing Remote Access to Advanced Semiconductors",
@@ -172,6 +176,10 @@ window.DMS_SIGNALS = [
     "why": "In-country deployment creates an option for workloads that need local processing or seek lower network latency. Buyers still need to check the specific services and redundancy options available for their architecture.",
     "watch": "Regional availability of the required managed services, accelerator types, and quotas, plus the location of backups and support access.",
     "limits": "Provider disclosures establish the launch and listed zones. They give no comparable measure of available GPU capacity, observed latency, or customer uptake.",
+    "related": [
+      { "label": "Indonesia country case: from cloud availability to AI compute access", "url": "intelligence-brief.html#indonesia-case" },
+      { "label": "Indonesia country data and Tableau dashboard", "url": "data-explorer.html#indonesia-spotlight" }
+    ],
     "sources": [
       {
         "label": "Microsoft Indonesia · General availability",

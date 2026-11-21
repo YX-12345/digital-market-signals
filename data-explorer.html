@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Compare connectivity, broadband and electricity trends in 77 low- and middle-income economies using World Development Indicators.">
   <title>Digital Infrastructure Dashboard | Digital Market Signals</title>
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
   <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/data-explorer.html">
   <script defer src="explorer.js?v=3"></script>
 </head>
@@ -31,7 +31,7 @@
 
     <section class="section tableau-section" aria-labelledby="tableau-title">
       <h2 id="tableau-title">Interactive Tableau dashboard</h2>
-      <p>Filter the internet-use trend by country and the 2024 fixed broadband comparison by region or income group. Hover or tap a mark for details.</p>
+      <p>Use <strong>Country</strong> to filter the internet-use trend, or <strong>Region</strong> and <strong>Income Group</strong> to filter the 2024 fixed broadband comparison. Hover or tap a mark for details.</p>
       <p><a href="https://public.tableau.com/app/profile/yu1607/viz/DigitalInfrastructureinEmergingEconomies/Dashboard1">Open the dashboard on Tableau Public</a></p>
       <iframe class="tableau-frame" src="https://public.tableau.com/views/DigitalInfrastructureinEmergingEconomies/Dashboard1?:embed=y&amp;:showVizHome=n&amp;:tabs=n" title="Interactive Tableau dashboard: Digital Infrastructure in Emerging Economies" width="1100" height="1377" allowfullscreen></iframe>
     </section>
@@ -39,11 +39,38 @@
     <section class="section" aria-labelledby="wdi-findings">
       <h2 id="wdi-findings">Three findings from the WDI data</h2>
       <ol class="findings">
-        <li><strong>Internet use rose across the matched sample.</strong> All 67 economies with observations in both 2015 and 2024 recorded increases. The median increase was 26.5 percentage points. Ten economies are outside that comparison because an endpoint is missing.</li>
-        <li><strong>High internet use can accompany different fixed-broadband rates.</strong> In 2024, Malaysia recorded 98.0% internet use and 13.5 fixed subscriptions per 100 people. Brazil recorded 84.5% internet use and 24.1 fixed subscriptions per 100. Investigate the access mix and local service quality before planning delivery.</li>
-        <li><strong>Electricity access improved at different rates in two project markets.</strong> From 2015 to 2024, access increased from 41.6% to 77.0% in Kenya and from 52.5% to 62.5% in Nigeria. National access helps frame local inquiries about firm power, connection timelines and backup at proposed sites.</li>
+        <li><strong>Update assumptions about who a digital service can reach.</strong> Internet use increased in all 67 economies with observations in both 2015 and 2024, with a median gain of 26.5 percentage points. Ten economies lack an endpoint. For a rollout, check current access and affordability among intended users, since these national changes can hide local gaps.</li>
+        <li><strong>Internet use and fixed subscriptions answer different questions.</strong> In 2024, Malaysia had higher internet use than Brazil (98.0% versus 84.5%) but fewer fixed subscriptions per 100 people (13.5 versus 24.1). For a bandwidth-sensitive service, check how target users connect and test speeds and reliability on those connections. The national figures cannot identify the share of users on mobile or fixed networks.</li>
+        <li><strong>Electrification provides context for site-level power checks.</strong> From 2015 to 2024, electricity access rose from 41.6% to 77.0% in Kenya and from 52.5% to 62.5% in Nigeria. To evaluate a facility, request evidence on firm power, connection lead times, outages and backup. National access rates cannot establish site-level power or compute availability.</li>
       </ol>
       <p class="metadata">Source: World Development Indicators, retrieved 20 November 2026. Changes are descriptive, and the cross-country comparisons use the stated reference year.</p>
+    </section>
+
+    <section class="section compact" id="indonesia-spotlight" aria-labelledby="indonesia-spotlight-title">
+      <h2 id="indonesia-spotlight-title">Country Spotlight: Indonesia</h2>
+      <table class="spotlight-table">
+        <caption class="metadata">Indonesia · World Development Indicators, rounded to one decimal</caption>
+        <thead><tr><th scope="col">Indicator</th><th scope="col">2015</th><th scope="col">2024</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">People using the internet (% of population)</th><td>22.1</td><td>72.8</td></tr>
+          <tr><th scope="row">Fixed broadband subscriptions per 100 people</th><td>1.5</td><td>4.9</td></tr>
+          <tr><th scope="row">Access to electricity (% of population)</th><td>97.5</td><td>99.9</td></tr>
+        </tbody>
+      </table>
+      <p>Internet use indicates how widely people go online. Fixed broadband counts subscriptions, including those held by organizations, while electricity access measures population coverage. Each can inform questions about service delivery. GPU supply and site reliability require separate evidence.</p>
+      <p>In the <a href="#tableau-title">Tableau trend chart</a>, open <strong>Country</strong> and select Indonesia. To isolate its line, clear the other selected countries.</p>
+      <p><a href="intelligence-brief.html#indonesia-case">Read the Indonesia country case</a></p>
+    </section>
+
+    <section class="section compact" aria-labelledby="market-context">
+      <h2 id="market-context">From Infrastructure Data to Market Intelligence</h2>
+      <p>Country data describe the conditions for reaching users. Procurement decisions also need project evidence on available cloud services, compute allocations, financing, hardware and commissioning.</p>
+      <ul>
+        <li>Compare connectivity context with the published milestone for <a href="signal.html?id=indonesia-azure-region">Microsoft Azure in Indonesia</a>. Check regional services and quotas for the intended workload.</li>
+        <li>Use electricity access to frame power questions for the <a href="signal.html?id=nigeria-ustda-afridata-feasibility-2026">proposed Nigeria data centers</a> and <a href="signal.html?id=india-ctrls-bihar-data-center">Bihar proposals</a>. Confirm firm power, financing and commissioning separately.</li>
+        <li>For <a href="signal.html?id=india-ai-compute-portal">India’s shared compute program</a>, examine eligibility, allocations and usage to assess who can obtain usable compute.</li>
+      </ul>
+      <p><a href="https://yx-12345.github.io/digital-market-signals/intelligence-brief.html">Read the Build or Buy? intelligence brief</a></p>
     </section>
 
     <section class="section compact" aria-labelledby="data-heading">
@@ -57,7 +84,7 @@
         <dt><a href="https://databank.worldbank.org/metadataglossary/world-development-indicators/series/EG.ELC.ACCS.ZS">Electricity access · EG.ELC.ACCS.ZS</a></dt>
         <dd>Percent of the population with access to electricity.</dd>
       </dl>
-      <p>Blank values stay blank. The long file contains 2,164 reported observations and 146 missing cells. In 2024, 49 economies had both internet-use and fixed-broadband data. The 2025 probe returned one internet-use value, with zero observations for the other two series. The 2026 probe returned no observations for the sample.</p>
+      <p>The 2024 scatterplot includes the 49 economies with both internet-use and fixed-broadband observations. Missing values are kept blank in the CSV files.</p>
       <ul class="source-list">
         <li><a href="data/processed/wdi_tableau.csv" download>Download Tableau-ready wide CSV</a></li>
         <li><a href="data/processed/wdi_long.csv" download>Download long-format CSV</a></li>
@@ -65,17 +92,6 @@
         <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/docs/wdi-data.md">Data dictionary, inclusion rules and validation</a></li>
         <li><a href="https://github.com/YX-12345/digital-market-signals/blob/main/scripts/prepare_wdi.py">Python processing script</a></li>
       </ul>
-    </section>
-
-    <section class="section compact" aria-labelledby="market-context">
-      <h2 id="market-context">From Infrastructure Data to Market Intelligence</h2>
-      <p>Country data describe the conditions for reaching users. Procurement decisions also need project evidence on available cloud services, compute allocations, financing, hardware and commissioning.</p>
-      <ul>
-        <li>Compare connectivity context with the published milestone for <a href="signal.html?id=indonesia-azure-region">Microsoft Azure in Indonesia</a>. Check regional services and quotas for the intended workload.</li>
-        <li>Use electricity access to frame power questions for the <a href="signal.html?id=nigeria-ustda-afridata-feasibility-2026">proposed Nigeria data centers</a> and <a href="signal.html?id=india-ctrls-bihar-data-center">Bihar proposals</a>. Confirm firm power, financing and commissioning separately.</li>
-        <li>For <a href="signal.html?id=india-ai-compute-portal">India’s shared compute program</a>, examine eligibility, allocations and usage to assess who can obtain usable compute.</li>
-      </ul>
-      <p><a href="https://yx-12345.github.io/digital-market-signals/intelligence-brief.html">Read the Build or Buy? intelligence brief</a></p>
     </section>
 
     <details class="section archive">

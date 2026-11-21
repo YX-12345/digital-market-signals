@@ -8,6 +8,7 @@ A U.S. interim final rule effective November 19 adds license requirements for sp
 Why it matters: For affected transactions, hardware delivery and compliance can shape a project schedule even where the facility itself is ready.
 Research: https://yx-12345.github.io/digital-market-signals/signal.html?id=bis-advanced-ai-chip-controls-2026
 Federal Register: https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm
+Indonesia country case: https://yx-12345.github.io/digital-market-signals/intelligence-brief.html#indonesia-case
 
 INDIA | BIHAR DATA CENTER PROPOSALS
 CtrlS described a proposed 150 MW facility in Bodh Gaya in October. On November 20 Reuters identified Patna in reporting a later pact for the same stated scale.

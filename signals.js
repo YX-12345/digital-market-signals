@@ -147,6 +147,16 @@
       sources.append(item);
     });
     article.append(element('h2', 'Sources'), sources);
+
+    if (record.related?.length) {
+      const related = element('ul', '', 'source-list');
+      record.related.forEach(({ label, url }) => {
+        const item = element('li', '');
+        item.append(link(label, url));
+        related.append(item);
+      });
+      article.append(element('h2', 'Related analysis'), related);
+    }
   }
 
   const library = byId('library-form');
