@@ -6,7 +6,7 @@ An independent research portfolio by Phoebe Wang on AI infrastructure and cloud 
 | --- | --- |
 | Home | Featured research and a guide to the portfolio |
 | Research | [When Does Reserved AI Compute Pay Off?](research.html), an IndiaAI pricing article and interactive scenario explorer |
-| Market Monitor | Searchable evidence records with stable `signal.html?id=<record-id>` links |
+| Market Monitor | [Featured updates, research questions and searchable evidence](market-signals.html) with stable `signal.html?id=<record-id>` links |
 | Data Lab | Interactive Tableau charts, WDI findings and [data downloads](data-explorer.html) |
 | Methods & Sources | [Research workflow](methodology.html) and [owner review checklist](docs/owner-review.md) |
 
@@ -28,10 +28,12 @@ Run `python3 scripts/prepare_wdi.py` with Python 3.10 or later. The script retri
 
 The published [Tableau Public workbook](https://public.tableau.com/app/profile/yu1607/viz/DigitalInfrastructureinEmergingEconomies/Dashboard1) is embedded on the [Dashboard page](data-explorer.html), which also includes the earlier seven-economy connectivity chart in the archive.
 
-## Maintain Market Signals
+## Maintain Market Monitor
+
+The [record-by-record source audit](docs/market-monitor-source-audit.md) documents the November 21, 2026 review and open verification questions.
 
 1. Check primary operator, government or regulator material. If a milestone comes from later reporting, keep the attribution and link to that reporting separately. Identify operational, proposed, funded study, program launch and regulatory milestones by the evidence available.
-2. Edit `signals-data.js`. Keep `id` stable. Store the lead publication date in `date`, the last source-check date in `reviewed`, and add countries, regions, topic, stage and qualifying status. Use YYYY-MM-DD.
-3. Add source objects with label, type, URL and date when documented. For substantive updates, append a chronological `history` item referencing its zero-based source index. Update the stage only when the evidence supports it. Preserve conflicts, uncertainties and follow-up questions.
+2. Edit `signals-data.js`. Keep `id` and the original source publication `date` stable. Store the last source check in `reviewed`, a dated event or announcement in `milestone`, and the last documented substantive change in `lastUpdate` when applicable. Use YYYY-MM-DD. Set countries, regions, topic, stage type, stage and qualifying status.
+3. Add source objects with publisher, label, type, URL and date when documented. Append chronological `history` items referencing their zero-based source indexes. Update the stage only when the evidence supports it. Preserve conflicts, uncertainties and follow-up questions.
 4. Check related prose in Home, the brief, the dashboard and both digest formats. Revisit the research question when a detail changes. Update the browser asset query versions for changed JavaScript or CSS.
-5. Preview from the root with `python3 -m http.server 8000`. After GitHub Pages publishes from `main`, check the four main routes, brief direct link, ten record links, filters, reset, document downloads and responsive layout.
+5. Keep the no-JavaScript source index in `market-signals.html` aligned with the original source of each record. Preview from the repository root over HTTP and check record links, milestone and other filters, publication-date sorting, histories and mobile layout.

@@ -10,12 +10,13 @@ Research: https://yx-12345.github.io/digital-market-signals/signal.html?id=bis-a
 Federal Register: https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm
 Indonesia country case: https://yx-12345.github.io/digital-market-signals/intelligence-brief.html#indonesia-case
 
-INDIA | BIHAR DATA CENTER PROPOSALS
+INDIA | BIHAR DATA CENTER PROPOSAL
 CtrlS’s October release named Bodh Gaya for a 150 MW proposal. On November 20, Reuters reported a pact of the same stated scale and named Patna.
-Why it matters: The disclosures leave the relationship between the proposals unresolved. Counting both as new capacity would assume they are separate.
+Source correction, November 21, 2026. CtrlS’s November 20 release links the agreement to the October letter of intent and identifies the Patna area as the preferred location. Counting the two announcements separately would double-count one proposal. The final site remains open.
 Research: https://yx-12345.github.io/digital-market-signals/signal.html?id=india-ctrls-bihar-data-center
-CtrlS: https://www.ctrls.com/press-release-ctrls-plan-to-invest-rs-10000-crore-bihar-patna-datacenter/
-Reuters: https://www.reuters.com/world/india/indias-ctrls-invest-over-1-billion-build-data-centre-bihar-2026-11-20/
+October CtrlS release: https://www.ctrls.com/press-release-ctrls-plan-to-invest-rs-10000-crore-bihar-patna-datacenter/
+November CtrlS release: https://www.ctrls.com/press-release-ctrls-signs-mou-bihar-150-mw-ai-datacenter/
+Syndicated Reuters report: https://sa.marketscreener.com/news/india-s-ctrls-to-invest-over-1-billion-to-build-data-centre-in-bihar-ce785ed3d88aff23
 
 NIGERIA | FEASIBILITY FUNDING
 The U.S. Trade and Development Agency announced a grant for feasibility work on proposed data centers in Lagos and Delta states.
