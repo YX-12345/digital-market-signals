@@ -7,6 +7,11 @@
   const normalize = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase();
   const tierLabels = { featured: 'Featured', current: 'Current coverage', reference: 'Reference' };
 
+  function materialDate(record) {
+    const milestone = record.milestone.date;
+    return record.lastUpdate && record.lastUpdate > milestone ? record.lastUpdate : milestone;
+  }
+
   function element(tag, text = '', className) {
     const node = document.createElement(tag);
     node.textContent = text;
@@ -54,10 +59,10 @@
     context.append(element('strong', tierLabels[record.editorialTier]), ' · ', describe(record));
     const dates = element('p', '', 'caption record-dates');
     const labels = [
-      ['Original source', record.date], [record.milestone.label, record.milestone.date],
-      ['Last reviewed', record.reviewed]
+      ['Latest material development', materialDate(record)],
+      ['Original publication', record.date],
+      ['Last source review', record.reviewed]
     ];
-    if (record.lastUpdate) labels.splice(2, 0, ['Last substantive update', record.lastUpdate]);
     labels.forEach(([label, date]) => {
       const part = element('span', label + ' ');
       part.append(time(date));
@@ -111,7 +116,12 @@
       ).map(({ record }) => record);
 
       const direction = sort.value === 'oldest' ? 1 : -1;
-      matching.sort((a, b) => direction * a.date.localeCompare(b.date) || a.headline.localeCompare(b.headline));
+      matching.sort((a, b) => {
+        const primary = sort.value === 'material'
+          ? materialDate(b).localeCompare(materialDate(a))
+          : 0;
+        return primary || direction * a.date.localeCompare(b.date) || a.headline.localeCompare(b.headline);
+      });
       count.textContent = matching.length + ' of ' + records.length + ' records';
       results.replaceChildren(...matching.map(card));
       if (!matching.length) results.append(element('p', 'No records match. Try another keyword or reset the filters.'));
@@ -137,11 +147,13 @@
     const facts = element('dl', '', 'evidence-facts');
     const entries = [
       ['Milestone', status(record)],
-      [record.milestone.label === record.stage ? 'Milestone date' : record.milestone.label, time(record.milestone.date)],
-      ['Original source date', time(record.date)],
-      ['Last reviewed', time(record.reviewed)]
+      ['Latest material development', time(materialDate(record))],
+      ['Original publication date', time(record.date)],
+      ['Last source review', time(record.reviewed)]
     ];
-    if (record.lastUpdate) entries.splice(3, 0, ['Last substantive update', time(record.lastUpdate)]);
+    if (record.milestone.date !== materialDate(record) && record.milestone.date !== record.date) {
+      entries.splice(1, 0, [record.milestone.label, time(record.milestone.date)]);
+    }
     entries.forEach(([label, value]) => {
       const group = element('div');
       const detail = element('dd');

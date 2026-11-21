@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="styles.css?v=6">
   <link rel="canonical" href="https://yx-12345.github.io/digital-market-signals/market-signals.html">
   <script defer src="signals-data.js?v=7"></script>
-  <script defer src="signals.js?v=5"></script>
+  <script defer src="signals.js?v=6"></script>
   <link rel="stylesheet" href="publication.css?v=2">
-  <link rel="stylesheet" href="market-monitor.css?v=1">
+  <link rel="stylesheet" href="market-monitor.css?v=2">
 </head>
-<body class="publication">
+<body class="publication monitor-page">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header publication-header">
     <div class="wrap header-inner">
@@ -72,14 +72,26 @@
         <h2 id="questions-title">Questions We’re Tracking</h2>
       </header>
       <div class="monitor-grid tracking-grid">
-        <article class="tracking-question">
+        <article class="tracking-question cloud-comparison" id="cloud-availability">
           <h3>When can customers use a new cloud region for specific AI workloads?</h3>
-          <p>Compare dated availability notices with regional product listings and instance catalogs.</p>
-          <ul class="tracking-links" aria-label="Cloud availability records">
-            <li><a href="signal.html?id=chile-aws-region-early-access-2026">AWS Chile</a></li>
-            <li><a href="signal.html?id=brazil-alibaba-cloud-region-launch-2026">Alibaba Cloud Brazil</a></li>
-            <li><a href="signal.html?id=indonesia-azure-region">Azure Indonesia</a></li>
-          </ul>
+          <p>These announcements document different stages of regional availability. Each AI workload still needs a service or instance check in the region where it would run.</p>
+          <dl class="cloud-cases">
+            <div>
+              <dt><a href="signal.html?id=chile-aws-region-early-access-2026">AWS Chile</a></dt>
+              <dd><strong>Limited early access.</strong> AWS reported access for selected customers on <a href="https://www.aboutamazon.com/news/aws/aws-south-america-chile-region-launch">November 11, 2026</a>.</dd>
+              <dd><strong>Evidence needed.</strong> A general availability notice and regional listings for Bedrock and SageMaker AI.</dd>
+            </div>
+            <div>
+              <dt><a href="signal.html?id=brazil-alibaba-cloud-region-launch-2026">Alibaba Cloud Brazil</a></dt>
+              <dd><strong>Core cloud services launched.</strong> Alibaba Cloud listed core services and described its agentic AI suite as planned on <a href="https://www.alibabacloud.com/en/press-room/alibaba-cloud-launch-first-cloud-region-in-brazil">August 27, 2026</a>.</dd>
+              <dd><strong>Evidence needed.</strong> A dated Brazil catalog for named AI products and accelerator instances.</dd>
+            </div>
+            <div>
+              <dt><a href="signal.html?id=indonesia-azure-region">Azure Indonesia</a></dt>
+              <dd><strong>General availability.</strong> Microsoft said customers could select Indonesia Central on <a href="https://news.microsoft.com/id-id/2025/04/15/general-availability-of-indonesia-central-cloud-region/">April 15, 2025</a>.</dd>
+              <dd><strong>Evidence needed.</strong> Regional GPU instance listings and the quotas available to customers.</dd>
+            </div>
+          </dl>
         </article>
         <article class="tracking-question">
           <h3>Which infrastructure proposals advance toward operating capacity?</h3>
@@ -104,11 +116,11 @@
     <section class="monitor-section" id="evidence-library" aria-labelledby="evidence-library-title">
       <header class="monitor-section-head">
         <h2 id="evidence-library-title">Evidence Library</h2>
-        <p>Browse current developments and historical reference records. Sorting uses the original source date. Each record distinguishes that date from the milestone and the most recent review. <a href="methodology.html#maintenance">How records are maintained</a></p>
+        <p>By default, records are sorted by their latest documented milestone or substantive update. Original publication is a separate sort option. The last source review records when the evidence was checked. <a href="methodology.html#maintenance">How records are maintained</a></p>
       </header>
       <form class="filters panel monitor-filters" id="library-form" aria-label="Filter the Evidence Library" hidden>
         <label class="search">Keyword search
-          <input id="keyword" type="search" placeholder="e.g. GPUs, Querétaro, data transfers">
+          <input id="keyword" type="search" placeholder="e.g. GPUs, Querétaro">
         </label>
         <label>Topic
           <select id="topic"><option value="">All topics</option></select>
@@ -119,10 +131,11 @@
         <label>Milestone
           <select id="milestone"><option value="">All milestones</option></select>
         </label>
-        <label>Original source date
+        <label class="library-sort">Sort by
           <select id="sort">
-            <option value="newest">Newest first</option>
-            <option value="oldest">Oldest first</option>
+            <option value="material">Latest Material Development</option>
+            <option value="newest">Original Publication Date · newest</option>
+            <option value="oldest">Original Publication Date · oldest</option>
           </select>
         </label>
         <button type="reset">Reset filters</button>
@@ -132,18 +145,18 @@
       <div id="library-fallback" class="monitor-fallback">
         <p>Search and individual records require JavaScript. You can open the original source for each record below.</p>
         <ul class="source-list" id="original-sources">
-          <li><a href="https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm">U.S. advanced-chip rule adds licensing requirements in five markets</a> · Federal Register · <time datetime="2026-11-19">2026-11-19</time></li>
-          <li><a href="https://www.aboutamazon.com/news/aws/aws-south-america-chile-region-launch">AWS opens its Chile region to selected customers ahead of general availability</a> · About Amazon · <time datetime="2026-11-11">2026-11-11</time></li>
-          <li><a href="https://www.ctrls.com/press-release-ctrls-plan-to-invest-rs-10000-crore-bihar-patna-datacenter/">CtrlS advances Bihar’s proposed 150 MW AI data center from letter of intent to MoU</a> · CtrlS · <time datetime="2026-10-16">2026-10-16</time></li>
-          <li><a href="https://ustda.gov/ustda-backs-ai-ready-data-center-development-in-nigeria/">USTDA funds feasibility work for two proposed data centers in Nigeria</a> · USTDA · <time datetime="2026-09-23">2026-09-23</time></li>
-          <li><a href="https://www.alibabacloud.com/en/press-room/alibaba-cloud-launch-first-cloud-region-in-brazil">Alibaba Cloud launches a Brazil region with core services and plans further AI offerings</a> · Alibaba Cloud · <time datetime="2026-08-27">2026-08-27</time></li>
-          <li><a href="https://news.microsoft.com/id-id/2025/04/15/general-availability-of-indonesia-central-cloud-region/">Azure makes Indonesia Central generally available</a> · Microsoft Indonesia · <time datetime="2025-04-15">2025-04-15</time></li>
-          <li><a href="https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2108961&amp;lang=2&amp;reg=48">India launches a portal for subsidized AI compute</a> · India Press Information Bureau · <time datetime="2025-03-06">2025-03-06</time></li>
-          <li><a href="https://aws.amazon.com/blogs/aws/announcing-the-new-aws-asia-pacific-thailand-region/">AWS opens a three-zone cloud region in Thailand</a> · AWS News Blog · <time datetime="2025-01-07">2025-01-07</time></li>
-          <li><a href="https://cloud.google.com/blog/products/infrastructure/google-cloud-announces-41st-cloud-region-in-mexico">Google Cloud opens a region in Querétaro</a> · Google Cloud · <time datetime="2024-12-04">2024-12-04</time></li>
-          <li><a href="https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024">Brazil’s data regulator sets out cross-border transfer mechanisms</a> · ANPD · <time datetime="2024-08-23">2024-08-23</time></li>
-          <li><a href="https://aws.amazon.com/blogs/aws/now-open-aws-asia-pacific-malaysia-region/">AWS makes its Malaysia region generally available</a> · AWS News Blog · <time datetime="2024-08-21">2024-08-21</time></li>
-          <li><a href="https://news.microsoft.com/source/2024/05/22/microsoft-and-g42-announce-1-billion-comprehensive-digital-ecosystem-initiative-for-kenya/">Kenya’s proposed Olkaria cloud campus faces reported delays</a> · Microsoft · <time datetime="2024-05-22">2024-05-22</time></li>
+          <li>U.S. advanced-chip rule adds licensing requirements in five markets · <a href="https://www.govinfo.gov/content/pkg/FR-2026-11-19/html/2026-23529.htm">Federal Register · Addressing Remote Access to Advanced Semiconductors</a> · <time datetime="2026-11-19">2026-11-19</time></li>
+          <li>AWS opens its Chile region to selected customers ahead of general availability · <a href="https://www.aboutamazon.com/news/aws/aws-south-america-chile-region-launch">About Amazon · AWS South America (Chile) Region early access</a> · <time datetime="2026-11-11">2026-11-11</time></li>
+          <li>CtrlS advances Bihar’s proposed 150 MW AI data center from letter of intent to MoU · <a href="https://www.ctrls.com/press-release-ctrls-plan-to-invest-rs-10000-crore-bihar-patna-datacenter/">CtrlS · Bihar letter of intent and Patna inauguration</a> · <time datetime="2026-10-16">2026-10-16</time></li>
+          <li>USTDA funds feasibility work for two proposed data centers in Nigeria · <a href="https://ustda.gov/ustda-backs-ai-ready-data-center-development-in-nigeria/">USTDA · Agreement and locations of proposed facilities</a> · <time datetime="2026-09-23">2026-09-23</time></li>
+          <li>Alibaba Cloud launches a Brazil region with core services and plans further AI offerings · <a href="https://www.alibabacloud.com/en/press-room/alibaba-cloud-launch-first-cloud-region-in-brazil">Alibaba Cloud · First cloud region in Brazil</a> · <time datetime="2026-08-27">2026-08-27</time></li>
+          <li>Azure makes Indonesia Central generally available · <a href="https://news.microsoft.com/id-id/2025/04/15/general-availability-of-indonesia-central-cloud-region/">Microsoft Indonesia · General availability</a> · <time datetime="2025-04-15">2025-04-15</time></li>
+          <li>India launches a portal for subsidized AI compute · <a href="https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2108961&amp;lang=2&amp;reg=48">India Press Information Bureau · Portal launch</a> · <time datetime="2025-03-06">2025-03-06</time></li>
+          <li>AWS opens a three-zone cloud region in Thailand · <a href="https://aws.amazon.com/blogs/aws/announcing-the-new-aws-asia-pacific-thailand-region/">AWS News Blog · Thailand region launch</a> · <time datetime="2025-01-07">2025-01-07</time></li>
+          <li>Google Cloud opens a region in Querétaro · <a href="https://cloud.google.com/blog/products/infrastructure/google-cloud-announces-41st-cloud-region-in-mexico">Google Cloud · Querétaro region opening</a> · <time datetime="2024-12-04">2024-12-04</time></li>
+          <li>Brazil’s data regulator sets out cross-border transfer mechanisms · <a href="https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024">ANPD · Resolution 19/2024, Articles 9 and 16 and Annex II (Portuguese)</a> · <time datetime="2024-08-23">2024-08-23</time></li>
+          <li>AWS makes its Malaysia region generally available · <a href="https://aws.amazon.com/blogs/aws/now-open-aws-asia-pacific-malaysia-region/">AWS News Blog · Malaysia region launch</a> · <time datetime="2024-08-21">2024-08-21</time></li>
+          <li>Kenya’s proposed Olkaria cloud campus faces reported delays · <a href="https://news.microsoft.com/source/2024/05/22/microsoft-and-g42-announce-1-billion-comprehensive-digital-ecosystem-initiative-for-kenya/">Microsoft · Kenya digital investment announcement</a> · <time datetime="2024-05-22">2024-05-22</time></li>
         </ul>
       </div>
     </section>

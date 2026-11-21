@@ -17,8 +17,14 @@
 .tracking-question { border-left: 2px solid var(--rule); padding-inline-start: 1rem; }
 .tracking-links { display: flex; flex-wrap: wrap; gap: .3rem .9rem; margin: 0; padding: 0; list-style: none; font-size: .9rem; }
 .tracking-links a { text-underline-offset: .14em; }
+.tracking-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cloud-comparison { grid-column: 1 / -1; }
+.cloud-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85rem 1.25rem; margin: .95rem 0 0; }
+.cloud-cases > div { border-top: 1px solid var(--rule); padding-top: .65rem; }
+.cloud-cases dt { font-weight: 730; }
+.cloud-cases dd { margin: .25rem 0 0; }
 
-.monitor .monitor-filters { grid-template-columns: minmax(0, 1.35fr) repeat(4, minmax(0, 1fr)); background: var(--pale); border: 1px solid var(--rule); }
+.monitor .monitor-filters { grid-template-columns: minmax(0, 1.35fr) repeat(3, minmax(0, 1fr)) minmax(15rem, 1.45fr); background: var(--pale); border: 1px solid var(--rule); }
 .monitor-filters label { font-size: .9rem; }
 .monitor-filters select, .monitor-filters input { width: 100%; min-width: 0; background: var(--surface); color: var(--navy); }
 .monitor-filters button { justify-self: start; }
@@ -51,10 +57,17 @@
   .monitor .monitor-filters .search { grid-column: 1 / -1; }
 }
 @media (max-width: 48rem) {
-  .monitor-grid { grid-template-columns: 1fr; }
+  .monitor-grid, .cloud-cases { grid-template-columns: 1fr; }
   .tracking-question { padding-block: .3rem; }
 }
+@media (max-width: 35rem) {
+  .monitor-page .publication-header .header-inner { gap: .3rem; padding-block: .6rem .35rem; }
+  .monitor-page .publication-header .site-nav { gap: 0 .2rem; }
+  .monitor-page .publication-header .site-nav a { padding-block: .34rem; }
+  .monitor-page .publication-main { padding-top: 1.35rem; }
+  .monitor-intro + .monitor-section { margin-top: 1.4rem; padding-top: 1rem; }
+}
 @media (max-width: 30rem) {
-  .monitor .monitor-filters { grid-template-columns: 1fr; }
+  .monitor .monitor-filters .library-sort { grid-column: 1 / -1; }
   .evidence-facts { grid-template-columns: 1fr 1fr; gap: .75rem; }
 }
